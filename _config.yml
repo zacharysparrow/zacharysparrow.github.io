@@ -70,7 +70,7 @@ author:
       icon: "fab fa-fw fa-github"
       url: "https://github.com/zacharysparrow"
     - label: "OrchID"
-      icon: "fab fa-brands fa-orchid"
+      icon: "fab fa-fw fa-orchid"
       url: "https://orcid.org/0000-0001-6163-2843"
 
 footer:
