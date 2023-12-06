@@ -27,7 +27,7 @@ Add links to papers
 7. **Z. M. Sparrow**, H.-Y. Ko, J. Zhang, and R. A. DiStasio Jr., *Robust Linear-Scaling Hybrid Density Functional Theory with Controllable Accuracy for Finite-Gap Condensed-Phase Systems*, in preparation.
 8. J. Hu, B. G. Ernst, **Z. M. Sparrow**, S. M. Mattes, G. W. Coates, R. A. DiStasio Jr., B. P. Fors, *Valorizing Post-Consumer High Density Polyethylene using Machine Learning*, in preparation. 
 
-## Conference Presentations & Invited Talks
+## Talks & Presentations
 
 1. **Z. M. Norberg**[^1], V. Prabhakaran, J. Laskin, *Fabrication and Optimization of an Integrated Photoelectrochemical Device Using Ion Soft-Landing*, Pacific Northwest National Laboratory Summer Research Symposium, Richland, WA. (2016)
 2. **Z. M. Norberg**[^1], M. Pearce, S. Hoops, O. Dmytrenko, M. Richey, and R. Sanchez-Gonzalez, *An Efficient Algorithm for Increased Spatial Resolution in Two-Component Molecular Tagging Velocimetry*, National Conference on Undergraduate Research, Memphis, TN. (2017)
