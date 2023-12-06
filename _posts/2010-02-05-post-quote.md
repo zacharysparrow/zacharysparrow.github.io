@@ -1,5 +1,7 @@
 ---
 title: "Post: Quote"
+header:
+  teaser: "/assets/images/filler.jpg"
 categories:
   - Blog
 tags:
