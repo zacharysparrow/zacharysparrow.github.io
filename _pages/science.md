@@ -1,6 +1,7 @@
 ---
 permalink: /science/
 title: "Scientific Work"
+toc: true
 ---
 
 ## Featured Projects
