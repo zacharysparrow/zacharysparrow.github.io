@@ -6,13 +6,16 @@ toc_sticky: true
 ---
 
 ## Featured Projects
-### Project 1
+### Machine Learning for Post_Consumer HDPE Valorization
 - item
 
-### Project 2
+### Robust Linear Scaling Exact Exchange
 - item
 
-### Project 3
+### Physics-Based Regularization of Data Driven Approximations
+- item
+
+### NENCI-2021: A Benchmark Database on Non-Covalent Interactions
 - item
 
 
