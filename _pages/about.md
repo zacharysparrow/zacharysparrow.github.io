@@ -3,6 +3,69 @@ permalink: /about/
 title: "About"
 ---
 
-Tempor velit sint sunt ipsum tempor enim ad qui ullamco. Est dolore anim ad velit duis dolore minim sunt aliquip amet commodo labore. Ut eu pariatur aute ea aute excepteur laborum. Esse ea esse excepteur minim mollit qui cillum excepteur ex dolore magna. Labore deserunt fugiat incididunt incididunt sint ea. Consequat dolore aute laboris quis proident quis non et est consectetur ex eiusmod sit culpa.
+# Data Scientist
 
-Cupidatat ea do et in excepteur in. Ad nostrud ut est esse eu duis ea sunt eiusmod. Aliquip tempor veniam sint elit fugiat. Velit incididunt laboris amet incididunt labore dolore irure velit excepteur commodo deserunt laborum. Consectetur eu fugiat veniam veniam Lorem labore magna eiusmod. Ea occaecat reprehenderit pariatur consectetur minim labore ut aliquip.
+As a computational chemistry PhD graduate, I have a passion for leveraging data-driven methodologies to address complex challenges. With extensive experience in data analysis, programming, and machine learning, I am adept at extracting actionable insights from diverse datasets. I am eager to apply my unique blend of scientific expertise to drive innovation as a data scientist in a dynamic and fast-paced industry.
+
+## Education
+
+- Ph.D. Computational Chemistry | Cornell University (*May 2023*)							       		
+- M.S. Computational Chemistry | Cornell University (*Dec. 2019*)	 			        		
+- B.A. Mathematics, B.A. Chemistry | St. Olaf College (*May 2017*)
+
+## Work Experience
+
+**Postdoctoral Research Associate**  
+Cornell University (*May 2023 - Present*)
+- Engineered deep learning pipeline to guide the experimental valorization of recycled high-density polyethylene (HDPE) to pre-recycled strengths
+- Developed sensitivity analysis technique to elucidate the roles of data and physical constraints on the accuracy of quantum chemistry approximations and suggest routes towards improvement
+
+**Graduate Research Assistant**  
+Cornell University (*Aug. 2017 - May 2023*)
+- Constructed a new quantum chemical approximation that leverages both machine learning and physical principles, reliably decreasing error by ~15%
+- Designed, built, and analyzed two benchmark-quality quantum chemical databases to diagnose shortcomings in approximate quantum chemistry methods, resulting in a new general error analysis framework
+- Developed an efficient black box algorithm to estimate electron interaction energies in large-scale systems, thereby extending applicability to systems orders of magnitude larger than historically possible
+- Selected to participate in fully funded 3 month long program to define future research goals for the field at the UCLA Institute for Pure and Applied Mathematics
+- Mentored 6 undergraduate researchers across 4 distinct quantum chemistry projects
+
+**Undergraduate Researcher/Center for Interdisciplinary Research Fellow**  
+St. Olaf College (*Aug. 2015 - Aug. 2017*)
+- Designed and implemented an efficient algorithm for high-resolution image analysis of high-speed gas flows
+- Served as formal consultant for other undergraduate researchers with mathematics, statistics, and computer science questions
+
+**Undergraduate Research Assistant**  
+MIT (*June 2015 - Aug. 2015*)
+- Reconstructed historical Saharan dust transport over the Atlantic ocean by analyzing deep-sea sediment samples and modeling carbon-14 deposition rates using Gaussian Process regression
+
+## Projects
+
+Coming Soon...
+
+## Publications
+
+1. Y. Vidavsky, M. R. Buche, **Z. M. Sparrow**, X. Zhang, S. J. Yang, R. A. DiStasio Jr., and M. N. Silberstein, *Tuning the Mechanical Properties of Metallopolymers via Ligand Interactions: A Combined Experimental and Theoretical Study*, Macromolecules 53 2021 (2020).
+2. M. Pearce, **Z. M. Sparrow**, T. R. Mabote, and R. Sanchez-Gonzalez; *stoBEST: An Efficient Algorithm for Increased Spatial Resolution in Two-Component Molecular Tagging Velocimetry*, Meas. Sci. Technol. 32 035302 (2021).
+3. **Z. M. Sparrow**, B. G. Ernst, P. T. Joo, K. U. Lao, and R. A. DiStasio Jr., *NENCI-2021 Part I: A Large Benchmark Database of Non-Equilibrium Non-Covalent Interactions Emphasizing Close Intermolecular Contacts*, J. Chem. Phys., 155 184303 (2021). *Cover Article & Editor's Pick 2021*
+4. V. Prabhakaran, J. Romo, A. Bhattarai, K. George, **Z. M. Norberg**[^1], D. Kalb, E. Aprà, E., P. A. Kottke, A. G. Fedorov, P. Z. El-Khoury, G. E. Johnson, and J. Laskin, *Integrated photoelectrochemical energy storage cells prepared by benchtop ion soft landing*, Chem. Commun., 58 9060 (2022).
+5. **Z. M. Sparrow**, B. G. Ernst, T. K. Quady, and R. A. DiStasio Jr., *Uniting Non-Empirical and Empirical Density Functional Approximation Strategies Using Constraint-Based Regularization*, J. Phys. Chem. Lett., 13 30 (2022).
+6. H.-Y. Ko, M. F. C. Andrade, **Z. M. Sparrow**, and R. A. DiStasio Jr., *High-Throughput Condensed-Phase Hybrid Density Functional Theory for Large-Scale Finite-Gap Systems: The SeA Approach*, J. Chem. Theory Comput., 19 13 (2023).
+7. **Z. M. Sparrow**, H.-Y. Ko, J. Zhang, and R. A. DiStasio Jr., *Robust Linear-Scaling Hybrid Density Functional Theory with Controllable Accuracy for Finite-Gap Condensed-Phase Systems*, in preparation.
+8. J. Hu, B. G. Ernst, **Z. M. Sparrow**, S. M. Mattes, G. W. Coates, R. A. DiStasio Jr., B. P. Fors, *Valorizing Post-Consumer High Density Polyethylene using Machine Learning*, in preparation. 
+
+## Conference Presentations & Invited Talks
+
+1. **Z. M. Norberg**[^1], V. Prabhakaran, J. Laskin, *Fabrication and Optimization of an Integrated Photoelectrochemical Device Using Ion Soft-Landing*, Pacific Northwest National Laboratory Summer Research Symposium, Richland, WA. (2016)
+2. **Z. M. Norberg**[^1], M. Pearce, S. Hoops, O. Dmytrenko, M. Richey, and R. Sanchez-Gonzalez, *An Efficient Algorithm for Increased Spatial Resolution in Two-Component Molecular Tagging Velocimetry*, National Conference on Undergraduate Research, Memphis, TN. (2017)
+3. **Z. M. Sparrow**, B. G. Ernst, P. T. Joo, K. U. Lao, R. A. DiStasio Jr., *NENCI-2020: A Large Benchmark Database of Non-Equilibrium Non-Covalent Interactions with an Emphasis on Close Contacts*, American Physical Society March Meeting, Denver, CO. (2020) (cancelled)
+4. **Z. M. Sparrow**, B. G. Ernst, P. T. Joo, K. U. Lao, R. A. DiStasio Jr., *NENCI-2021: A Large Benchmark Database of Non-Equilibrium Non-Covalent Interactions Emphasizing Close Intermolecular Contacts*, American Physical Society March Meeting, Online. (2021).
+5. **Z. M. Sparrow**, B. G. Ernst, T. K. Quady, and R. A. DiStasio Jr., *Uniting non-empirical and semi-empirical density functional approximation strategies using constraint-based regularization*, American Chemical Society Spring Meeting, San Diego, CA. (2022).
+6. **Z. M. Sparrow**, *Predicting Chemical Properties on Your Computer Using Data and Physics*, Chemistry Department Seminar, St. Olaf College, Northfield, MN. (2022).
+7. **Z. M. Sparrow**, H.-Y. Ko, and R. A. DiStasio Jr., *Towards Routine Use of Hybrid DFT for Large-Scale Finite-Gap Condensed-Phase Systems*, Institute for Pure and Applied Mathematics Advancing Quantum Mechanics with Mathematics and Statistics Seminar Series, Los Angeles, CA. (2022).
+8. **Z. M. Sparrow**, H.-Y. Ko, Ju-an Zhang, and R. A. DiStasio Jr., *Robust Linear-Scaling Hybrid Density Functional Theory with Controllable Accuracy for Finite-Gap Condensed-Phase Systems*, Institute for Pure and Applied Mathematics Advancing Quantum Mechanics with Mathematics and Statistics Reunion Conference 1, Lake Arrowhead, CA. (2023).
+
+[^1]: Last name changed from Norberg to Sparrow in 2017
+
+
+
+
+
