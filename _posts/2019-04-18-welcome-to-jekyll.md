@@ -1,6 +1,8 @@
 ---
 title: "Welcome to Jekyll!"
 date: 2019-04-18T15:34:30-04:00
+header:
+  teaser: "/assets/images/filler.jpg"
 categories:
   - blog
 tags:
