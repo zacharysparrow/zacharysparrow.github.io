@@ -2,6 +2,7 @@
 permalink: /science/
 title: "Scientific Work"
 toc: true
+toc_sticky: true
 ---
 
 ## Featured Projects
