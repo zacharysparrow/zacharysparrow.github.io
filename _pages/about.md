@@ -2,6 +2,7 @@
 permalink: /about/
 title: "About"
 toc: true
+toc_sticky: true
 ---
 
 As a computational chemistry PhD graduate, I have a passion for leveraging data-driven methodologies to address complex challenges. With extensive experience in data analysis, programming, and machine learning, I am adept at extracting actionable insights from diverse datasets. I am eager to apply my unique blend of scientific expertise to drive innovation as a data scientist in a dynamic and fast-paced industry.
