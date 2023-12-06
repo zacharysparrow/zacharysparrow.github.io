@@ -3,6 +3,18 @@ permalink: /science/
 title: "Scientific Work"
 ---
 
+## Featured Projects
+**Project 1**
+- item
+
+**Project 2**
+- item
+
+**Project 3**
+- item
+
+
+Add links to papers
 ## Publications
 
 1. Y. Vidavsky, M. R. Buche, **Z. M. Sparrow**, X. Zhang, S. J. Yang, R. A. DiStasio Jr., and M. N. Silberstein, *Tuning the Mechanical Properties of Metallopolymers via Ligand Interactions: A Combined Experimental and Theoretical Study*, Macromolecules 53 2021 (2020).
