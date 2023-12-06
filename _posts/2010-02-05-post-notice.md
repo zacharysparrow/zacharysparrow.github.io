@@ -1,5 +1,7 @@
 ---
 title: "Post: Notice"
+header:
+  teaser: "/assets/images/filler.jpg"
 categories:
   - Blog
 tags:
