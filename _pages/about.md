@@ -28,8 +28,9 @@ Cornell University (*Aug. 2017 - May 2023*)
 - Selected to participate in fully funded 3 month long program to define future research goals for the field at the UCLA Institute for Pure and Applied Mathematics
 - Mentored 6 undergraduate researchers across 4 distinct quantum chemistry projects
 
-### Undergraduate Researcher/Center for Interdisciplinary Research Fellow  
+### Undergraduate Researcher
 St. Olaf College (*Aug. 2015 - Aug. 2017*)
+- Awarded competitive St. Olaf Center for Interdisciplinary Research Fellowship for outstanding research bridging chemistry, mathematics, and computer science
 - Designed and implemented an efficient algorithm for high-resolution image analysis of high-speed gas flows
 - Served as formal consultant for other undergraduate researchers with mathematics, statistics, and computer science questions
 
