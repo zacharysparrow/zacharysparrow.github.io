@@ -9,7 +9,7 @@ toc_sticky: true
 ### Machine Learning for Post_Consumer HDPE Valorization
 - item
 
-### Robust Linear Scaling Exact Exchange
+### Robust, Linear Scaling Computation of Quantum Mechanical Interactions
 - item
 
 ### Physics-Based Regularization of Data Driven Approximations
