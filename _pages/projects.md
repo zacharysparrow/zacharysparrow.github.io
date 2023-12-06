@@ -1,11 +1,11 @@
 ---
 title: Portfolio
 layout: collection
-permalink: /posts/
+permalink: /pages/
 collection: posts
-entries_layout: grid
-classes: wide
 ---
 
 Coming Soon...
+entries_layout: grid
+classes: wide
 
