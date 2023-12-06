@@ -34,7 +34,7 @@ St. Olaf College (*Aug. 2015 - Aug. 2017*)
 - Designed and implemented an efficient algorithm for high-resolution image analysis of high-speed gas flows
 - Served as formal consultant for other undergraduate researchers with mathematics, statistics, and computer science questions
 
-### Undergraduate Research Assistant  
+### Visitin Undergraduate Research Assistant  
 MIT (*June 2015 - Aug. 2015*)
 - Reconstructed historical Saharan dust transport over the Atlantic ocean by analyzing deep-sea sediment samples and modeling carbon-14 deposition rates using Gaussian Process regression
 
