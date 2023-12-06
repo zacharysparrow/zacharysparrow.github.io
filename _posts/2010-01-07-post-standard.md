@@ -1,5 +1,7 @@
 ---
 title: "Post: Standard"
+header:
+  teaser: "/assets/images/filler.jpg"
 excerpt_separator: "<!--more-->"
 categories:
   - Blog
