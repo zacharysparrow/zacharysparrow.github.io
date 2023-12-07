@@ -20,6 +20,7 @@ classes: wide
 
 Add links to papers
 ## Publications
+OrchID: [0000-0001-6163-2843](https://orcid.org/0000-0001-6163-2843)
 
 1. Y. Vidavsky, M. R. Buche, **Z. M. Sparrow**, X. Zhang, S. J. Yang, R. A. DiStasio Jr., and M. N. Silberstein, *Tuning the Mechanical Properties of Metallopolymers via Ligand Interactions: A Combined Experimental and Theoretical Study*, Macromolecules 53 2021 (2020).
 2. M. Pearce, **Z. M. Sparrow**, T. R. Mabote, and R. Sanchez-Gonzalez; *stoBEST: An Efficient Algorithm for Increased Spatial Resolution in Two-Component Molecular Tagging Velocimetry*, Meas. Sci. Technol. 32 035302 (2021).
