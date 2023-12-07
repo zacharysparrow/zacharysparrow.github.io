@@ -4,7 +4,7 @@ title: "Scientific Work"
 classes: wide
 ---
 
-## Featured Projects
+## Featured
 ### Machine Learning for Post-Consumer HDPE Valorization
 - item
 
