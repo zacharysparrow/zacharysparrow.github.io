@@ -6,7 +6,7 @@ toc_sticky: true
 ---
 
 ## Featured Projects
-### Machine Learning for Post_Consumer HDPE Valorization
+### Machine Learning for Post-Consumer HDPE Valorization
 - item
 
 ### Robust, Linear Scaling Computation of Quantum Mechanical Interactions
@@ -15,7 +15,7 @@ toc_sticky: true
 ### Physics-Based Regularization of Data Driven Approximations
 - item
 
-### NENCI-2021: A Benchmark Database on Non-Covalent Interactions
+### Benchmark Database of Non-Covalent Interactions
 - item
 
 
