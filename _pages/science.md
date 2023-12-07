@@ -1,6 +1,7 @@
 ---
 permalink: /science/
 title: "Scientific Work"
+classes: wide
 ---
 
 ## Featured Projects
