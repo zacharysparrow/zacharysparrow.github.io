@@ -64,7 +64,7 @@ author:
   bio    : "My awesome biography constrained to a sentence or two goes here."
   links:
     - label: "Ithaca, NY"
-      icon: "fab fa-fw fa-marker"
+      icon: "fab icon-map-marker"
       url: "" #none
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
