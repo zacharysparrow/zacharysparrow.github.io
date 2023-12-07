@@ -8,9 +8,9 @@ As a computational chemistry PhD graduate, I have a passion for leveraging data-
 
 ## Education
 
-- Ph.D. Computational Chemistry | Cornell University (*May 2023*)							       		
-- M.S. Computational Chemistry | Cornell University (*Dec. 2019*)	 			        		
-- B.A. Mathematics, B.A. Chemistry | St. Olaf College (*May 2017*)
+- Ph.D. Computational Chemistry  Cornell University (*May 2023*)							       		
+- M.S. Computational Chemistry  Cornell University (*Dec. 2019*)	 			        		
+- B.A. Mathematics, B.A. Chemistry  St. Olaf College (*May 2017*)
 
 ## Work Experience
 
