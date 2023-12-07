@@ -84,7 +84,7 @@ footer:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/zacharysparrow"
-    - label: "OrchID"
+    - label: "OrchIDd"
       icon: <i class="fa-brands fa-orcid"></i> #"fab fa-fw fa-orchid"
       url: "https://orcid.org/0000-0001-6163-2843"
 
