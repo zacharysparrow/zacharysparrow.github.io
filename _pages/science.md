@@ -23,7 +23,7 @@ Highly accurate, benchmark-level calculations on atoms and molecules are importa
 
 
 ## Publications
-OrchID: [0000-0001-6163-2843](https://orcid.org/0000-0001-6163-2843)
+OrcID: [0000-0001-6163-2843](https://orcid.org/0000-0001-6163-2843)
 
 1. Y. Vidavsky, M. R. Buche, **Z. M. Sparrow**, X. Zhang, S. J. Yang, R. A. DiStasio Jr., and M. N. Silberstein, *Tuning the Mechanical Properties of Metallopolymers via Ligand Interactions: A Combined Experimental and Theoretical Study*, Macromolecules 53 2021 (2020). [Link](https://doi.org/10.1021/acs.macromol.9b02756)
 2. M. Pearce, **Z. M. Sparrow**, T. R. Mabote, and R. Sanchez-Gonzalez; *stoBEST: An Efficient Algorithm for Increased Spatial Resolution in Two-Component Molecular Tagging Velocimetry*, Meas. Sci. Technol. 32 035302 (2021). [Link](https://doi.org/10.1088/1361-6501/abb1e4)
