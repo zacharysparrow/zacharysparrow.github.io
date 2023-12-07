@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "About Me"
+title: "About"
 classes: wide
 header: 
   overlay_image: assets/images/Mount+VanHoevenberg_crop.jpeg
