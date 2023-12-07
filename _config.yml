@@ -19,7 +19,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   Data scientist portfolio for Zachary Sparrow
 #twitter_username: username
 github_username: zacharysparrow
-minimal_mistakes_skin: "air" #default # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+minimal_mistakes_skin: "dirt" #default # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 search: true
 
 # Build settings
