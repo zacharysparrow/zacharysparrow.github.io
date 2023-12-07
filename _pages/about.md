@@ -33,7 +33,7 @@ St. Olaf College, Northfield, MN (*Aug. 2015 - Aug. 2017*)
 - Designed and implemented an efficient algorithm for high-resolution image analysis of high-speed gas flows
 - Served as formal consultant for other undergraduate researchers with mathematics, statistics, and computer science questions
 
-### Visitin Undergraduate Research Assistant  
+### Visiting Undergraduate Research Assistant  
 MIT, Cambridge, MA (*June 2015 - Aug. 2015*)
 - Reconstructed historical Saharan dust transport over the Atlantic ocean by analyzing deep-sea sediment samples and modeling carbon-14 deposition rates using Gaussian Process regression
 
