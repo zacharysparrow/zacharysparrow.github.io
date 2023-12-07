@@ -63,15 +63,17 @@ author:
   avatar : "/assets/images/bio-photo.jpg"
   bio    : "My awesome biography constrained to a sentence or two goes here."
   links:
+    - label: "Ithaca, NY"
+      icon: "fab fa-fw fa-map-marker"
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
+      url: "mailto:zacharysparrow@cornell.edu"
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
       url: "https://www.linkedin.com/in/zach-sparrow/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/zacharysparrow"
-    - label: "OrchID"
-      icon: "fab fa-fw fa-user"
-      url: "https://orcid.org/0000-0001-6163-2843"
 
 footer:
   links:
@@ -81,9 +83,6 @@ footer:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/zacharysparrow"
-    - label: "OrchID"
-      icon: "fab fa-brands fa-user"
-      url: "https://orcid.org/0000-0001-6163-2843"
 atom_feed:
   hide: true
 
