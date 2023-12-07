@@ -3,7 +3,13 @@ permalink: /
 title: "About"
 classes: wide
 header: 
-  image: assets/images/Mount+VanHoevenberg_crop.jpeg
+  overlay_image: assets/images/Mount+VanHoevenberg_crop.jpeg
+  excerpt: "Check out my work!"
+  actions:
+    - label: "Scientific Work"
+      url: "https://zacharysparrow.github.io/science/"
+    - label: "Projects"
+      url: "https://zacharysparrow.github.io/projects/"
 ---
 
 As a computational chemistry PhD graduate, I have a passion for leveraging data-driven methodologies to address complex challenges. With extensive experience in data analysis, programming, and machine learning, I am adept at extracting actionable insights from diverse datasets. I am eager to apply my unique blend of scientific expertise to drive innovation as a data scientist in a dynamic and fast-paced industry.
