@@ -21,6 +21,9 @@ description: >- # this means to ignore newlines until "baseurl:"
 github_username: zacharysparrow
 minimal_mistakes_skin: "dirt" #default # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 search: true
+lunr:
+  search_within_pages: true
+search_full_content: true
 
 # Build settings
 markdown: kramdown
