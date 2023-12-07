@@ -63,9 +63,6 @@ author:
   avatar : "/assets/images/bio-photo.jpg"
   bio    : "I'm a computational chemistry PhD graduate passionate about data driven solutions to complex problems."
   links:
-    - label: "test"
-      icon: "fas fa-fw fa-orcid"
-      url: ""
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
       url: "mailto:zacharysparrow@cornell.edu"
