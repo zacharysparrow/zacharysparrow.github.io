@@ -79,7 +79,7 @@ author:
 footer:
   links:
     - label: "LinkedIn"
-      icon: "fab fa-fw fa-linkedin-square"
+      icon: "fab fa-brands fa-linkedin-square"
       url: "https://www.linkedin.com/in/zach-sparrow/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
