@@ -84,6 +84,8 @@ footer:
     - label: "OrchIDddd"
       icon: &#f8d2; #"fab fa-brands fa-orchid"
       url: "https://orcid.org/0000-0001-6163-2843"
+atom_feed:
+  hide: true
 
 defaults:
   # _posts
