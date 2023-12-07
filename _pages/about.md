@@ -1,10 +1,9 @@
 ---
 permalink: /
-title: "About"
+title: "Check out my work!"
 classes: wide
 header: 
   overlay_image: assets/images/Mount+VanHoevenberg_crop.jpeg
-  tagline: "Check out my work!"
   actions:
     - label: "Scientific Work"
       url: "https://zacharysparrow.github.io/science/"
