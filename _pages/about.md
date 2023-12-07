@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "Check out my work!"
+title: "About Me"
 classes: wide
 header: 
   overlay_image: assets/images/Mount+VanHoevenberg_crop.jpeg
