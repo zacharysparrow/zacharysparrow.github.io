@@ -64,7 +64,7 @@ author:
   bio    : "My awesome biography constrained to a sentence or two goes here."
   links:
     - label: "LinkedIn"
-      icon: "fab fa-fw fa-linkedin-square"
+      icon: "fab fa-fw fa-linkedin"
       url: "https://www.linkedin.com/in/zach-sparrow/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
@@ -76,7 +76,7 @@ author:
 footer:
   links:
     - label: "LinkedIn"
-      icon: "fab fa-brands fa-linkedin-square"
+      icon: "fab fa-brands fa-linkedin"
       url: "https://www.linkedin.com/in/zach-sparrow/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
