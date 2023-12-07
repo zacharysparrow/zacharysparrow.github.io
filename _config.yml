@@ -65,6 +65,7 @@ author:
   links:
     - label: "Ithaca, NY"
       icon: "fab fa-fw fa-map-marker"
+      url: #none
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
       url: "mailto:zacharysparrow@cornell.edu"
