@@ -5,9 +5,11 @@ classes: wide
 ---
 
 ## Featured
+<!---
 ### Machine Learning for Post-Consumer HDPE Valorization
 Relevant Publications: *Coming soon...*  
 For a given processing method, all of the mechanical properties of high density polyethylene are uniqely defined by its molecular weight distribution (MWD)---the distriution of carbon chain lengths in the polymer. Historically, the relationship between the MWD and mechanical properties has been characterized primarily by only the MWD mean and standard deviation, which are insufficient for completely describing the MWD. We developed a deep neural network model (PolyEthylene Property Predictor, PEPPr) to predict the mechanical properties of an HDPE sample given its MWD, with ~15% error. We show that PEPPr is accurate enough to guide experimental design of commercially competitive materials. Additionally, we demonstrate how PEPPr can be used to guide revalorization of recycled polymer *via* selective addition of pristine polymer to degraded samples, suggesting a route towards significantly reducing plastic waste.
+-->
 
 ### Robust Linear Scaling Computation of Quantum Mechanical Interactions
 Relevant Publications: [Link](https://doi.org/10.1021/acs.jctc.2c00827)  
