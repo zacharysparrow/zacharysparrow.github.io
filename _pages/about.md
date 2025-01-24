@@ -11,7 +11,7 @@ header:
       url: "https://zacharysparrow.github.io/projects/"
 ---
 
-I have 5 years of experience constructing and analyzing chemical data sets with a strong publication record emphasizing the benchmarking and development of predictive machine learning models. I love using data to get to the bottom of things, whether that be using ML models to tackle the polymer recycling problem, elucidate fundamental diffusion mechanisms in liquid water, or provide insight into quantum chemical methods. Conversely, I spend my free time getting to the top of things -- Rock climbing, hiking, running (hills!) etc..
+I have 5 years of experience constructing and analyzing chemical data sets with a strong publication record emphasizing the benchmarking and development of predictive machine learning models. I love using data to get to the bottom of things, whether that be using ML models to tackle the polymer recycling problem, elucidate fundamental diffusion mechanisms in liquid water, or provide insight into quantum chemical methods. Conversely, I spend my free time getting to the top of things -- Rock climbing, hiking, and running (Ithaca has so many hills!).
 
 ## Education
 
