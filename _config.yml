@@ -61,7 +61,7 @@ plugins:
 author:
   name   : "Zachary Sparrow"
   avatar : "/assets/images/bio-photo.jpg"
-  bio    : "I'm a computational chemistry PhD graduate passionate about data driven solutions to complex problems."
+  bio    : "Computational chemistry Ph.D. who uses data to get to the bottom of things."
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
