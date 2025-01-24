@@ -11,7 +11,7 @@ header:
       url: "https://zacharysparrow.github.io/projects/"
 ---
 
-As a computational chemistry PhD graduate, I have a passion for leveraging data-driven methodologies to address complex challenges. With extensive experience in data analysis, programming, and machine learning, I am adept at extracting actionable insights from diverse datasets. I am eager to apply my unique blend of scientific expertise to drive innovation as a data scientist in a dynamic and fast-paced industry.
+I have 5 years of experience constructing and analyzing chemical data sets with a strong publication record emphasizing the benchmarking and development of predictive machine learning models. I love using data to get to the bottom of things, whether that be using ML models to tackle the polymer recycling problem, elucidate fundamental diffusion mechanisms in liquid water, or provide insight into quantum chemical methods. Conversely, I spend my free time getting to the top of things -- Rock climbing, hiking, running (hills!) etc..
 
 ## Education
 
