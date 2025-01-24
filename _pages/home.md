@@ -9,7 +9,7 @@ header:
 #    - label: "<i class='fas fa-download'></i> Install now"
 #      url: "/docs/quick-start-guide/"
 excerpt: >
-  I'm a computational chemistry PhD graduate with data driven solutions to complex problems.<br />
+  Computational chemistry PhD who uses data to get to the bottom of things.<br />
 #  <small><a href="https://github.com/mmistakes/minimal-mistakes/releases/tag/4.24.0">Latest release v4.24.0</a></small>
 feature_row:
   - image_path: /assets/images/filler.jpg
