@@ -61,7 +61,7 @@ plugins:
 author:
   name   : "Zachary Sparrow"
   avatar : "/assets/images/bio-photo.jpg"
-  bio    : "Computational chemistry Ph.D. turned data scientist who uses data to get to the bottom of things."
+  bio    : "Data scientist looking for insight into chemical physics."
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
