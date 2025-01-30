@@ -1,0 +1,6 @@
+- Add projects
+- Add granola recipe under misc
+- Add profile pic
+- Update about info
+- Update science
+- Refine intro
