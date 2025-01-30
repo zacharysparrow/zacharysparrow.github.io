@@ -5,5 +5,7 @@ main:
     url: /science/
   - title: "Projects"
     url: /projects/
+  - title: "Misc"
+    url: /misc/
 #  - title: "Tags"
 #    url: /tags/
