@@ -6,6 +6,8 @@ header:
   overlay_color: "#5e616c"
   overlay_image: /assets/images/Mount+VanHoevenberg.jpeg
   actions:
+    - label: "About:
+      url: "https://zacharysparrow.github.io/about/"
     - label: "Scientific Work"
       url: "https://zacharysparrow.github.io/science/"
     - label: "Projects"
