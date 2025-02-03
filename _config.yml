@@ -101,6 +101,26 @@ defaults:
       comments: false
       share: true
       related: false
+  - scope:
+      path: ""
+      type: misc
+    values:
+      layout: single
+      author_profile: true
+      read_time: false
+      comments: false
+      share: true
+      related: false
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: single
+      author_profile: true
+      read_time: false
+      comments: false
+      share: true
+      related: false
   # _pages
   - scope:
       path: "_pages"
@@ -110,8 +130,13 @@ defaults:
       author_profile: true
 
 collections:
-  - misc
-  - projects
+  misc:
+    output: true
+    permalink: /:collection/:path/
+  projects:
+    output: true
+    permalink: /:collection/:path/
+
 
 category_archive:
   type: liquid
