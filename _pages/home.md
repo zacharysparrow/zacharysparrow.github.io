@@ -20,7 +20,6 @@ header:
 excerpt: >
   Data scientist looking for insight into chemical physics.<br />
 #  <small><a href="https://github.com/mmistakes/minimal-mistakes/releases/tag/4.24.0">Latest release v4.24.0</a></small>
---
 author_profile: true
 feature_row:
   - image_path: /assets/images/filler.jpg
