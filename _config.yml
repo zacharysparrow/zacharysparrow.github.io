@@ -109,6 +109,10 @@ defaults:
       layout: single
       author_profile: true
 
+collections:
+  - misc
+  - projects
+
 category_archive:
   type: liquid
   path: /categories/
