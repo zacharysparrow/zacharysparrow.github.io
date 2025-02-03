@@ -93,6 +93,16 @@ defaults:
   # _posts
   - scope:
       path: ""
+      type: post
+    values:
+      layout: single
+      author_profile: true
+      read_time: false
+      comments: false
+      share: true
+      related: false
+  - scope:
+      path: ""
       type: misc
     values:
       layout: single
