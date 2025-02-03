@@ -23,32 +23,25 @@ excerpt: >
 feature_row:
   - image_path: /assets/images/filler.jpg
     alt: "about me"
-    title: "About me"
+    title: "About Me"
     excerpt: "text"
     url: "/pages/about/"
     btn_class: "btn--primary"
     btn_label: "Learn more"
   - image_path: /assets/images/filler.jpg
     alt: "science"
-    title: "Scientific work"
+    title: "Scientific Work"
     excerpt: "text"
     url: "/pages/science/"
     btn_class: "btn--primary"
     btn_label: "Learn more"
   - image_path: /assets/images/filler.jpg
     alt: "projects"
-    title: "Projects"
+    title: "Independent Projects"
     excerpt: "text"
     url: "/pages/projects/"
     btn_class: "btn--primary"
     btn_label: "Learn more"
-  - image_path: /assets/images/filler.jpg
-    alt: "projects"
-    title: "Misc"
-    excerpt: "text"
-    url: "/pages/misc/"
-    btn_class: "btn--primary"
-    btn_label: "Learn more"   
 ---
 
 {% include feature_row %}
