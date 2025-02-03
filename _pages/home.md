@@ -12,7 +12,7 @@ header:
       url: "https://zacharysparrow.github.io/science/"
     - label: "Projects"
       url: "https://zacharysparrow.github.io/projects/"
-    - label: "Misc"
+    - label: "Misc."
       url: "https://zacharysparrow.github.io/misc/"
 #  actions:
 #    - label: "<i class='fas fa-download'></i> Install now"
