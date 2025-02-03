@@ -110,8 +110,8 @@ defaults:
       author_profile: true
 
 collections:
-  - m
-  - p
+  - misc
+  - projects
 
 category_archive:
   type: liquid
