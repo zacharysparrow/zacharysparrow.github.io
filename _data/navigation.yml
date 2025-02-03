@@ -7,5 +7,5 @@ main:
     url: /projects/
   - title: "Misc."
     url: /misc/
-  - title: "Tags"
-    url: /tags/
+#  - title: "Tags"
+#    url: /tags/
