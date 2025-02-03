@@ -2,7 +2,7 @@
 title: Misc
 layout: collection
 permalink: /misc/
-collection: posts
+collection: posts/misc/
 classes: wide
 entries_layout: grid
 header: 
