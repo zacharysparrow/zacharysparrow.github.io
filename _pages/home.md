@@ -35,11 +35,18 @@ feature_row:
     btn_label: "Learn more"
   - image_path: /assets/images/filler.jpg
     alt: "projects"
-    title: "Independent projects"
+    title: "Projects"
     excerpt: "text"
     url: "/pages/projects/"
     btn_class: "btn--primary"
-    btn_label: "Learn more"      
+    btn_label: "Learn more"
+  - image_path: /assets/images/filler.jpg
+    alt: "projects"
+    title: "Misc"
+    excerpt: "text"
+    url: "/pages/misc/"
+    btn_class: "btn--primary"
+    btn_label: "Learn more"   
 ---
 
 {% include feature_row %}
