@@ -101,16 +101,6 @@ defaults:
       comments: false
       share: true
       related: false
-  - scope:
-      path: ""
-      type: misc
-    values:
-      layout: single
-      author_profile: true
-      read_time: false
-      comments: false
-      share: true
-      related: false
   # _pages
   - scope:
       path: "_pages"
@@ -120,8 +110,8 @@ defaults:
       author_profile: true
 
 collections:
-  - misc
-  - projects
+  - m
+  - p
 
 category_archive:
   type: liquid
