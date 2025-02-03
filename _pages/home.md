@@ -1,7 +1,7 @@
 ---
 layout: splash
-permalink: /splash/
-hidden: true
+permalink: /
+# hidden: true
 header:
   overlay_color: "#5e616c"
   overlay_image: /assets/images/Mount+VanHoevenberg.jpeg
