@@ -34,7 +34,7 @@ feature_row3:
     btn_label: "Learn More"
 ---
 
-<h1>Featured Projects</h1>
+<h1>Featured</h1>
 Coming Soon...
 <hr>
 {% include feature_row id="feature_row1" type="left" %}
