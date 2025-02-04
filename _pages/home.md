@@ -6,7 +6,7 @@ header:
   overlay_color: "#5e616c"
   overlay_image: /assets/images/Mount+VanHoevenberg.jpeg
   actions:
-    - label: "About"
+    - label: "About Me"
       url: "https://zacharysparrow.github.io/about/"
     - label: "Scientific Work"
       url: "https://zacharysparrow.github.io/science/"
@@ -36,6 +36,13 @@ feature_row:
     url: "/projects/"
     btn_class: "btn--primary"
     btn_label: "Learn More"
+  - image_path: /assets/images/filler.jpg
+    alt: "Miscellaneous"
+    title: "Miscellaneous"
+    excerpt: "This is what I have to say about everything else"
+    url: "/misc/"
+    btn_class: "btn--primary"
+    btn_label: "Learn More"
 
 feature_row2:
   - image_path: /assets/images/filler.jpg
@@ -47,7 +54,7 @@ feature_row2:
     btn_label: "Learn More"
 ---
 
-![image-center](https://wsrv.nl/?url=https://github.com/zacharysparrow/zacharysparrow.github.io/blob/master/assets/images/bio-photo.jpg?raw=true&h=200&w=200&fit=cover&mask=circle&maxage=7d){: .align-center}
+[![image-center](https://wsrv.nl/?url=https://github.com/zacharysparrow/zacharysparrow.github.io/blob/master/assets/images/bio-photo.jpg?raw=true&h=200&w=200&fit=cover&mask=circle&maxage=7d){: .align-center}](https://zacharysparrow.github.io/about/)
 
 <p style="text-align:center;">I'm a postdoctoral data scientist in Ithaca, NY. I obtained my Ph.D. in computational and theoretical chemistry from Cornell University for insights into the data-driven design and large-scale application of chemical physical models. I love working with great people, turning data into insight, and developing algorithms to do things that weren't possible before. Interested in working together? Feel free to contact me!</p>
 
