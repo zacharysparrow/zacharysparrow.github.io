@@ -4,7 +4,7 @@ permalink: /
 # hidden: true
 header:
 #  overlay_color: "#5e616c"
-  image: /assets/images/WhitefaceLookout_Womack3.JPG
+  overlay_image: /assets/images/WhitefaceLookout_Womack3.JPG
 #  actions:
 #    - label: "About Me"
 #      url: "https://zacharysparrow.github.io/about/"
@@ -19,6 +19,10 @@ header:
 #      url: "/docs/quick-start-guide/"
 excerpt: >
   Postdoctoral Data Scientist<br />
+  <br />
+  <br />
+  <br />
+  <br />
 #  <small><a href="https://github.com/mmistakes/minimal-mistakes/releases/tag/4.24.0">Latest release v4.24.0</a></small>
 
 feature_row1:
