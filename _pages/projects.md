@@ -4,7 +4,7 @@ layout: collection
 permalink: /projects/
 collection: projects
 classes: wide
-entries_layout: grid
+entries_layout: list
 header: 
   overlay_image: assets/images/Mount+VanHoevenberg_crop.jpeg
 ---
