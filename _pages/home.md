@@ -23,23 +23,23 @@ excerpt: >
 
 feature_row:
   - image_path: /assets/images/filler.jpg
+    alt: "About me"
+    excerpt: " "
     url: "/about/"
     btn_class: "btn--primary"
     btn_label: "About Me"
   - image_path: /assets/images/filler.jpg
-    alt: "science"
-    title: "Scientific Work"
-    excerpt: "text"
+    alt: "Scientific Work"
+    excerpt: " "
     url: "/science/"
     btn_class: "btn--primary"
-    btn_label: "Learn more"
+    btn_label: "Scientific Work"
   - image_path: /assets/images/filler.jpg
-    alt: "projects"
-    title: "Personal Projects"
-    excerpt: "text"
+    alt: "Personal projects"
+    excerpt: " "
     url: "/projects/"
     btn_class: "btn--primary"
-    btn_label: "Learn more"
+    btn_label: "Personal Projects"
 ---
 
 <p style="text-align:center;">I'm a postdoctoral data scientist in Ithaca, NY. I obtained my Ph.D. in computational and theoretical chemistry from Cornell University for insights into the data-driven design and large-scale application of chemical physical models. I love working with great people, turning data into insight, and developing algorithms to do things that weren't possible before. Interested in working together? Feel free to contact me!</p>
