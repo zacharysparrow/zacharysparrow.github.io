@@ -42,8 +42,8 @@ feature_row:
     btn_label: "Personal Projects"
 ---
 
-![image-center]({{ site.url }}{{ site.baseurl }}/assets/images/bio-photo.jpg){: .align-center}
-![image-center](https://github.com/zacharysparrow/zacharysparrow.github.io/blob/master/assets/images/bio-photo.jpg&h=200&w=200&fit=cover&mask=circle&maxage=7d){: .align-center}
+# ![image-center]({{ site.url }}{{ site.baseurl }}/assets/images/bio-photo.jpg){: .align-center}
+![image-center](https://wsrv.nl/?url=https://github.com/zacharysparrow/zacharysparrow.github.io/blob/master/assets/images/bio-photo.jpg?raw=true&h=200&w=200&fit=cover&mask=circle&maxage=7d){: .align-center}
 
 <p style="text-align:center;">I'm a postdoctoral data scientist in Ithaca, NY. I obtained my Ph.D. in computational and theoretical chemistry from Cornell University for insights into the data-driven design and large-scale application of chemical physical models. I love working with great people, turning data into insight, and developing algorithms to do things that weren't possible before. Interested in working together? Feel free to contact me!</p>
 
