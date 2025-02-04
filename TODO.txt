@@ -1,6 +1,15 @@
-- Add projects
-- Add granola recipe under misc
-- Add profile pic
-- Update about info
-- Update science
-- Refine intro
+- Add bio pic
+- Add projects to main page
+  -  BetaBaker/Grader
+  -  ADK Data
+  -  AABB package
+  -  My science
+  -  Misc other interests
+- Misc
+  -  Granola recipe
+  -  46ers
+  -  Climbing
+-  About
+  -  Update
+- Science
+  -  Trim down
