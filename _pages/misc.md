@@ -1,7 +1,7 @@
 ---
-title: Misc.
+title: Other
 layout: collection
-permalink: /misc/
+permalink: /other/
 collection: misc
 classes: wide
 entries_layout: grid
