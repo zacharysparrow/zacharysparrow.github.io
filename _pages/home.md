@@ -62,7 +62,7 @@ about_me:
 
 <p style="text-align:center;">I'm a postdoctoral data scientist in Ithaca, NY. I obtained my Ph.D. in computational and theoretical chemistry from Cornell University for insights into the data-driven design and large-scale application of chemical physical models. I love working with great people, turning data into insight, and developing algorithms to do things that weren't possible before. Interested in working together? Feel free to contact me!</p>
 
-<hr>
+<h1>Featured Projects</h1>
 
 {% include feature_row id="feature_row1" type="left" %}
 
