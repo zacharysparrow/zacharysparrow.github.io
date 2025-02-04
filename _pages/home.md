@@ -43,6 +43,7 @@ feature_row:
 ---
 
 ![image-center]({{ site.url }}{{ site.baseurl }}/assets/images/bio-photo.jpg){: .align-center}
+![image-center](https://images.weserv.nl/?url=avatars.githubusercontent.com/u/65769327?v=4&h=300&w=300&fit=cover&mask=circle&maxage=7d){: .align-center}
 
 <p style="text-align:center;">I'm a postdoctoral data scientist in Ithaca, NY. I obtained my Ph.D. in computational and theoretical chemistry from Cornell University for insights into the data-driven design and large-scale application of chemical physical models. I love working with great people, turning data into insight, and developing algorithms to do things that weren't possible before. Interested in working together? Feel free to contact me!</p>
 
