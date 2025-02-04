@@ -26,7 +26,7 @@ feature_row1:
     alt: "Project 1"
     title: "Project 1"
     excerpt: "This is what I have to say about project 1"
-    url: "/science/"
+    url: "/projects/project1/"
     btn_class: "btn--primary"
     btn_label: "Learn More"
 
@@ -35,7 +35,7 @@ feature_row2:
     alt: "Project 2"
     title: "Project 2"
     excerpt: "This is what I have to say about project 2"
-    url: "/projects/"
+    url: "/projects/project2/"
     btn_class: "btn--primary"
     btn_label: "Learn More"
 
@@ -44,7 +44,7 @@ feature_row3:
     alt: "Project 3"
     title: "Project 3"
     excerpt: "This is what I have to say about project 3"
-    url: "/other/"
+    url: "/projects/project3/"
     btn_class: "btn--primary"
     btn_label: "Learn More"
 
