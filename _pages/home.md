@@ -21,15 +21,7 @@ excerpt: >
   Postdoctoral Data Scientist<br />
 #  <small><a href="https://github.com/mmistakes/minimal-mistakes/releases/tag/4.24.0">Latest release v4.24.0</a></small>
 
-feature_row1:
-  - image_path: /assets/images/filler.jpg
-    alt: "About me"
-    title: "About Me"
-    excerpt: "This is what I have to say about myself"
-    url: "/about/"
-    btn_class: "btn--primary"
-    btn_label: "Learn More"
-feature_row2:
+feature_row:
   - image_path: /assets/images/filler.jpg
     alt: "Scientific Work"
     title: "Scientific Work"
@@ -37,12 +29,20 @@ feature_row2:
     url: "/science/"
     btn_class: "btn--primary"
     btn_label: "Learn More"
-feature_row3:
   - image_path: /assets/images/filler.jpg
     alt: "Personal projects"
     title: "Personal Projects"
     excerpt: "This is what I have to say about my personal projects"
     url: "/projects/"
+    btn_class: "btn--primary"
+    btn_label: "Learn More"
+
+feature_row2:
+  - image_path: /assets/images/filler.jpg
+    alt: "About me"
+    title: "About Me"
+    excerpt: "This is what I have to say about myself"
+    url: "/about/"
     btn_class: "btn--primary"
     btn_label: "Learn More"
 ---
@@ -53,8 +53,4 @@ feature_row3:
 
 <hr>
 
-{% include feature_row id="feature_row1" type="left" %}
-
-{% include feature_row id="feature_row2" type="right" %}
-
-{% include feature_row id="feature_row3" type="left" %}
+{% include feature_row %}
