@@ -21,19 +21,21 @@ excerpt: >
   Postdoctoral Data Scientist<br />
 #  <small><a href="https://github.com/mmistakes/minimal-mistakes/releases/tag/4.24.0">Latest release v4.24.0</a></small>
 
-feature_row:
+feature_row1:
   - image_path: /assets/images/filler.jpg
     alt: "About me"
     excerpt: " "
     url: "/about/"
     btn_class: "btn--primary"
     btn_label: "About Me"
+feature_row2:
   - image_path: /assets/images/filler.jpg
     alt: "Scientific Work"
     excerpt: " "
     url: "/science/"
     btn_class: "btn--primary"
     btn_label: "Scientific Work"
+feature_row3:
   - image_path: /assets/images/filler.jpg
     alt: "Personal projects"
     excerpt: " "
@@ -48,4 +50,8 @@ feature_row:
 
 <hr>
 
-{% include feature_row %}
+{% include feature_row id="feature_row1" type="left" %}
+
+{% include feature_row id="feature_row2" type="right" %}
+
+{% include feature_row id="feature_row3" type="left" %}
