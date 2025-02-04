@@ -43,7 +43,6 @@ Coming Soon...
 
 {% include feature_row id="feature_row3" type="left" %}
 
-<hr>
-<h3>All Projects</h3>
+<h2>All Projects</h2>
 
 
