@@ -63,7 +63,7 @@ plugins:
 author:
   name   : "Zachary Sparrow"
   avatar : "/assets/images/bio-photo.jpg"
-  bio    : "Data scientist looking for insight into chemical physics."
+  bio    : "Postdoctoral data scientist looking for insight into chemical physics."
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
