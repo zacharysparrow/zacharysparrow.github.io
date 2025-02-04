@@ -45,6 +45,8 @@ feature_row:
     btn_label: "Learn more"
 ---
 
-I'm a post-doctoral data scientist in Ithaca, NY. I obtained my Ph.D. in computational and theoretical chemistry from Cornell University for insights into the data-driven design and large-scale application of of chemical physical models. I love working with great people, turning data into insight, and developing algorithms to do things that weren't possible before. Interestaed in working together? Feel free to contact me!
+<p>I'm a post-doctoral data scientist in Ithaca, NY. I obtained my Ph.D. in computational and theoretical chemistry from Cornell University for insights into the data-driven design and large-scale application of of chemical physical models. I love working with great people, turning data into insight, and developing algorithms to do things that weren't possible before. Interestaed in working together? Feel free to contact me!</p>
+
+<hr>
 
 {% include feature_row %}
