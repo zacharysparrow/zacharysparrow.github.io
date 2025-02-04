@@ -13,3 +13,4 @@
   -  Update
 - Science
   -  Trim down
+- All header images
