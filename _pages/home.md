@@ -23,12 +23,9 @@ excerpt: >
 
 feature_row:
   - image_path: /assets/images/filler.jpg
-    alt: "about me"
-    title: "About Me"
-    excerpt: "text"
     url: "/about/"
     btn_class: "btn--primary"
-    btn_label: "Learn more"
+    btn_label: "About Me"
   - image_path: /assets/images/filler.jpg
     alt: "science"
     title: "Scientific Work"
