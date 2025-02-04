@@ -5,15 +5,15 @@ permalink: /
 header:
   overlay_color: "#5e616c"
   overlay_image: /assets/images/Mount+VanHoevenberg.jpeg
-  actions:
-    - label: "About Me"
-      url: "https://zacharysparrow.github.io/about/"
-    - label: "Scientific Work"
-      url: "https://zacharysparrow.github.io/science/"
-    - label: "Projects"
-      url: "https://zacharysparrow.github.io/projects/"
-    - label: "Other"
-      url: "https://zacharysparrow.github.io/other/"
+#  actions:
+#    - label: "About Me"
+#      url: "https://zacharysparrow.github.io/about/"
+#    - label: "Scientific Work"
+#      url: "https://zacharysparrow.github.io/science/"
+#    - label: "Projects"
+#      url: "https://zacharysparrow.github.io/projects/"
+#    - label: "Other"
+#      url: "https://zacharysparrow.github.io/other/"
 #  actions:
 #    - label: "<i class='fas fa-download'></i> Install now"
 #      url: "/docs/quick-start-guide/"
@@ -21,30 +21,34 @@ excerpt: >
   Postdoctoral Data Scientist<br />
 #  <small><a href="https://github.com/mmistakes/minimal-mistakes/releases/tag/4.24.0">Latest release v4.24.0</a></small>
 
-feature_row:
+feature_row1:
   - image_path: /assets/images/filler.jpg
-    alt: "Scientific Work"
-    title: "Scientific Work"
-    excerpt: "This is what I have to say about my science"
+    alt: "Project 1"
+    title: "Project 1"
+    excerpt: "This is what I have to say about project 1"
     url: "/science/"
-    btn_class: "btn--primary"
-    btn_label: "Learn More"
-  - image_path: /assets/images/filler.jpg
-    alt: "Personal projects"
-    title: "Personal Projects"
-    excerpt: "This is what I have to say about my personal projects"
-    url: "/projects/"
-    btn_class: "btn--primary"
-    btn_label: "Learn More"
-  - image_path: /assets/images/filler.jpg
-    alt: "Miscellaneous"
-    title: "Miscellaneous"
-    excerpt: "This is what I have to say about everything else"
-    url: "/misc/"
     btn_class: "btn--primary"
     btn_label: "Learn More"
 
 feature_row2:
+  - image_path: /assets/images/filler.jpg
+    alt: "Project 2"
+    title: "Project 2"
+    excerpt: "This is what I have to say about project 2"
+    url: "/projects/"
+    btn_class: "btn--primary"
+    btn_label: "Learn More"
+
+feature_row3:
+  - image_path: /assets/images/filler.jpg
+    alt: "Project 3"
+    title: "Project 3"
+    excerpt: "This is what I have to say about project 3"
+    url: "/other/"
+    btn_class: "btn--primary"
+    btn_label: "Learn More"
+
+about_me:
   - image_path: /assets/images/filler.jpg
     alt: "About me"
     title: "About Me"
@@ -60,4 +64,8 @@ feature_row2:
 
 <hr>
 
-{% include feature_row %}
+{% include feature_row id="feature_row1" type="left" %}
+
+{% include feature_row id="feature_row2" type="right" %}
+
+{% include feature_row id="feature_row3" type="left" %}
