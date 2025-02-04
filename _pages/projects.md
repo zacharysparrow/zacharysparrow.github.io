@@ -34,10 +34,9 @@ feature_row3:
     btn_label: "Learn More"
 ---
 
-Coming Soon...
-
 <h1>Featured Projects</h1>
-
+Coming Soon...
+<hr>
 {% include feature_row id="feature_row1" type="left" %}
 
 {% include feature_row id="feature_row2" type="right" %}
@@ -45,5 +44,6 @@ Coming Soon...
 {% include feature_row id="feature_row3" type="left" %}
 
 <hr>
+<h3>All Projects</h3>
 
 
