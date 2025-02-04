@@ -24,24 +24,27 @@ excerpt: >
 feature_row1:
   - image_path: /assets/images/filler.jpg
     alt: "About me"
-    excerpt: " "
+    title: "About Me"
+    excerpt: "This is what I have to say about myself"
     url: "/about/"
     btn_class: "btn--primary"
-    btn_label: "About Me"
+    btn_label: "Learn More"
 feature_row2:
   - image_path: /assets/images/filler.jpg
     alt: "Scientific Work"
-    excerpt: " "
+    title: "Scientific Work"
+    excerpt: "This is what I have to say about my science"
     url: "/science/"
     btn_class: "btn--primary"
-    btn_label: "Scientific Work"
+    btn_label: "Learn More"
 feature_row3:
   - image_path: /assets/images/filler.jpg
     alt: "Personal projects"
-    excerpt: " "
+    title: "Personal Projects"
+    excerpt: "This is what I have to say about my personal projects"
     url: "/projects/"
     btn_class: "btn--primary"
-    btn_label: "Personal Projects"
+    btn_label: "Learn More"
 ---
 
 ![image-center](https://wsrv.nl/?url=https://github.com/zacharysparrow/zacharysparrow.github.io/blob/master/assets/images/bio-photo.jpg?raw=true&h=200&w=200&fit=cover&mask=circle&maxage=7d){: .align-center}
