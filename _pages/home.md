@@ -4,7 +4,7 @@ permalink: /
 # hidden: true
 header:
   overlay_color: "#5e616c"
-  overlay_image: /assets/images/WhitefaceLookout_Womack3.JPG
+  image: /assets/images/WhitefaceLookout_Womack3.JPG
 #  actions:
 #    - label: "About Me"
 #      url: "https://zacharysparrow.github.io/about/"
