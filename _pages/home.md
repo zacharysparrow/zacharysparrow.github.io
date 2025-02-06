@@ -53,7 +53,7 @@ feature_row4:
   - image_path: /assets/images/filler.jpg
     alt: "Other Interests"
     title: "Other Interests"
-    excerpt: "I spend a lot of time during the day getting to the bottom of things, one way or another. Naturally, I like to balance that out with activities that often involve getting to the top of things---rock climbing, hiking, running (Ithaca has so many hills!). If you're interested in granola recipes, my progress towards completing the Adirondack 46ers, or some nice pictures of rocks, then this is where to look!"
+    excerpt: "I spend a lot of time during the day getting to the bottom of things, one way or another. Naturally, I like to balance that out with activities that often involve getting to the top of things---rock climbing, hiking, and running (Ithaca has so many hills!). If you're interested in granola recipes, my progress towards completing the Adirondack 46ers, or some nice pictures of rocks, then this is where to look!"
     url: "/other/"
     btn_class: "btn--primary"
     btn_label: "Learn More"
