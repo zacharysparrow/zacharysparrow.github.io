@@ -42,10 +42,19 @@ feature_row2:
 
 feature_row3:
   - image_path: /assets/images/filler.jpg
-    alt: "Project 3"
-    title: "Project 3"
-    excerpt: "This is what I have to say about project 3"
-    url: "/projects/project3/"
+    alt: "Quantum Chemistry"
+    title: "Quantum Chemistry"
+    excerpt: "My Ph.D. and postdoctoral work focused on incorporating chemical data into chemical and quantum mechanical models, and the development of algorithms that allow application of those models to very large systems. Some of my more recent projects include developing a ML model to predict polymer properties and facilitate recycling, using deep-learning-based molecular dynamics to uncover fundamental diffusion mechanisms in water, the construction and analysis of benchmark quantum chemical databases, and the development of extremely fast algorithms for modeling large-scale systems."
+    url: "/science/"
+    btn_class: "btn--primary"
+    btn_label: "Learn More"
+
+feature_row4:
+  - image_path: /assets/images/filler.jpg
+    alt: "Other Interests"
+    title: "Other Interests"
+    excerpt: "I spend a lot of time during the day getting to the bottom of things, one way or another. Naturally, I like to balance that out with activities that often involve getting to the top of things---rock climbing, hiking, running (Ithaca has so many hills!). If you're interested in granola recipes, my progress towards completing the Adirondack 46ers, or some nice pictures of rocks, then this is where to look!"
+    url: "/other/"
     btn_class: "btn--primary"
     btn_label: "Learn More"
 
@@ -72,3 +81,5 @@ about_me:
 {% include feature_row id="feature_row2" type="right" %}
 
 {% include feature_row id="feature_row3" type="left" %}
+
+{% include feature_row id="feature_row4" type="right" %}
