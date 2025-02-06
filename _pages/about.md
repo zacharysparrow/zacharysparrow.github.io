@@ -19,7 +19,7 @@ header:
 - M.S. Computational Chemistry --- Cornell University, Ithaca, NY (*Dec. 2019*)	 			        		
 - B.A. Mathematics, B.A. Chemistry --- St. Olaf College, Northfield, MN (*May 2017*)
 
-## Work Experience
+## Experience
 
 ### Postdoctoral Research Associate  
 Cornell University, Ithaca, NY (*May 2023 - Present*)
