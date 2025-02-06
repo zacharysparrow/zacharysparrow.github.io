@@ -13,6 +13,8 @@ header:
 #      url: "https://zacharysparrow.github.io/misc/"
 ---
 
+Postdoctoral research associate in computational chemistry transitioning into a data scientist role. I have 5 years of experience constructing and analyzing chemical data sets with a strong publication record emphasizing the benchmarking and development of predictive machine learning models.
+
 ## Education
 
 - Ph.D. Computational Chemistry --- Cornell University, Ithaca, NY (*May 2023*)							       		
@@ -44,6 +46,12 @@ St. Olaf College, Northfield, MN (*Aug. 2015 - Aug. 2017*)
 MIT, Cambridge, MA (*June 2015 - Aug. 2015*)
 - Reconstructed historical Saharan dust transport over the Atlantic ocean by analyzing deep-sea sediment samples and modeling carbon-14 deposition rates using Gaussian Process regression
 
+## Skills
+### Proficient in
+- Python, NumPy, Pytorch, Pandas, scikit-learn, Matplotlib, Bash, Linux, Git, Mathematica
+
+### Familiar with
+- SQL, TensorFlow, Julia, R
 
 
 
