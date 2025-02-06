@@ -42,9 +42,9 @@ feature_row2:
 
 feature_row3:
   - image_path: /assets/images/filler.jpg
-    alt: "Quantum Chemistry"
-    title: "Quantum Chemistry"
-    excerpt: "My Ph.D. and postdoctoral work focused on incorporating chemical data into chemical and quantum mechanical models, and the development of algorithms that allow application of those models to very large systems. Some of my more recent projects include developing a ML model to predict polymer properties and facilitate recycling, using deep-learning-based molecular dynamics to uncover fundamental diffusion mechanisms in water, the construction and analysis of benchmark quantum chemical databases, and the development of extremely fast algorithms for modeling large-scale systems."
+    alt: "Chemical Physics"
+    title: "Chemical Physics"
+    excerpt: "My Ph.D. and postdoctoral work focused on incorporating chemical data into chemical and quantum mechanical models, and the development of algorithms that allow application of those models to very large systems. Some of my more recent projects include developing a ML model to predict polymer properties and facilitate recycling, using deep-learning-based molecular dynamics to uncover fundamental diffusion mechanisms in water, the construction and analysis of benchmark quantum chemical databases, and the development of extremely fast (linear scaling) algorithms for simulating large-scale systems."
     url: "/science/"
     btn_class: "btn--primary"
     btn_label: "Learn More"
