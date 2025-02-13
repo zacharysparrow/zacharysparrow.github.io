@@ -83,3 +83,6 @@ about_me:
 {% include feature_row id="feature_row3" type="left" %}
 
 {% include feature_row id="feature_row4" type="right" %}
+
+<h3 style="text-align:center;">What is a Data Scientist?</h3>
+<p style="text-align:center;">At it's core, machine learning is a technique to derive algorithms from data. These algorithms can be quite powerful, but they are algorithms nonetheless. Historically, the best and more reliable way to devlop an algorithm has been through a deeper understanding of the problem at hand---this has not changed. As such, a data scientist's role is first to analyze and understand. Strong models will naturally follow just as LLMs followed from understanding natural language.
