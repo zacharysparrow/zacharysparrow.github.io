@@ -75,17 +75,6 @@ feature_row6:
     url: "/other/"
     btn_class: "btn--primary"
     btn_label: "Learn More"
-
-<!---
-about_me:
-  - image_path: /assets/images/filler.jpg
-    alt: "About me"
-    title: "About Me"
-    excerpt: "This is what I have to say about myself"
-    url: "/about/"
-    btn_class: "btn--primary"
-    btn_label: "Learn More"
--->
 ---
 
 [![image-center](https://wsrv.nl/?url=https://github.com/zacharysparrow/zacharysparrow.github.io/blob/master/assets/images/bio-photo.jpg?raw=true&h=200&w=200&fit=cover&mask=circle&maxage=7d){: .align-center}](https://zacharysparrow.github.io/about/)
