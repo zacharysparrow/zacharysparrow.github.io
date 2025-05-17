@@ -19,28 +19,46 @@ header:
 #    - label: "<i class='fas fa-download'></i> Install now"
 #      url: "/docs/quick-start-guide/"
 excerpt: >
-  Postdoctoral Data Scientist<br />
+  Postdoctoral Scientist<br />
 #  <small><a href="https://github.com/mmistakes/minimal-mistakes/releases/tag/4.24.0">Latest release v4.24.0</a></small>
 
 feature_row1:
   - image_path: /assets/images/filler.jpg
-    alt: "Project 1"
-    title: "Project 1"
-    excerpt: "This is what I have to say about project 1"
-    url: "/projects/project1/"
+    alt: "Guess the Grade"
+    title: "Guess the Grade"
+    excerpt: "A common problem in rock climbing is determining the difficulty of a climb. This question is particularly relevant for climbs set on system boards, which are short training walls with a standardized set of hand/foot holds. Climbs on these boards are often set by members of the climbing community, who also determine the difficulty of the climb. These difficulty estimates can sometimes be quite unreliable. That begs the question---can an AI be trained to estimate system board climb difficulty?"
+    url: "/projects/guess_the_grade/"
     btn_class: "btn--primary"
     btn_label: "Learn More"
 
 feature_row2:
   - image_path: /assets/images/filler.jpg
-    alt: "Project 2"
-    title: "Project 2"
-    excerpt: "This is what I have to say about project 2"
-    url: "/projects/project2/"
+    alt: "Plan My Marathon"
+    title: "Plan My Marathon"
+    excerpt: "Running a marathon requires a huge amount of training and dedication. Committing to a training plan can be difficult, especially when life's other commitments get in the way. What should you do when you have to skip a scheduled run because of prior committments, or because the weather is awful? For the recreational runner without access to a coach, it's hard to determine how to best adjust your training plan. So, let the Plan My Marathon AI do it for you!"
+    url: "/projects/plan_my_marathon/"
     btn_class: "btn--primary"
     btn_label: "Learn More"
 
 feature_row3:
+  - image_path: /assets/images/filler.jpg
+    alt: "Visualizing the Seneca 7 Race Results"
+    title: "Visualizing the Seneca 7 Race Results"
+    excerpt: "The Seneca 7 is a 7 person relay race around Seneca Lake covering a distance of (approximately) 77.7 miles. Each team member runs three legs throughout the day as the rest of the team leapfrogs their way up the course (hopefully ariving at the exchange point in time to switch runners). Using Tableau, I visualized the results of the past several years of this chaotic race."
+    url: "/projects/seneca_7/"
+    btn_class: "btn--primary"
+    btn_label: "Learn More"
+
+feature_row4:
+  - image_path: /assets/images/filler.jpg
+    alt: "The Wordle Bot"
+    title: "The Wordle Bot"
+    excerpt: "Almost everyone has heard of Wordle---The New York Times' daily word guessing game. This web app flips the game on its head. Instead of guessing the hidden word yourself, you get to determine the hidden word. Watch as The Wordle Bot finds your hidden word in six tries or less (or your money back) using an information theory-based algorithm! As a bonus, this algorithm can be used to determine some of the best (and worst) first word guesses."
+    url: "/projects/the_wordle_bot/"
+    btn_class: "btn--primary"
+    btn_label: "Learn More"
+
+feature_row5:
   - image_path: /assets/images/filler.jpg
     alt: "Chemical Physics"
     title: "Chemical Physics"
@@ -49,7 +67,7 @@ feature_row3:
     btn_class: "btn--primary"
     btn_label: "Learn More"
 
-feature_row4:
+feature_row6:
   - image_path: /assets/images/filler.jpg
     alt: "Other Interests"
     title: "Other Interests"
@@ -58,6 +76,7 @@ feature_row4:
     btn_class: "btn--primary"
     btn_label: "Learn More"
 
+<!---
 about_me:
   - image_path: /assets/images/filler.jpg
     alt: "About me"
@@ -66,14 +85,15 @@ about_me:
     url: "/about/"
     btn_class: "btn--primary"
     btn_label: "Learn More"
+-->
 ---
 
 [![image-center](https://wsrv.nl/?url=https://github.com/zacharysparrow/zacharysparrow.github.io/blob/master/assets/images/bio-photo.jpg?raw=true&h=200&w=200&fit=cover&mask=circle&maxage=7d){: .align-center}](https://zacharysparrow.github.io/about/)
 
-<p style="text-align:center;">I'm a postdoctoral data scientist in Ithaca, NY. I obtained my Ph.D. in computational and theoretical chemistry from Cornell University for insights into the data-driven design and large-scale application of chemical physical models. I love working with great people, turning data into insight, and developing algorithms to do things that weren't possible before.</p>
+<p style="text-align:center;">I'm a postdoctoral scientist in Ithaca, NY. I obtained my Ph.D. in computational and theoretical chemistry from Cornell University for insights into the data-driven design and large-scale application of chemical physical models. I love working with great people, turning data into insight, and developing algorithms to do things that weren't possible before.</p>
 
 <hr>
-<h1 style="text-align:center;">Featured Projects</h1>
+<h1 style="text-align:center;">Personal Projects</h1>
 <hr>
 
 {% include feature_row id="feature_row1" type="left" %}
@@ -84,5 +104,6 @@ about_me:
 
 {% include feature_row id="feature_row4" type="right" %}
 
-<h3 style="text-align:center;">What is Machine Learning?</h3>
-<p style="text-align:center;">At its core, machine learning is a technique to derive algorithms from data. These algorithms can be quite powerful, but they are algorithms nonetheless. Historically, the best and more reliable way to devlop an algorithm has been through a deeper understanding of the problem at hand---this has not changed. As such, a data scientist's role is first to analyze and understand. Strong models will naturally follow just as LLMs followed from understanding natural language. Machine learning follows from human learning.
+{% include feature_row id="feature_row5" type="left" %}
+
+{% include feature_row id="feature_row6" type="right" %}
