@@ -37,11 +37,11 @@ Cornell University, Ithaca, NY (*Aug. 2017 - May 2023*)
 
 ### Undergraduate Researcher
 St. Olaf College, Northfield, MN (*Aug. 2015 - Aug. 2017*)
-- Designed and implemented an efficient algorithm for high-resolution image analysis of high-speed gas flows
+- Developed efficient algorithm for high-resolution image analysis of high-speed gas flows
 
 ### Visiting Undergraduate Research Assistant  
 MIT, Cambridge, MA (*June 2015 - Aug. 2015*)
-- Reconstructed historical Saharan dust transport over the Atlantic ocean by analyzing deep-sea sediment samples and modeling carbon-14 deposition rates using Gaussian Process regression
+- Reconstructed historical Saharan dust transport by analyzing deep-sea sediment samples and modeling carbon-14 deposition rates using Gaussian Process regression
 
 ## Skills
 - Python, NumPy, Pytorch, Pandas, scikit-learn, Matplotlib, Bash, Linux, SQL, Tableau, Git, R, Julia, Mathematica

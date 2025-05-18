@@ -45,9 +45,9 @@ feature_row3:
     alt: "Visualizing the Seneca 7 Race Results"
     title: "Visualizing the Seneca 7 Race Results"
     excerpt: "The Seneca 7 is a 7 person relay race around Seneca Lake covering a distance of (approximately) 77.7 miles. Each team member runs three legs throughout the day as the rest of the team leapfrogs their way up the course (hopefully ariving at the exchange point in time to switch runners). Using Tableau, I visualized the results of the past several years of this chaotic race."
-    url: "/projects/seneca_7/"
+    url: "https://public.tableau.com/app/profile/zachary.sparrow/viz/TheSeneca7/TheSeneca7"
     btn_class: "btn--primary"
-    btn_label: "Learn More"
+    btn_label: "See the Viz"
 
 feature_row4:
   - image_path: /assets/images/filler.jpg
@@ -77,21 +77,21 @@ feature_row6:
     btn_label: "Learn More"
 ---
 
-[![image-center](https://wsrv.nl/?url=https://github.com/zacharysparrow/zacharysparrow.github.io/blob/master/assets/images/bio-photo.jpg?raw=true&h=200&w=200&fit=cover&mask=circle&maxage=7d){: .align-center}](https://zacharysparrow.github.io/about/)
+[![image-left](https://wsrv.nl/?url=https://github.com/zacharysparrow/zacharysparrow.github.io/blob/master/assets/images/github_profile.jpg?raw=true&h=200&w=200&fit=cover&mask=circle&maxage=7d){: .align-left}](https://zacharysparrow.github.io/about/)
 
-<p style="text-align:center;">I'm a postdoctoral scientist in Ithaca, NY. I obtained my Ph.D. in computational and theoretical chemistry from Cornell University for insights into the data-driven design and large-scale application of chemical physical models. I love working with great people, turning data into insight, and developing algorithms to do things that weren't possible before.</p>
+<p style="text-align:left;"><br/>I'm a postdoctoral scientist in Ithaca, NY. I obtained my Ph.D. in computational and theoretical chemistry from Cornell University for insights into the data-driven design and large-scale application of chemical physical models. I love working with great people, turning data into insight, and developing algorithms to do things that weren't possible before.<br/><br/><br/></p>
 
 <hr>
-<h1 style="text-align:center;">Personal Projects</h1>
+<h1 style="text-align:center;">Featured Work</h1>
 <hr>
 
 {% include feature_row id="feature_row1" type="left" %}
 
 {% include feature_row id="feature_row2" type="right" %}
 
-{% include feature_row id="feature_row3" type="left" %}
+{% include feature_row id="feature_row4" type="left" %}
 
-{% include feature_row id="feature_row4" type="right" %}
+{% include feature_row id="feature_row3" type="right" %}
 
 {% include feature_row id="feature_row5" type="left" %}
 
