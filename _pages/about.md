@@ -13,7 +13,7 @@ header:
 #      url: "https://zacharysparrow.github.io/misc/"
 ---
 
-Postdoctoral research associate in computational chemistry transitioning into a data scientist role. I have a nearly decade of computational research experience with an emphasis on constructing and analyzing chemical data sets, the development of predictive machine learning models, and algorithm design.
+I'm a postdoctoral scientist in computational and theoretical chemistry transitioning into a data scientist role. I have a nearly decade of computational research experience with an emphasis on constructing and analyzing chemical data sets, the development of predictive machine learning models, and algorithm design. I love working with great people, turning data into insight, and developing algorithms to do things that weren't possible before.
 
 ## Education
 

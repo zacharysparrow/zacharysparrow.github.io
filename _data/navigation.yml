@@ -1,10 +1,10 @@
 main:
   - title: "About"
     url: /about/
-  - title: "Scientific Work"
+  - title: "Science"
     url: /science/
-      #  - title: "Projects"
-      #    url: /projects/
+  - title: "Projects"
+    url: /projects/
   - title: "Other"
     url: /other
 #  - title: "Tags"

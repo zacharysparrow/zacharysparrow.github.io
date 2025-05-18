@@ -5,6 +5,9 @@ classes: wide
 header: 
   overlay_image: assets/images/Mount+VanHoevenberg_crop.jpeg
 ---
+
+Accurate simulations of molecules and materials have the potential to greatly acellerate the development of new technologies (better solar cells, batteries, drugs, etc.). On a theoretical level, we know how to do these simulations *exactly*. The problem? Running these simulations for any interesting molecule or material would take longer than the heat death of the universe. As such, the entire field of theoretical/computational chemistry is focused on developing fast, accurate approximations to the true quantum mechanical simulations. I believe the most promising solution to this problem lies in the development of both physics-informed machine learning models and fast (linear-scaling) algorithms to apply these models to large systems. 
+
 <!---
 ## Featured
 ### Machine Learning for Post-Consumer HDPE Valorization

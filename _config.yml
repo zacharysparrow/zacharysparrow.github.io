@@ -61,9 +61,9 @@ plugins:
   - jekyll-include-cache
 
 author:
-  name   : "Zachary Sparrow"
-  avatar : "/assets/images/github_profile.jpg"
-  bio    : "Postdoctoral data scientist looking for insight into chemical physics."
+  name   : "Zachary Sparrow, Ph.D."
+  avatar : "/assets/images/github-profile.jpg"
+  bio    : "Postdoctoral scientist looking for data-driven insight into chemical physics."
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
@@ -106,6 +106,16 @@ defaults:
       type: projects
     values:
       layout: single
+      author_profile: true
+      read_time: false
+      comments: false
+      share: true
+      related: false
+  - scope:
+      path: ""
+      type: splash
+    values:
+      layout: splash
       author_profile: true
       read_time: false
       comments: false
