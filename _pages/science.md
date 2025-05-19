@@ -9,6 +9,8 @@ header:
 ## Theoretical and Computational Chemistry
 Accurate simulations of molecules and materials have the potential to greatly acellerate the development of new technologies (better solar cells, batteries, drugs, etc.). On a theoretical level, we know how to do these simulations *exactly*. The problem? Running these simulations for any interesting molecule or material would take longer than the heat death of the universe. The main issue is accurately modeling the electrons, which has come to be known as the electronic structure problem. The entire electornic structure field is focused on developing fast, accurate approximations to the true quantum mechanical simulations. I believe the most promising solution to this problem lies in the development of both physics-informed machine learning models and fast (linear-scaling) algorithms to apply these models to large systems. 
 
+My favorite recent project was developing an ML model dubbed the PolyEthylene Property Predictor (PEPPr) to predict the properties of HDPE given the molecular weight distribution (the distribution of molecule sizes) of the sample. Using this model, we were able to guide experimental synthesis of stronger, easier to process materials. Additionally, we demonstrated how to use PEPPr to overcome some of the problems associated with material degredation during the recycling process.
+
 <!---
 ## Featured
 ### Machine Learning for Post-Consumer HDPE Valorization

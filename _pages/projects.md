@@ -9,7 +9,7 @@ header:
   overlay_image: assets/images/Mount+VanHoevenberg_crop.jpeg
 
 feature_row1: 
-  - image_path: /assets/images/filler.jpg 
+  - image_path: /assets/images/climb_10_attention_weights.png 
     alt: "Guess the Grade" 
     title: "Guess the Grade" 
     excerpt: "A common problem in rock climbing is determining the difficulty of a climb. This question is particularly relevant for climbs set on system boards, which are short training walls with a standardized set of hand/foot holds. Climbs on these boards are often set by members of the climbing community, who also (somewhat unreliably) determine the difficulty of the climb. That begs the question---can an AI be trained to estimate system board climb difficulty?" 
@@ -27,7 +27,7 @@ feature_row2:
     btn_label: "Learn More" 
  
 feature_row3: 
-  - image_path: /assets/images/filler.jpg 
+  - image_path: /assets/images/seneca7_sneak_peek.png 
     alt: "Visualizing the Seneca 7 Race Results" 
     title: "Visualizing the Seneca 7 Race Results" 
     excerpt: "The Seneca 7 is a 7 person relay race around Seneca Lake covering a distance of (approximately) 77.7 miles. Each team member runs three legs throughout the day as the rest of the team leapfrogs their way up the course (hopefully ariving at the exchange point in time to switch runners). Using Tableau, I visualized the results of the past several years of this chaotic race." 
@@ -49,8 +49,8 @@ feature_row4:
 
 {% include feature_row id="feature_row2" type="right" %}
 
-{% include feature_row id="feature_row4" type="left" %}
+{% include feature_row id="feature_row3" type="left" %}
 
-{% include feature_row id="feature_row3" type="right" %}
+{% include feature_row id="feature_row4" type="right" %}
 
 
