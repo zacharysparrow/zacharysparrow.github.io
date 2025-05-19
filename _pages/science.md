@@ -4,12 +4,27 @@ title: "Scientific Work"
 classes: wide
 header: 
   overlay_image: assets/images/Mount+VanHoevenberg_crop.jpeg
+
+feature_row1:
+  - image_path: /assets/images/peppr_summary.png
+    excerpt: "One of my favorite recent projects was developing an ML model dubbed the PolyEthylene Property Predictor (PEPPr) to predict the properties of HDPE given the molecular weight distribution (the distribution of molecule sizes) of the sample. Polymers are difficult to understand from first principles because of their stochastic nature, making ML an attractive tool for this problem. Leveraging synthetic data augmentation, we were able to train a model that is stable enough to guide the design of polymers with a desired set of properties, resulting in the experimental synthesis of stronger, easier to process materials. Additionally, we demonstrated how to use PEPPr to overcome some of the problems associated with material degredation during the recycling process."
+
+feature_row2:
+  - image_path: /assets/images/nenci.png
+    excerpt: "My first Ph.D. project was to construct and analyze a database of non-covalent interactions (interactions between two distinct molecules) now called NENCI-2021. At the time of publishing, NENCI-2021 was the largest of its kind, containing about 10,000 unique interactions. My analysis had a number of key insights into some of the most commonly used approximations, most notably how the error made in a simulation scales with respect to system size in a manner that resembles a bias-variance breakdown, even for non-empirical approximations. The resulting publication was selected as the cover article and won Editor's choice for 2021 in the Journal of Chemical Physics."
+
+feature_row3:
+  - image_path: /assets/images/case21.png
+    excerpt: "My first foray into training my own empirical quantum chemical approximation followed the realization that most other empirical methods ignored many of the underlying fundamental physics, hoping to learn such information directly from the data. I realized that the vast majority of these physics can be written in terms of constraints and regularization penalties, effectively filling in the gap between the empirical and non-empirical approximations. Using this technique, we showed that an approximation that uses both data and physical constraints outperforms some of the most common approximations still used today. This project ultimately started a push in our research group to develop a better understanding of how to most effectively construct empirical quantum chemical methods, and how this differs from more common applications of ML."
 ---
 
 ## Theoretical and Computational Chemistry
 Accurate simulations of molecules and materials have the potential to greatly acellerate the development of new technologies (better solar cells, batteries, drugs, etc.). On a theoretical level, we know how to do these simulations *exactly*. The problem? Running these simulations for any interesting molecule or material would take longer than the heat death of the universe. The main issue is accurately modeling the electrons, which has come to be known as the electronic structure problem. The entire electornic structure field is focused on developing fast, accurate approximations to the true quantum mechanical simulations. I believe the most promising solution to this problem lies in the development of both physics-informed machine learning models and fast (linear-scaling) algorithms to apply these models to large systems. 
 
-My favorite recent project was developing an ML model dubbed the PolyEthylene Property Predictor (PEPPr) to predict the properties of HDPE given the molecular weight distribution (the distribution of molecule sizes) of the sample. Using this model, we were able to guide experimental synthesis of stronger, easier to process materials. Additionally, we demonstrated how to use PEPPr to overcome some of the problems associated with material degredation during the recycling process.
+### Featured Work
+{% include feature_row id="feature_row1" type="left" %}
+{% include feature_row id="feature_row3" type="right" %}
+{% include feature_row id="feature_row2" type="left" %}
 
 <!---
 ## Featured
@@ -29,10 +44,6 @@ Exact quantum mechanics is too computationally expensive for all but the smalles
 Relevant Publications: [Link](https://doi.org/10.1063/5.0068862) (*Cover Article & Editor's Choice 2021*)  
 Highly accurate, benchmark-level calculations on atoms and molecules are important because they give the computational chemistry community a way to measure the accuracy of quantum chemical models that are easier to compute. We've generated two databases of this kind: one describing the interactions between two distinct molecules as they get pushed together, and one of molecules with atoms displaced beyond their most likely positions in the molecule. Both of these databases are some of the largest of their kind. We have since analyed the performance of dozens of quantum chemistry approximations using these databases. One key observation that we've made is that the mean and variance of the distribution of errors across different systems for a given approximation increases as certain quantum mechanical contributions to the property increases. The latter database has also led to a new analysis technique that decomposes error into two distinct physical components. Both of these methods provide insight into how to further improve quantum chemical models.
 -->
-
-### Academic Profiles
-Google Scholar: [Zachary M. Sparrow](https://scholar.google.com/citations?user=oyR3ZTYAAAAJ&hl=en)<br>
-ORCiD: [0000-0001-6163-2843](https://orcid.org/0000-0001-6163-2843)
 
 ## Publications
 
@@ -66,6 +77,9 @@ Based Machine Learning*, J. Am. Chem. Soc., 147 12 (2025). [Link](https://doi.or
 
 
 
+### Academic Profiles
+Google Scholar: [Zachary M. Sparrow](https://scholar.google.com/citations?user=oyR3ZTYAAAAJ&hl=en)<br>
+ORCiD: [0000-0001-6163-2843](https://orcid.org/0000-0001-6163-2843)
 
 
 

@@ -43,6 +43,15 @@ feature_row4:
     url: "/projects/the_wordle_bot/" 
     btn_class: "btn--primary" 
     btn_label: "Learn More"
+
+feature_row5: 
+  - image_path: /assets/images/aabbcd.png
+    alt: "AABBCD Python Package" 
+    title: "AABBCD Python Package" 
+    excerpt: "There are many occasions in science where you need to compute numerical integrals involving the product of two compact distributions (*i.e.* distributions that decay rapidly from their center). This compactness imposes a natural sparsity; distributions that are far from each other don't interact, resulting in an integral that is effectively zero. This package (Axis-Aligned Bounding Boxes for Compact Distributions, AABBCD) provides utility functions for leveraging such sparsity for computational savings using algorithms I developed to compute the exact exchange interaction in large-scale systems." 
+    url: "/projects/AABBCD/" 
+    btn_class: "btn--primary" 
+    btn_label: "Learn More"
 ---
 
 {% include feature_row id="feature_row1" type="left" %}
@@ -53,4 +62,5 @@ feature_row4:
 
 {% include feature_row id="feature_row4" type="right" %}
 
+{% include feature_row id="feature_row5" type="left" %}
 

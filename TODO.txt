@@ -1,4 +1,3 @@
-- Add bio pic
 - Add projects to main page
   -  BetaBaker/Grader
   -  ADK Data
@@ -9,8 +8,3 @@
   -  Granola recipe
   -  46ers
   -  Climbing
--  About
-  -  Update
-- Science
-  -  Trim down
-- All header images
