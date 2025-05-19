@@ -25,31 +25,31 @@ excerpt: >
 #  <small><a href="https://github.com/mmistakes/minimal-mistakes/releases/tag/4.24.0">Latest release v4.24.0</a></small>
 
 feature_row1:
-  - image_path: /assets/images/filler.jpg
+  - image_path: /assets/images/climb_10_attention_weights.png
     alt: "Personal Projects"
     title: "Personal Projects"
-    excerpt: "I enjoy exploring the intersection between some of my hobbies and data. Some personal projects that I've been working on include: an AI to estimate the difficulty of rock climbing sets, an AI-powered marathon training app, a bot to solve New York Times' daily game Wordle, and a Tableau visualization of the infamous Seneca 7 relay race."
+    excerpt: "I enjoy exploring the intersection between tech and my hobbies, either by exploring data sets or developing apps for my own use. As a bonus, this gives me an opportunity to expand my data science knowledge. Some personal projects that I've been working on include: an AI to estimate the difficulty of rock climbing sets, an AI-powered marathon training app, a bot to solve New York Times' daily game Wordle, and a Tableau visualization of the infamous Seneca 7 relay race."
     url: "/projects/"
     btn_class: "btn--primary"
     btn_label: "Learn More"
 
 feature_row5:
-  - image_path: /assets/images/filler.jpg
+  - image_path: /assets/images/peppr_summary.png
     alt: "Scientific Work"
     title: "Scientific Work"
     excerpt: "My Ph.D. and postdoctoral work focused on incorporating chemical data into quantum chemical models and developing algorithms to apply such models to very large systems. Some of my more recent projects include developing a ML model to predict polymer properties and facilitate recycling, using deep-learning to uncover fundamental diffusion mechanisms in water, the construction and analysis of benchmark quantum chemical databases, and the development of extremely fast algorithms for simulating large-scale systems."
     url: "/science/"
     btn_class: "btn--primary"
-    btn_label: "My Publications"
+    btn_label: "Learn More"
 
 feature_row6:
-  - image_path: /assets/images/filler.jpg
+  - image_path: /assets/images/marmot.jpg
     alt: "Other Interests"
     title: "Other Interests"
-    excerpt: "I spend a lot of time during the day getting to the bottom of things, one way or another. Naturally, I like to balance that out with activities that often involve getting to the top of things---rock climbing, hiking, and running (Ithaca has so many hills!). If you're interested in granola recipes, my progress towards completing the Adirondack 46ers, or some nice pictures of rocks, then this is where to look!"
+    excerpt: "I spend a lot of time during the day getting to the bottom of things, one way or another. Naturally, I like to balance that out with activities that often involve getting to the top of things---rock climbing, hiking, and running (Ithaca has so many hills!). If you're interested in granola recipes, my progress towards completing the Adirondack 46ers, or some nice pictures of rocks (or marmots on rocks), then this is where to look!"
     url: "/other/"
     btn_class: "btn--primary"
-    btn_label: "To the Mountains!"
+    btn_label: "Learn More"
 ---
 
 {% include feature_row id="feature_row5" type="right" %}

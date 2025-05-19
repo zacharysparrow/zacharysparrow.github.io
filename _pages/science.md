@@ -6,7 +6,8 @@ header:
   overlay_image: assets/images/Mount+VanHoevenberg_crop.jpeg
 ---
 
-Accurate simulations of molecules and materials have the potential to greatly acellerate the development of new technologies (better solar cells, batteries, drugs, etc.). On a theoretical level, we know how to do these simulations *exactly*. The problem? Running these simulations for any interesting molecule or material would take longer than the heat death of the universe. As such, the entire field of theoretical/computational chemistry is focused on developing fast, accurate approximations to the true quantum mechanical simulations. I believe the most promising solution to this problem lies in the development of both physics-informed machine learning models and fast (linear-scaling) algorithms to apply these models to large systems. 
+## Theoretical and Computational Chemistry
+Accurate simulations of molecules and materials have the potential to greatly acellerate the development of new technologies (better solar cells, batteries, drugs, etc.). On a theoretical level, we know how to do these simulations *exactly*. The problem? Running these simulations for any interesting molecule or material would take longer than the heat death of the universe. The main issue is accurately modeling the electrons, which has come to be known as the electronic structure problem. The entire electornic structure field is focused on developing fast, accurate approximations to the true quantum mechanical simulations. I believe the most promising solution to this problem lies in the development of both physics-informed machine learning models and fast (linear-scaling) algorithms to apply these models to large systems. 
 
 <!---
 ## Featured
@@ -27,8 +28,11 @@ Relevant Publications: [Link](https://doi.org/10.1063/5.0068862) (*Cover Article
 Highly accurate, benchmark-level calculations on atoms and molecules are important because they give the computational chemistry community a way to measure the accuracy of quantum chemical models that are easier to compute. We've generated two databases of this kind: one describing the interactions between two distinct molecules as they get pushed together, and one of molecules with atoms displaced beyond their most likely positions in the molecule. Both of these databases are some of the largest of their kind. We have since analyed the performance of dozens of quantum chemistry approximations using these databases. One key observation that we've made is that the mean and variance of the distribution of errors across different systems for a given approximation increases as certain quantum mechanical contributions to the property increases. The latter database has also led to a new analysis technique that decomposes error into two distinct physical components. Both of these methods provide insight into how to further improve quantum chemical models.
 -->
 
+### Academic Profiles
+Google Scholar: [Zachary M. Sparrow](https://scholar.google.com/citations?user=oyR3ZTYAAAAJ&hl=en)<br>
+ORCiD: [0000-0001-6163-2843](https://orcid.org/0000-0001-6163-2843)
+
 ## Publications
-OrcID: [0000-0001-6163-2843](https://orcid.org/0000-0001-6163-2843)
 
 1. **Z. M. Sparrow**, H.-Y. Ko, J. Zhang, and R. A. DiStasio Jr., *Robust Linear-Scaling Hybrid Density Functional Theory with Controllable Accuracy for Finite-Gap Condensed-Phase Systems*, in preparation.
 2. **Z. M. Sparrow**, R. Kang, B. G. Ernst, R. A. DiStasio Jr., *Decomposing Conformational Energy Errors into Geometric and Potential Energy Curvature Components: Application to NECE-2025*, in preparation.

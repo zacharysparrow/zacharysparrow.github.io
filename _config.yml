@@ -74,6 +74,12 @@ author:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/zacharysparrow"
+    - label: "Google Scholar"
+      icon: "fa-brands fa-google-scholar"
+      url: "https://scholar.google.com/citations?user=oyR3ZTYAAAAJ&hl=en"
+    - label: "ORCiD"
+      icon: "fa-brands fa-orcid"
+      url: "https://orcid.org/0000-0001-6163-2843"
 
 footer:
   links:
@@ -86,6 +92,12 @@ footer:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/zacharysparrow"
+    - label: "Google Scholar"
+      icon: "fa-brands fa-google-scholar"
+      url: "https://scholar.google.com/citations?user=oyR3ZTYAAAAJ&hl=en"
+    - label: "ORCiD"
+      icon: "fa-brands fa-orcid"
+      url: "https://orcid.org/0000-0001-6163-2843"
 atom_feed:
   hide: true
 

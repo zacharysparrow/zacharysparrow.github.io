@@ -1,6 +1,6 @@
 ---
 permalink: /about/
-title: "About"
+title: "About Me"
 classes: wide
 header: 
   overlay_image: assets/images/Mount+VanHoevenberg_crop.jpeg
@@ -17,8 +17,8 @@ I'm a postdoctoral scientist in computational and theoretical chemistry transiti
 
 ## Education
 
-- Ph.D. Computational Chemistry --- Cornell University, Ithaca, NY (*May 2023*)							       		
-- M.S. Computational Chemistry --- Cornell University, Ithaca, NY (*Dec. 2019*)	 			        		
+- Ph.D. Theoretical/Computational Chemistry --- Cornell University, Ithaca, NY (*May 2023*)							       		
+- M.S. Theoretical/Computational Chemistry --- Cornell University, Ithaca, NY (*Dec. 2019*)	 			        		
 - B.A. Mathematics, B.A. Chemistry --- St. Olaf College, Northfield, MN (*May 2017*)
 
 ## Experience
