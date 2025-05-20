@@ -6,7 +6,8 @@ permalink: /projects/
 classes: wide
 entries_layout: list
 header: 
-  overlay_image: assets/images/Mount+VanHoevenberg_crop.jpeg
+  overlay_image: assets/images/tea2_crop.jpg
+  caption: Photo by <a href="https://unsplash.com/@kellysikkema?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Kelly Sikkema</a> on <a href="https://unsplash.com/photos/flat-lay-photo-of-coffee-mug-and-pencils-iH844EdBTkc?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
 
 feature_row1: 
   - image_path: /assets/images/climb_10_attention_weights.png 
