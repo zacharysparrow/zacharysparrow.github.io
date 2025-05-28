@@ -1,17 +1,225 @@
 ---
-title: "Post: Modified Date"
-last_modified_at: 2016-03-09T16:20:02-05:00
-entries_layout: grid
-header:
-  teaser: "/assets/images/filler.jpg"
+title: "Guess the Grade"
 categories:
   - Blog
 tags:
-  - Post Formats
-  - readability
-  - standard
+  - Deep Learning
+  - Transformer
+  - Ordinal Regression
+  - Climbing
+  - Bouldering
+sidebar:
+  - title: "Technology Used"
+    text: "Python, SQL, Deep Learning"
+  - title: "Packages Used"
+    text: "PyTorch, Pandas, Sci-kit Learn, MatPlotLib"
 ---
 
-This post has been updated and should show a modified date if used in a layout.
+<h2> The Problem </h2>
+At the time of writing, I've been regularly rock climbing for about four years now.
+I'm always trying to push my climbing to the next level, which has slowly lead me to more structured and consistent training.
+In this journey, I've found that system boards are an important training tool to develop the body tension needed for hard climbing.
+System boards are short walls with fixed holds, often with adjustable steepness.
+The climber can connect to the board <i>via</i> a dedicated app containing a database of climbs set by the community.
+Selecting a climb illuminates a set of LED lights indicating which holds on the wall can be used in an attempt to reach the top of the wall.
+A single system board can have tens of thousands of climbs/boulder, all with a floor footprint of just a single climb.
 
-All children, except one, grow up. They soon know that they will grow up, and the way Wendy knew was this. One day when she was two years old she was playing in a garden, and she plucked another flower and ran with it to her mother. I suppose she must have looked rather delightful, for Mrs. Darling put her hand to her heart and cried, "Oh, why can't you remain like this for ever!" This was all that passed between them on the subject, but henceforth Wendy knew that she must grow up. You always know after you are two. Two is the beginning of the end.
+<figure style="width: 600px" class="align-center">
+  <img src="{{ site.url }}{{ site.baseurl }}/assets/images/system_board.png" alt="">
+  <figcaption> A climber climbing on a system board. Photo by <a href="https://www.youtube.com/watch?v=yaCAkYkVUw0">Eric Karlsson</a>. </figcaption>
+</figure>
+
+To help with selecting appropriate boulders for you skill level, climbs are assigned a difficulty level by the person who posted the climb (a.k.a. the setter) to the database.
+In the US, the most popular difficulty scale is the V-Scale.
+On this scale, the easiest climbs are assigned a difficulty of V0, while more difficult climbs are assigned higher numerical values (the hardest being V17 at the time of writing).
+Different people and body types are more well suited for different climbs, meaning these difficulty ratings are fairly subjective.
+To overcome this, outdoor boulders are graded based on the consensus of numerous climbers who have climbed the boulder themselves.
+In contrast, a boulder on a system board often only has one or two ascents logged due to the sheer number of available climbs and the tendency of climbers not to grade boulders they've climbed after the fact.
+Consequently, the difficulty assigned to system board boulders often feel inaccurate.
+<br />
+<br />
+
+Accurate, automatic boulder grading would help tens of thousands of climbers select training climbs appropriate to their skill level.
+This begs the question---can a machine learning (ML) model be trained to predict the difficulty of a boulder on a system board?
+
+<h2> The Data </h2>
+The first step to training an ML model is always obtaining a database for training and testing the model.
+Fortunately, SQLite databases containing all of the climbs on a variety of system boards can be obtained straightforwardly using the <a href="https://github.com/lemeryfertitta/BoardLib/tree/main">BoardLib library</a>.
+<br />
+<br />
+
+Here, we'll focus on building a model for the Tension Board 1 (TB1), the board at my gym that I have the most experience with.
+The TB1 can be constructed with varying sets of holds, resulting in several different layouts, each encoded as an integer.
+After some examination, I've found my gym uses layout 9, which also seems to be the most popular and complete layout.
+Additionally, we'll also limit ourselves to single boulders, rather than circuits consisting of long sequences of moves.
+This translates to selecting climbs only with the variable 'frames_count' set to 1.
+<br />
+<br />
+
+With these restrictions, we can now query the database to select the data we're interested in using for model training and testing.
+This information is stored within three tables that needs to be joined with some light manipulation.
+We'll start with a simple 'SELECT' query from the 'climbs' table:
+<pre style="background-color: #dddddd; padding: 10px;">
+<code>
+SELECT
+        uuid, 
+        name,
+        frames,
+        stats.angle,
+        INSTR(LOWER(description), 'no match') > 0 AS no_match,
+        v_scale.v_grade,
+        stats.ascensionist_count,
+        stats.quality_average
+FROM climbs
+</code>
+</pre>
+
+The uuid, name, and frames fields contain a unique ID, name of the climb, and holds used in the climb, respectively.
+In climbing, matching refers to whether or not you are allowed to place both hands on a hold simultaneously.
+Some boulders are set with matching in mind, others are set explicitly prohibiting matching.
+In the app, those that prohib matching are found by searching the description for the phrase 'no match'; we do the same here to determine if matching is allowed for each climb.
+The board angle, difficulty, number of ascensionists, and the community-determined quality will be pulled from joined tables (aliased as 'stats' and 'v_scale'), described below, starting with the 'stats' table.
+<pre style="background-color: #dddddd; padding: 10px;">
+<code>
+JOIN (
+        (SELECT
+                climb_uuid,
+                angle,
+                display_difficulty,
+                ascensionist_count,
+                quality_average
+        FROM climb_stats
+        ) as 'stats'
+</code>
+</pre>
+This fragment of the query selects the climb ID and corresponding angle, difficulty, number of ascensionists, and quality from the 'climb_stats' table and aliases that table as simple 'stats'.
+This table is eventually joined on each climb's uuid with the above columns selected from the 'climbs' table.
+Before that, we need to process the display difficulty.
+The difficulty of each climb is stored as a float which is then rounded and mapped to a given grade.
+This allows the app to display climb difficulties on different grading scales, depending on the climber's preferences and where they are in the world (Europe tends to use the Font-Scale, for example).
+We query table matching these difficulty values to the grading scale and join it with the 'stats' table as so,
+<pre style="background-color: #dddddd; padding: 10px;">
+<code>
+        JOIN (
+                SELECT
+                        difficulty,
+                        SUBSTR(boulder_name, INSTR(boulder_name, 'V') + 1, LENGTH(boulder_name)) AS v_grade
+                FROM difficulty_grades
+                ) as 'v_scale'
+        ON ROUND(stats.display_difficulty, 0) = v_scale.difficulty
+        )
+        ON climbs.uuid = stats.climb_uuid
+        AND frames_count = 1
+        AND layout_id = 9;
+</code>
+</pre>
+The fourth line in the above sub-query does some string manipulation to extract the V grade name, which is stored in the same column as the Font-Scale grade name for some reason.
+In effect, this 'JOIN' adds a column with the V grade name alongside the corresponding display difficulty floats.
+This table is this joined with the original 'climbs' table query along the 'uuid' and 'climb_uuid' columns (for the 'climbs' and 'stats' tables, respectively), selecting only the boulders matching the desired layout as described above.
+<br />
+<br />
+
+With this data in hand, we can further investigate the 'frames' column of our resulting data.
+This column contains a string that indicates which holds are 'on' and the allowed uses for each hold.
+For example, each boulder must have a start and finishing hold, and holds can be indicated as general use or a foot hold only.
+The most climbed boulder has the following 'frames' entry: 'p22r1p49r1p74r2p76r4p78r2p80r2p82r3'.
+The 'p' string indicates that the following number is the number of the hold on the wall, while the 'r' string indicates the preceeding hold's intended use.
+Starting with the hold's use, the numbers 1-4 correspond to a start, middle, finish, and foot hold, respectively.
+<br />
+<br />
+
+Of course, it's more informative to know where the holds are on the wall instead of each hold ID.
+This information is contained within two tables: the first maps the hold ID to a hole ID corresponding to the bolt hole that is used to attach the hold to the wall, while the second maps each hole ID to cartesian coordinates.
+To further complicate things, the TB1 is designed such that holds are mirror images of each other on the right and left sides of the board, as seen in the following photo.
+<figure style="width: 600px" class="align-center">
+  <img src="{{ site.url }}{{ site.baseurl }}/assets/images/filler.jpg" alt="">
+  <figcaption> The holds on the TB1 are mirror images of each other. </figcaption>
+</figure>
+
+Each climb can therefore be flipped across the vertical axis to train the climber's right and left sides evenly.
+Consequently, each hold ID also has a corresponding mirrored hold ID, which is used in the mirrored version of the climb.
+All of this information is extracted with the following query.
+<pre style="background-color: #dddddd; padding: 10px;">
+<code>
+SELECT placements.id, x, y, xm, ym FROM placements
+JOIN 
+        (
+        SELECT
+                h1.id,
+                h1.x,
+                h1.y,
+                h1.mirrored_hole_id,
+                h2.x as xm,
+                h2.y as ym
+        FROM holes h1
+        JOIN holes h2
+        ON h1.mirrored_hole_id = h2.id
+        ) as all_h
+ON hole_id = all_h.id
+</code>
+</pre>
+This query effectively implements the hold ID -> hold ID -> coordinates map described above, first finding the mirrored coordinates associated with each hole.
+In the end, we have a table that let's us look up the cartesian coordinates of a hold given only the hold ID.
+<br />
+<br />
+
+With this data in hand, we now turn towards constructing training, validation, and test sets.
+First, we note that there is some considerable imbalance in the number of climbs set for each difficulty, as seen in the histogram below.
+<figure style="width: 600px" class="align-center">
+  <img src="{{ site.url }}{{ site.baseurl }}/assets/images/filler.jpg" alt="">
+  <figcaption> Hisogram of boulder difficulties in the TB1 data set. </figcaption>
+</figure>
+
+Easier climbs (V0-V6) are far more common than harder climbs.
+We should therefore stratify our data sampling along each difficulty grade to ensure each set contains climbs representative of each difficlty.
+We construct the trianing and validation sets using the described stratified random sampling strategy, resulting in data set sizes with a 80:20 ratio.
+<br />
+<br />
+
+However, there's still the problem of noise in the data---each boulder is graded by community members, which, as perviously discussed, can be quite unreliable.
+Fortunately, the TB1 has a set of "benchmark" climbs, which have been designed specifically as representative members of each V grade.
+Additionally, each one of these benchmark climbs has been climbed at least hundreds of times, suggesting that the given grades are as accurate as they can be.
+The goal of this project is to train the model to predict the "real" grade of a given boulder, so we use these benchmark problems as the test set.
+In doing so, we ensure that there is as little noise in the test set as possible, resulting in noise-free measurements of the model's out-of-sample performance.
+Benchmark climbs are identified by their unique IDs, which are extracted (along with the wall angle and V grade as described above) using the following SQL query:
+<pre style="background-color: #dddddd; padding: 10px;">
+<code>
+SELECT climb_uuid, angle, v_scale.v_grade
+FROM climb_stats 
+        JOIN (
+                SELECT
+                        difficulty,
+                        SUBSTR(boulder_name, INSTR(boulder_name, 'V') + 1, LENGTH(boulder_name)) AS v_grade
+                FROM difficulty_grades
+                ) as 'v_scale'
+        ON ROUND(benchmark_difficulty, 0) = v_scale.difficulty
+WHERE benchmark_difficulty IS NOT NULL;
+</code>
+</pre>
+
+While this approach effectively eliminates noise in the test set, it completely ignores label noise in the training and validation set.
+Given the subjectivity and size of the dataset, it's practically impossible to correct these noisy labels.
+Instead, we leave them as is---with enough training data and care to prevent over fitting, our model should be able to ignore noisy labels, albeit at the cost of data efficiency.
+<br />
+<br />
+
+<h2> The Model </h2>
+- Transformer (vs convNet)
+- data augmentation
+- embedding (vocab is hand, foot, start, end, class token for match/no match)
+- Positional encoding (2D for position, 1D on 'class' token for angle)
+- Regression head, minimize MSE
+- Training details
+
+<h2> Results </h2>
+- Human performance
+- Confusion matrix, difficulty with hard climbs
+- Accuracy, within 1 accuracy
+- Attention
+- Possible improvements (more hold info)
+
+<br />
+<br />
+Check out the <a href="https://github.com/zacharysparrow/GuessTheGrade">GitHub Repo</a>!
+<br />
+<i style="font-size: 14px">Update: public repository hidden at the request of Aurora Climbing Inc.</i>

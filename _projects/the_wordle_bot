@@ -1,14 +1,109 @@
 ---
 title: "The Wordle Bot"
-header:
-  teaser: "/assets/images/filler.jpg"
 categories:
   - Blog
 tags:
   - Algorithm
   - Full Stack
+  - Web App
+  - Wordle
+sidebar:
+  - title: "Technology Used"
+    text: "Python, Flask"
+  - title: "Packages Used"
+    text: "Numpy, MatPlotLib, Seaborn"
 ---
 
-Description coming soon...
+It's become part of my morning routine to play some of the New York Times daily games with my partner, Sydney. One of the most popular, of course, is Wordle. The goal of Wordle is to guess a hidden 5 letter word in 6 tries or less. After every guess, you receive some information about how your word relates to the hidden word. If a letter is in the correct spot, it will appear green. If a guessed letter is in the wrong spot but in the hidden word, it will appear yellow. Letters that aren't in the hidden word appear gray. 
+<br />
+<br />
 
+One question we had when playing Wordle is what the best first guess is. In order to answer this question, I realized I would have to build a bot to play Wordle "perfectly". Thus, the Wordle Bot was born.
+<br />
+<br />
+
+You can test out the Wordle Bot at the link below. You decide on a hidden word, and the bot will play Wordle with a sequence of guesses that are in some sense "optimal". As an added feature, you can specify the starting word for the bot to use.
+<br />
 <a href="https://wordlebot.pythonanywhere.com/">Test the Wordle Bot!</a>
+
+<h2> The Algorithm </h2>
+The algorithm I came up with is a minimax algorithm. In simple terms, the algorithm guesses the word that maximizes the minimum possible amount of information received from the guess. So, how do I quantify the amount of information obtained with a guess?
+<br />
+<br />
+
+First, we define a dictionary of possible words to guess. To obtain this list, I found all 5 letter words that were in both Wikipedia's list of 100,000 most common words and an English dictionary, resulting in 3,103 possible words. This list is clearly missing some words (for example, "pesto"), but is complete enough for our purposes while being small enough to be practical.
+<br />
+<br />
+
+Now, a candidate guess from the list of words is selected. Then, the algorithm iterates through all possible words in the list of possible solutions that are consistent with the information already received during the game, simulating the response that it would get for guessing that word. For example, consider the following game:
+<figure style="width: 600px" class="align-center">
+  <img src="{{ site.url }}{{ site.baseurl }}/assets/images/wordle-solver-large.png" alt="">
+  <figcaption> Figure by <a href="https://jonathanolson.net/experiments/optimal-wordle-solutions">Jonathan Olson</a> </figcaption>
+</figure>
+After guessing trace, there are 19 possible solutions. Now, consider the candidate guess "pleat". Iterating through all of the possible remaining solutions, we find that there are 14 possible repsonses to guessing this word. The score of this candidate guess is the largest number of possible solutions that all yeild the same response to the candidate guess; a low score corresponds to more information gained through the guess, while a high score means little information was received. After all, you wouldn't want to guess a word that eliminates just one possible solution when you can guess a word that eliminates has of the remaining possible solutions.
+<br />
+<br />
+
+This scoring process is repeated for all possible guesses, and the algorithm chooses the guess with the lowest possible score as the best guess for this turn. This is where the term "minimax" comes from---we are minimizing the size of the largest group of possible solutions that all yeild the same response to the candidate guess. We can also describe this algorithm as "greedy" because it only looks ahead one word before making a guess. This process is repeated until only one possible solution is left. In the example above, guessing "pleat" fortunately gave us information that left only one possible solution: "delta".
+<br />
+<br />
+
+In practice, all of this computation only needs to be done once. Then, the results can be saved into a tree that can be looked at on-the-fly, which is lightning fast.
+
+<h2> The Best (and Worst) Starting Words </h2>
+An estimate of the best starting word can be found by comparing the score of each word as a first guess. Using this method, I found that some of the best starting words are...
+<details>
+<summary>Spoiler warning</summary>
+reals, aloes, tails, roles, and rates
+</details>
+
+In contrast, some of the worst starting words (worst scores) are...
+<details>
+<summary>Spoiler warning</summary>
+fuzzy, mummy, puppy, buggy, gummy
+</details>
+
+As one might expect, the best words tend towards using 5 distinct, yet common letters, typically in predictable placements. For example, all five of the best guesses use "s" as the last letter. This shouldn't be surprising---"s" is an extremely common suffix to make nouns plural!
+<br />
+<br />
+
+Alternatively, we can compute the entire solution tree for each starting guess, then compare the average number of guesses needed for a random hidden word. This technique yields a slightly different set of best starting words...
+<details>
+<summary>Spoiler warning</summary>
+tales, dares, cares, tries, tares
+</details>
+
+all requiring between 3.82 and 3.84 guesses on average. Conceptually, these are quite similar to the ideal words found using the greedy heuristic.
+
+We can also compute the worst starting words on average in a similar manner:
+<details>
+<summary>Spoiler warning</summary>
+jiffy, fuzzy, mummy, mamma, queue
+</details>
+
+There is considerable overlap with the list found using the greedy heuristic, with the addition of the absolute worst contender by a fairly considerable margin of about 0.05 additional guesses on average---queue. Not only does queue take the highest number of guesses on average, but it's also one of just 75 starting words that do not guarantee finding the hidden word in six guesses or less. In fact, using queue as your starting word would fail for 18 hidden words. For comparison, the next worst word fails for only 6 hidden words.
+
+So, just how important is choosing a good starting word? One of the best words found was "tales"; A histogram of the number of guesses needed to find each solution is shown below. With this starting word, every hidden word found in less than 6 guesses, requiring 3.82 guesses on average! The most common number of guesses needed is 4 by a considerable margin.
+<figure style="width: 600px" class="align-center">
+  <img src="{{ site.url }}{{ site.baseurl }}/assets/images/word_depth_distribution_tales.png" alt="">
+</figure>
+
+In contrast, "queue" roughly evenly splits the number of guesses needed between 4 and 5, ultimately requiring nearly an entire additional guess on average when compared to some of the best starting words. In other words, starting with "queue" is almost as bad as skipping a turn! 
+<figure style="width: 600px" class="align-center">
+  <img src="{{ site.url }}{{ site.baseurl }}/assets/images/word_depth_distribution_queue.png" alt="">
+</figure>
+
+<h2> What's Next? </h2>
+Perhaps the most interesting extension to this project would be a "hard mode", where the bot is only allowed to make guesses that are consistent with the information that it already has. I suspect that, unlike classic Wordle, hard mode is not always solvable in 6 guesses, even with the ideal starting guess. The algorithm described above can be easily modified to allow this (it's a one line change, in fact).
+<br />
+<br />
+
+The web app is currently limited to only using "tales" as the starting guess because the free server (just barely) lacks the storage space for the every solution tree. These trees could very likely be compressed to ensure they fit into the allotted disk, thereby enabling the user to specify the starting word in addition to the hidden word.
+<br />
+<br />
+
+Instead of defining the score as the largest number of possible solutions that all yield the same response to the candidate guess, we could have chosen the average numer of solutions that all yield the same response. On average, this will likely perform better than our choice. On the other hand, there will likely be more hidden words that require 6 (or more!) guesses. It would be interesting to compare these algorithms.
+<br />
+<br />
+
+Check out the <a href="https://github.com/zacharysparrow/wordle-bot">GitHub Repo</a>!

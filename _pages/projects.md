@@ -37,7 +37,7 @@ feature_row3:
     btn_label: "See the Viz" 
  
 feature_row4: 
-  - image_path: /assets/images/filler.jpg 
+  - image_path: /assets/images/wordle-bot.png 
     alt: "The Wordle Bot" 
     title: "The Wordle Bot" 
     excerpt: "Almost everyone has heard of Wordle---The New York Times' daily word guessing game. This web app flips the game on its head. Instead of guessing the hidden word yourself, you get to determine the hidden word. Watch as The Wordle Bot finds your hidden word in six tries or less (or your money back) using an information theory-based algorithm! As a bonus, this algorithm can be used to determine some of the best (and worst) first word guesses." 

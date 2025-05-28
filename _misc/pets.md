@@ -21,6 +21,7 @@ My partner, Sydney, and I have three lovely pets: a dog called Jessie, and two c
 ## Piper
 ![alt]({{ site.url }}{{ site.baseurl }}/assets/images/piper.jpg){: .full}
 - Retired scientist interested in big cat conservation
+- Has tattoos
 - Expert communicator
 - Gentle little princess
 - Loves cuddles, playing ribbon, and going outside
