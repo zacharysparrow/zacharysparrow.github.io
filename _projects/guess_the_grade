@@ -74,7 +74,7 @@ FROM climbs
 </code>
 </pre>
 
-The uuid, name, and frames fields contain a unique ID, name of the climb, and holds used in the climb, respectively.
+The uuid, name, and frames fields contain a climb ID (unique up to the angle of the wall), name of the climb, and holds used in the climb, respectively.
 In climbing, matching refers to whether or not you are allowed to place both hands on a hold simultaneously.
 Some boulders are set with matching in mind, others are set explicitly prohibiting matching.
 In the app, those that prohib matching are found by searching the description for the phrase 'no match'; we do the same here to determine if matching is allowed for each climb.
@@ -172,7 +172,13 @@ First, we note that there is some considerable imbalance in the number of climbs
 
 Easier climbs (V0-V6) are far more common than harder climbs.
 We should therefore stratify our data sampling along each difficulty grade to ensure each set contains climbs representative of each difficlty.
-We construct the trianing and validation sets using the described stratified random sampling strategy, resulting in data set sizes with a 80:20 ratio.
+<br />
+<br />
+
+Additionally, we find that there are often climbs that have the same set of holds, but on walls of different angle.
+As a result, these climbs have different difficulties associated with them.
+In order to avoid data leaking into the validation and test sets from the training set, we additionally ensure that climbs that use the same set of holds are all placed within the same data set split.
+The resulting training, validation, and test sets contain 56,248, 14,015, and 1,782 boulders, respectively, with the training and validation sets sized at a 80:20 ratio.
 <br />
 <br />
 
@@ -181,7 +187,7 @@ Fortunately, the TB1 has a set of "benchmark" climbs, which have been designed s
 Additionally, each one of these benchmark climbs has been climbed at least hundreds of times, suggesting that the given grades are as accurate as they can be.
 The goal of this project is to train the model to predict the "real" grade of a given boulder, so we use these benchmark problems as the test set.
 In doing so, we ensure that there is as little noise in the test set as possible, resulting in noise-free measurements of the model's out-of-sample performance.
-Benchmark climbs are identified by their unique IDs, which are extracted (along with the wall angle and V grade as described above) using the following SQL query:
+Benchmark climbs are identified by their IDs, which are extracted (along with the wall angle and V grade as described above) using the following SQL query:
 <pre style="background-color: #dddddd; padding: 10px;">
 <code>
 SELECT climb_uuid, angle, v_scale.v_grade
