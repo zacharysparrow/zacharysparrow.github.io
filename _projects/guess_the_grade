@@ -5,7 +5,7 @@ categories:
 tags:
   - Deep Learning
   - Transformer
-  - Ordinal Regression
+  - Ordinal Classification
   - Climbing
   - Bouldering
 sidebar:
@@ -209,13 +209,141 @@ Instead, we leave them as is---with enough training data and care to prevent ove
 <br />
 <br />
 
+Ultimately, we wrap the training, validation, and benchmark datasets in a PyTorch DataLoader, which also includes the mirrored version of each climb as a form of data augmentation.
+
 <h2> The Model </h2>
-- Transformer (vs convNet)
-- data augmentation
-- embedding (vocab is hand, foot, start, end, class token for match/no match)
-- Positional encoding (2D for position, 1D on 'class' token for angle)
-- Regression head, minimize MSE
-- Training details
+Given that the holds available for a climb form a set, a natural choice for model architecture is the transformer encoder.
+This choice has an advantage over convolution-based approaches, in that we can easily encode information about the absolute position of the holds on the wall, rather than just relative location.
+The absolute position of the holds is important here---holds of various sizes are placed at different points on the wall, so the absolute position of each hold contains information about the hold itself.
+With our choice in model in hand, we now need to choose how to embed the hold use information, wall angle, and whether matching is allowed, and encode each hold position.
+<br />
+<br />
+
+Comparing our model against LLMs, arguably the most natural choice for the hold use information is to treat each case (start, middle, end, and foot holds) as members of the "vocabulary".
+Each of these tokens then gets a learnable embedding into a variable dimension space (we use an embedding_dim of 128 here, which seems to work well).
+Along similar lines, we'll also embed the matching information as two members of the vocabulary (one for match and the other for no match) which we always include at the start of the input sequence.
+Each hold location is encoded using a 2D sinusoidal positional encoding, which is added to the embedded representation of each token.
+We'll encode the angle of the wall as a 1D sinusoidal positional encoding, which is added to the embedding of the match/no match token at the beginning of the sequence.
+Finally, we'll pad each sequence to a length of 64 tokens, which is long enough to represent all of the boulders in the data set with some room to spare.
+<figure style="width: 600px" class="align-center">
+  <img src="{{ site.url }}{{ site.baseurl }}/assets/images/filler.jpg" alt="">
+  <figcaption> Diagram of the architecture used herein. </figcaption>
+</figure>
+
+Next, we'll implement the transformer architecture in PyTorch.
+I'll focus on the key aspects of the code (rather than the complete code) for brevity.
+We first define a transformer layer as such,
+<pre style="background-color: #dddddd; padding: 10px;">
+<code>
+class TransformerEncoderLayerWithAttention(nn.TransformerEncoderLayer):
+    def forward(self, src, src_mask=None, src_key_padding_mask=None, is_causal=False):
+        attn_output, attn_output_weights = self.self_attn(src, src, src, attn_mask=src_mask,
+                                          key_padding_mask=src_key_padding_mask, is_causal=is_causal,
+                                          need_weights=True)
+        self.saved_attn = attn_output_weights
+        src = src + self.dropout1(attn_output)
+        src = self.norm1(src)
+        src2 = self.linear2(self.dropout(self.activation(self.linear1(src))))
+        src = src + self.dropout2(src2)
+        src = self.norm2(src)
+        return src
+</code>
+</pre>
+which allows us to extract the attention weights for analysis.
+The transformer layer consists of a multi-head self attention mechanism without any masks (we use 2 heads here), followed by a feed forward network (we use a width of 128) with residual connections.
+Stacking these layers (we use 4 layers) makes the transformer encoder.
+<pre style="background-color: #dddddd; padding: 10px;">
+<code>
+class TransformerEncoderWithAttention(nn.TransformerEncoder):
+    def forward(self, src, mask=None, src_key_padding_mask=None, is_causal=False):
+        output = src
+        self.attn_maps = []
+        for mod in self.layers:
+            output = mod(output, src_mask=mask, src_key_padding_mask=src_key_padding_mask, is_causal=is_causal)
+            self.attn_maps.append(mod.saved_attn.detach().cpu())
+        if self.norm is not None:
+            output = self.norm(output)
+        return output, self.attn_maps
+</code>
+</pre>
+
+Finally, the entire oridal classification/regression model can be constructed as follows, using the ReLU activation function:
+<pre style="background-color: #dddddd; padding: 10px;">
+<code>
+class TransformerClassifier(nn.Module):
+    def __init__(self, vocab_size, embedding_dim, num_heads, num_layers, ffw_dim, dropout_rate=0.0):
+        super(TransformerClassifier, self).__init__()
+        self.embedding_dim = int(embedding_dim)
+        self.embedding = nn.Embedding(vocab_size, embedding_dim)
+        self.encoder_layer = TransformerEncoderLayerWithAttention(embedding_dim, num_heads, dim_feedforward=ffw_dim, dropout=dropout_rate)
+        self.transformer_encoder = TransformerEncoderWithAttention(self.encoder_layer, num_layers, enable_nested_tensor=True)
+        self.linear1 = nn.Linear(embedding_dim, embedding_dim)
+        self.norm = nn.LayerNorm(embedding_dim)
+        self.ReLU = nn.ReLU()
+        self.linear2 = nn.Linear(embedding_dim, 1)
+
+    def forward(self, x): #x[batch, climb, embedding]
+        embedded = self.embedding(x[:,:,0])
+        key_padding_mask = (~(x[:,:,0] > 0))
+        for i,e in enumerate(embedded):
+            if i == 0:
+                embedded[i] += AngleEncoding(self.embedding_dim, x[i,:,1])
+            else:
+                embedded[i] += PositionalEncoding2d(self.embedding_dim, x[i,:,1], x[i,:,2])
+        output, attention_maps = self.transformer_encoder(torch.transpose(embedded,0,1), src_key_padding_mask=key_padding_mask)
+        output = self.linear1(output[0, :, :]) # use output of cls token for classification (<cls-0> or <cls-1> for match and no match)
+        output = self.norm(output)
+        output = self.ReLU(output)
+        output = self.linear2(output)
+        output = self.ReLU(output)
+        return output, attention_maps
+</code>
+</pre>
+The prediction head consists of a feedforward network with two layers, which makes a prediction using only the model's embedding of the starting matching token.
+A forward pass through this class returns a float estimating the V grade of the input climb.
+After training, this float can be rounded to the nearest integer to obtain the predicted V grade of the boulder.
+<br />
+<br />
+
+The model is optimized by minimizing the mean square error (MSE) between the prediction and the V grade of the boulder.
+We optimize with a batch size of 64 using the ADAM optimizer using cosine annealing for 10 epochs, using the best performing model on the validation set as the final model---optimizing the model for longer doesn't seem to improve performance on the validaiton set.
+Our optimization loop is implemented as follows,
+<pre style="background-color: #dddddd; padding: 10px;">
+<code>
+    # Train the model
+    for epoch in range(start_epoch + 1, num_epochs + start_epoch + 1):
+        n_ran = 0
+        train_loss = 0
+
+        for inputs, labels, weights in train_dataloader:
+            n_ran += len(inputs)
+            optimizer.zero_grad()
+            outputs, _ = model(inputs)
+            loss = criterion(outputs.t()[0], labels)
+            train_loss += loss.detach()
+            loss.backward()
+            optimizer.step()
+            scheduler.step()
+
+        train_loss = train_loss/n_ran*batch_size
+        
+	val_loss = 0
+        n_ran = 0
+
+        for inputs, labels, weights in val_dataloader:
+            n_ran += len(inputs)
+            outputs, _ = model(inputs)
+            loss = criterion(outputs.t()[0], labels)
+            val_loss += loss.detach()
+
+        val_loss = val_loss/n_ran*batch_size
+        all_loss.append([train_loss, val_loss])
+</code>
+</pre>
+
+The model is kept relatively small so that I can train it in a reasonable time on my PC, which doesn't have a GPU.
+That being said, the model hyper parameters described above do seem to be somewhat optimal; smaller models have worse performance, while larger models have either comparable or worse performance.
+With our model in hand, we can now turn towards testing on the benchmark set!
 
 <h2> Results </h2>
 - Human performance
