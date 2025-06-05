@@ -1,6 +1,6 @@
 ---
 layout: single
-title: I'm Zachary Sparrow,<br /> a Data Scientist.
+title: I'm Zachary Sparrow,<br /> Chemical Physicist and Data Scientist.
 classes: wide
 permalink: /
 # hidden: true
@@ -25,7 +25,7 @@ excerpt: >
 #  <small><a href="https://github.com/mmistakes/minimal-mistakes/releases/tag/4.24.0">Latest release v4.24.0</a></small>
 
 feature_row1:
-  - image_path: /assets/images/climb_10_attention_weights.png
+  - image_path: /assets/images/climb_transformer.png
     alt: "Personal Projects"
     title: "Personal Projects"
     excerpt: "I enjoy exploring the intersection between tech and my hobbies, either by exploring data sets or developing apps for my own use. As a bonus, this gives me an opportunity to expand my data science knowledge. Some personal projects that I've been working on include: an AI to estimate the difficulty of rock climbing sets, an AI-powered marathon training app, a bot to solve New York Times' daily game Wordle, and a Tableau visualization of the infamous Seneca 7 relay race."

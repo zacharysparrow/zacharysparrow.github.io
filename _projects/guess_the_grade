@@ -132,7 +132,7 @@ Of course, it's more informative to know where the holds are on the wall instead
 This information is contained within two tables: the first maps the hold ID to a hole ID corresponding to the bolt hole that is used to attach the hold to the wall, while the second maps each hole ID to cartesian coordinates.
 To further complicate things, the TB1 is designed such that holds are mirror images of each other on the right and left sides of the board, as seen in the following photo.
 <figure style="width: 600px" class="align-center">
-  <img src="{{ site.url }}{{ site.baseurl }}/assets/images/filler.jpg" alt="">
+  <img src="{{ site.url }}{{ site.baseurl }}/assets/images/tb_layout.png" alt="">
   <figcaption> The holds on the TB1 are mirror images of each other. </figcaption>
 </figure>
 
@@ -165,12 +165,12 @@ In the end, we have a table that let's us look up the cartesian coordinates of a
 
 With this data in hand, we now turn towards constructing training, validation, and test sets.
 First, we note that there is some considerable imbalance in the number of climbs set for each difficulty, as seen in the histogram below.
-<figure style="width: 600px" class="align-center">
-  <img src="{{ site.url }}{{ site.baseurl }}/assets/images/filler.jpg" alt="">
+<figure style="width: 400px" class="align-center">
+  <img src="{{ site.url }}{{ site.baseurl }}/assets/images/tb_hist.png" alt="">
   <figcaption> Hisogram of boulder difficulties in the TB1 data set. </figcaption>
 </figure>
 
-Easier climbs (V0-V6) are far more common than harder climbs.
+Easier climbs (V0-V8) are far more common than harder climbs.
 We should therefore stratify our data sampling along each difficulty grade to ensure each set contains climbs representative of each difficlty.
 <br />
 <br />
@@ -225,9 +225,10 @@ Along similar lines, we'll also embed the matching information as two members of
 Each hold location is encoded using a 2D sinusoidal positional encoding, which is added to the embedded representation of each token.
 We'll encode the angle of the wall as a 1D sinusoidal positional encoding, which is added to the embedding of the match/no match token at the beginning of the sequence.
 Finally, we'll pad each sequence to a length of 64 tokens, which is long enough to represent all of the boulders in the data set with some room to spare.
-<figure style="width: 600px" class="align-center">
-  <img src="{{ site.url }}{{ site.baseurl }}/assets/images/filler.jpg" alt="">
-  <figcaption> Diagram of the architecture used herein. </figcaption>
+The resulting encoding allows us to represent each climb in a way that a very traditional transformer encoder architecture can understand.
+<figure style="width: 300px" class="align-center">
+  <img src="{{ site.url }}{{ site.baseurl }}/assets/images/transformer.png" alt="">
+  <figcaption> Starndard transformer ecoder architecture used in this work. Source <a href="https://en.wikipedia.org/wiki/Transformer_(deep_learning_architecture)">Wikipedia</a></figcaption>
 </figure>
 
 Next, we'll implement the transformer architecture in PyTorch.
@@ -346,14 +347,30 @@ That being said, the model hyper parameters described above do seem to be somewh
 With our model in hand, we can now turn towards testing on the benchmark set!
 
 <h2> Results </h2>
-- Human performance
-- Confusion matrix, difficulty with hard climbs
-- Accuracy, within 1 accuracy
-- Attention
-- Possible improvements (more hold info)
+To my knowledge, there have been no studies on how good humans are at predicting the V-grade of boulders. In my experience, the average climber correctly guesses the grade of a climb on the TB1 between $20-30\%$ of the time, and is within one grade of the actual difficulty the majority of the time.
+<br />
+<br />
 
+We find that our model correctly predicts the difficulty of a given benchmark climb a little over $30\%$ of the time, implying that it is competitive with human performance. On top of that, the model is within one V-grade of the correct difficulty about $73\%$ of the time. The confusion matrix of our model is shown below. On first glance, the model is reasonably accurate for the majority of climbs, but struggles with harder boulders (more than V8 or so). This is likely because harder climbs are relatively rare in our data set. To overcome this, we could look into leveraging methods to counter data set imbalance, or use synthetic data generation methods.
+<figure style="width: 400px" class="align-center">
+  <img src="{{ site.url }}{{ site.baseurl }}/assets/images/confusion_matrix.png" alt="">
+  <figcaption> Grade prediction confusion matrix. </figcaption>
+</figure>
+
+Additionally, we can examine the attention weights of the transformer to get an idea of what the network "learned". The weights for benchmark climb number 10 are shown below. Heavy, white lines indicate that the model deems the "interaction" between the two holds are important for determining the grade of the climb. The model seems to have some understanding of locality---when climbing, you are likely to move between two holds that are nearby eachother, rather than on complete opposite sides of the wall. Moving between two holds or using two holds are the same time/in the same body position seems to correlate with higher attention weights. Further study of the attention weights would be interesting to see if the model has developed some quantitative understanding of the sequence of moves for a climb.
+<figure style="width: 400px" class="align-center">
+  <img src="{{ site.url }}{{ site.baseurl }}/assets/images/climb_10_attention_weights.png" alt="">
+  <figcaption> Attention weights for benchmark climb number 10. </figcaption>
+</figure>
+
+One major improvement to the model would be the addition of hold information. Right now, the model only knows the position and use of each hold in the climb, but nothing about the shape of the hold itself. Encoding information about the shape/difficulty of using each hold is likely very useful in predicting the difficulty of the climb, and would also help with the difficulty imbalance problem of our data set. This additional information could be encoded in a similar way to encoding the use of each hold (in the vocabulary), and in my opinion is the most promising route towards improving the model's performance. After all, how well could a human perform if they didn't get to look at the actual holds, either? Certainly far worse than if they were able to see the holds.
 <br />
 <br />
+
+Additionally, as humans, it's often easier to estimate the difficulty of a climb after watching somebody climb it. The TB1 dataset includes video links to people climbing many of the boulders---could this be used to further improve the model?
+<br />
+<br />
+
 Check out the <a href="https://github.com/zacharysparrow/GuessTheGrade">GitHub Repo</a>!
 <br />
 <i style="font-size: 14px">Update: public repository hidden at the request of Aurora Climbing Inc.</i>

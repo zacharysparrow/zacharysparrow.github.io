@@ -13,7 +13,7 @@ header:
 #      url: "https://zacharysparrow.github.io/misc/"
 ---
 
-I'm a postdoctoral scientist in computational and theoretical chemistry transitioning into a data scientist role. I have a nearly decade of computational research experience with an emphasis on constructing and analyzing chemical data sets, the development of predictive machine learning models, and algorithm design. I love working with great people, turning data into insight, and developing algorithms to do things that weren't possible before.
+I'm a postdoctoral scientist in computational and theoretical chemistry studying the electronic structure problem through a data scientist lens. I have a nearly decade of computational research experience with an emphasis on constructing and analyzing chemical data sets, the development of predictive machine learning models, and algorithm design. I love working with great people, turning data into insight, and developing algorithms to do things that weren't possible before. I received my Ph.D. for developing 1) tools to construct reliable ML-based density functional approximations, 2) datasets to train them, and 3) algorithms to make them fast for very large systems.
 
 ## Education
 
@@ -42,9 +42,6 @@ St. Olaf College, Northfield, MN (*Aug. 2015 - Aug. 2017*)
 ### Visiting Undergraduate Research Assistant  
 MIT, Cambridge, MA (*June 2015 - Aug. 2015*)
 - Reconstructed historical Saharan dust transport by analyzing deep-sea sediment samples and modeling carbon-14 deposition rates using Gaussian Process regression
-
-## Skills
-- Python, NumPy, Pytorch, Pandas, scikit-learn, Matplotlib, Bash, Linux, SQL, Tableau, Git, R, Julia, Mathematica
 
 
 

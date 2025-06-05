@@ -6,11 +6,11 @@ permalink: /projects/
 classes: wide
 entries_layout: list
 header: 
-  overlay_image: assets/images/tea2_crop.jpg
-  caption: Photo by <a href="https://unsplash.com/@kellysikkema?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Kelly Sikkema</a> on <a href="https://unsplash.com/photos/flat-lay-photo-of-coffee-mug-and-pencils-iH844EdBTkc?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+  overlay_image: assets/images/office_green_crop.jpg
+  caption: Photo by <a href="https://unsplash.com/@goodchinese?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unknown Wong</a> on <a href="https://unsplash.com/photos/black-leather-rolling-armchair-near-white-wooden-desk-bXmfBgobSMI?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
 
 feature_row1: 
-  - image_path: /assets/images/climb_10_attention_weights.png 
+  - image_path: /assets/images/climb_transformer.png 
     alt: "Guess the Grade" 
     title: "Guess the Grade" 
     excerpt: "A common problem in rock climbing is determining the difficulty of a climb. This question is particularly relevant for climbs set on system boards, which are short training walls with a standardized set of hand/foot holds. Climbs on these boards are often set by members of the climbing community, who also (somewhat unreliably) determine the difficulty of the climb. That begs the question---can an AI be trained to estimate system board climb difficulty?" 
