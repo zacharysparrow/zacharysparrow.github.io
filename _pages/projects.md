@@ -19,7 +19,7 @@ feature_row1:
     btn_label: "Learn More" 
  
 feature_row2: 
-  - image_path: /assets/images/filler.jpg 
+  - image_path: /assets/images/run-bot-back.png
     alt: "Plan My Marathon" 
     title: "Plan My Marathon" 
     excerpt: "Running a marathon requires a huge amount of training and dedication. Committing to a training plan can be difficult, especially when life's other commitments get in the way. What should you do when you have to skip a scheduled run because of prior committments, or because the weather is awful? For the recreational runner without access to a coach, it's hard to determine how to best adjust your training plan. So, let the Plan My Marathon AI do it for you!" 
