@@ -12,7 +12,7 @@ sidebar:
   - title: "Technology Used"
     text: "Python, SQL, Deep Learning"
   - title: "Packages Used"
-    text: "PyTorch, Pandas, Sci-kit Learn, MatPlotLib"
+    text: "PyTorch, Pandas, Numpy, Sci-kit Learn, MatPlotLib"
 ---
 
 <h2> The Problem </h2>
