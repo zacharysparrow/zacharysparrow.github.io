@@ -56,14 +56,14 @@ The Adirondack mountains (a.k.a. the 'Dacks) in upstate New York are some of the
 08/31/2024, Hunter's Pass Trail
 - The Dix Range is some of people's favorites, but wasn't ours. The day was wet, wet, wet, and our motto ended up being "I think that was the worst of it (it wasn't)." Summits were quite winder (30 mph or so). Going up Macoumb slide in the early morning fog was quite eerie, but very cool. Despite the weather, we had some solid type 2 fun and knocked out 5 peaks!
 
-### Skylight, Gray, and Colden
+### Skylight, Gray, and Colden (18/46)
 07/04/2025, Van Hoevenberg, Lake Arnold, Mount Marcy Trails
 - Another beautiful day! Classic ADK approach until the swamp with the "floating" bridges, which ended up being mostly washed away. Still, we were able to cross the swamp via downed trees and bridge remains. The ascent up Gray with fairly steep, with some technical scrambly sections. Skylight was amazing, but very windy! We were feeling good so we decided to hit out stretch goal (Colden) on the way back, and were almost fooled by the false summit. 
 
-### Big Slide
+### Big Slide (19/46)
 07/05/2025, The Brothers and Phelps Trails
 - After the big hike yesterday, the approach up to the first brother felt relentlessly steep. After getting to the first lookout over the Great Range we started to enjoy ourselves more, though. Seeing the Great Range was also really cool, and was great motivation for our planned traverse, which we hope to attempt later this year! Going down the Phelps trail was a lot of fun---there are some beautiful spots olong the creek as you're descending.
 
-### Sawteeth
+### Sawteeth (20/46)
 07/06/2025, Scenic and Weld Trails
 - We decided to trail run this one because we were due for a long run according to our marathon training plan and the long flat approach made this a good contender. This ended up being our favorite hike so far. The scenic trail is steep, technical, and really interesting (with some great views), and the Weld trail was an easy run down. We decided to visit Indian Head for the most famous ADK views over Lake Colden. Tired by the end, but we made some great time!
