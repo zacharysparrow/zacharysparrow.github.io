@@ -28,7 +28,7 @@ The Adirondack mountains (a.k.a. the 'Dacks) in upstate New York are some of the
 - [ ] Seward Range
 - [ ] The Great Range Traverse
 
-![alt]({{ site.url }}{{ site.baseurl }}/assets/images/wilderlist.png){: .full}
+![alt]({{ site.url }}{{ site.baseurl }}/assets/images/wilderlist_07072025.png){: .full}
 
 ## Trail Journal
 
