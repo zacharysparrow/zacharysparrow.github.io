@@ -62,7 +62,7 @@ The Adirondack mountains (a.k.a. the 'Dacks) in upstate New York are some of the
 
 ### Big Slide (19/46)
 07/05/2025, The Brothers and Phelps Trails
-- After the big hike yesterday, the approach up to the first brother felt relentlessly steep. After getting to the first lookout over the Great Range we started to enjoy ourselves more, though. Seeing the Great Range was also really cool, and was great motivation for our planned traverse, which we hope to attempt later this year! Going down the Phelps trail was a lot of fun---there are some beautiful spots olong the creek as you're descending.
+- After the big hike yesterday, the approach up to the first brother felt relentlessly steep. After getting to the first lookout over the Great Range we started to enjoy ourselves more, though. Seeing the Great Range was also really cool, and was great motivation for our planned traverse, which we hope to attempt later this year! Going down the Phelps trail was a lot of fun---there are some beautiful spots along the creek as you're descending.
 
 ### Sawteeth (20/46)
 07/06/2025, Scenic and Weld Trails
