@@ -2,7 +2,7 @@
 title: "Quest to Become an Adirondack 46er"
 date: 2025-07-28T10:00:00-04:00
 header:
-  image: "assets/images/adk_46_progress_072825.png"
+  image: "assets/images/adk_crop.jpg"
 categories:
   - blog
 ---
@@ -28,7 +28,7 @@ The Adirondack mountains (a.k.a. the 'Dacks) in upstate New York are some of the
 - [ ] Seward Range
 - [ ] The Great Range Traverse
 
-![alt]({{ site.url }}{{ site.baseurl }}/assets/images/wilderlist_07072025.png){: .full}
+![alt]({{ site.url }}{{ site.baseurl }}/assets/images/adk_46_progress_072825.png){: .full}
 
 ## Trail Journal
 
