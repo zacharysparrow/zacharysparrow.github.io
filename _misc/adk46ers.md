@@ -1,6 +1,6 @@
 ---
 title: "Quest to Become an Adirondack 46er"
-date: 2025-05-20T10:00:00-04:00
+date: 2025-07-07T10:00:00-04:00
 header:
   image: "assets/images/adk_crop.jpg"
 categories:
@@ -18,7 +18,7 @@ The Adirondack mountains (a.k.a. the 'Dacks) in upstate New York are some of the
 - [ ] Algonquin, Iroquois, and Wright
 - [x] Sawteeth
 - [ ] Marshall
-- [ ] Santanoni Range
+- [x] Santanoni Range
 - [x] Dix Range
 - [ ] Colvin, Blake, Nippletop, and Dial
 - [x] Marcy, Tabletop, and Phelps
@@ -67,3 +67,7 @@ The Adirondack mountains (a.k.a. the 'Dacks) in upstate New York are some of the
 ### Sawteeth (20/46)
 07/06/2025, Scenic and Weld Trails
 - We decided to trail run this one because we were due for a long run according to our marathon training plan and the long flat approach made this a good contender. This ended up being our favorite hike so far. The scenic trail is steep, technical, and really interesting (with some great views), and the Weld trail was an easy run down. We decided to visit Indian Head for the most famous ADK views over Lake Colden. Tired by the end, but we made some great time!
+
+### Santanoni Range (23/46)
+07/26/2025, Santanoni Road, Bradley Pond Trail, and various herd paths
+- With this, we're officially halfway done with the high peaks! The Santas have a reputation for being quite muddy, and we were not disappointed on that front. Knowing to expect quite a lot of mud (even for ADK standards) definitely made the day more pleasant -- we figured wet feet were unavoidable and didn't waste much energy trying to balance on logs and hop across rocks to avoid the inevitable. The herd paths were quite narrow, with quite a few branches poking out waiting to stick unexpecting hikers. As a result, Sydney and I both wear quite a few scrapes and scratches on our arms and legs. As foretold, the best views of the range are certainly from Panther, but we got some nice shots of the more northeast high peaks on the way to Santanoni with some beautiful fog/haze to accentuate the peaks.
