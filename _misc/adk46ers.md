@@ -73,7 +73,7 @@ The Adirondack mountains (a.k.a. the 'Dacks) in upstate New York are some of the
 
 ### Cliff, Redfield, and Marshall (26/46)
 08/23/25, Upper Works
-- Our goal was to hit 26 peaks for Sydney's 26th birthday, so we decided to add on Marshall to the already long Cliff and Redfield hike (which by itself is already about 20 miles long). On the plus side, the trail was quite dry. Still, we ended up clocking about 25.5 miles, making for a VERY long day. On top of that, neither Cliff, Redfield, nor Marshall really had any views... This hike felt more like work than any other we've done so far. We had some fun though, particularly with the suspension bridge and the Cliff cliffs at the beginning of the day. The wrost part was definitely the long march out (5 miles) after tagging Marshall. Glad to have this one done!
+- Our goal was to hit 26 peaks for Sydney's 26th birthday, so we decided to add on Marshall to the already long Cliff and Redfield hike (which by itself is already about 20 miles long). On the plus side, the trail was quite dry. Still, we ended up clocking about 25.5 miles, making for a VERY long day. On top of that, neither Cliff, Redfield, nor Marshall really had any views... This hike felt more like work than any other we've done so far. We had some fun though, particularly with the suspension bridge and the Cliff cliffs at the beginning of the day. The worst part was definitely the long march out (5 miles) after tagging Marshall. Glad to have this one done!
 
 ### Seward Range (30/46)
 08/31/25, Blueberry and Calkins Brook Trails
