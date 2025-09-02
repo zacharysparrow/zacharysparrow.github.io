@@ -1,6 +1,6 @@
 ---
 title: "Quest to Become an Adirondack 46er"
-date: 2025-07-28T10:00:00-04:00
+date: 2025-09-01T10:00:00-04:00
 header:
   image: "assets/images/adk_crop.jpg"
 categories:
@@ -17,18 +17,17 @@ The Adirondack mountains (a.k.a. the 'Dacks) in upstate New York are some of the
 - [x] Esther and Whiteface
 - [ ] Algonquin, Iroquois, and Wright
 - [x] Sawteeth
-- [ ] Marshall
 - [x] Santanoni Range
 - [x] Dix Range
 - [ ] Colvin, Blake, Nippletop, and Dial
 - [x] Marcy, Tabletop, and Phelps
 - [x] Allen
-- [ ] Cliff and Redfield
+- [x] Cliff, Redfield, and Marshall
 - [x] Skylight, Grey, and Colden
-- [ ] Seward Range
+- [x] Seward Range
 - [ ] The Great Range Traverse
 
-![alt]({{ site.url }}{{ site.baseurl }}/assets/images/adk_46_progress_072825.png){: .full}
+![alt]({{ site.url }}{{ site.baseurl }}/assets/images/adk_090125.png){: .full}
 
 ## Trail Journal
 
@@ -71,3 +70,11 @@ The Adirondack mountains (a.k.a. the 'Dacks) in upstate New York are some of the
 ### Santanoni Range (23/46)
 07/26/2025, Santanoni Road, Bradley Pond Trail, and various herd paths
 - With this, we're officially halfway done with the high peaks! The Santas have a reputation for being quite muddy, and we were not disappointed on that front. Knowing to expect quite a lot of mud (even for ADK standards) definitely made the day more pleasant -- we figured wet feet were unavoidable and didn't waste much energy trying to balance on logs and hop across rocks to avoid the inevitable. The herd paths were quite narrow, with quite a few branches poking out waiting to stick unexpecting hikers. As a result, Sydney and I both wear quite a few scrapes and scratches on our arms and legs. As foretold, the best views of the range are certainly from Panther, but we got some nice shots of the more northeast high peaks on the way to Santanoni with some beautiful fog/haze to accentuate the peaks.
+
+### Cliff, Redfield, and Marshall (26/46)
+08/23/25, Upper Works
+- Our goal was to hit 26 peaks for Sydney's 26th birthday, so we decided to add on Marshall to the already long Cliff and Redfield hike (which by itself is already about 20 miles long). On the plus side, the trail was quite dry. Still, we ended up clocking about 25.5 miles, making for a VERY long day. On top of that, neither Cliff, Redfield, nor Marshall really had any views... This hike felt more like work than any other we've done so far. We had some fun though, particularly with the suspension bridge and the Cliff cliffs at the beginning of the day. The wrost part was definitely the long march out (5 miles) after tagging Marshall. Glad to have this one done!
+
+### Seward Range (30/46)
+08/31/25, Blueberry and Calkins Brook Trails
+- For Labor day we chose one of the more remote ranges in the high peaks in hopes of avoiding some of the crowds the more popular parts of the backcountry sees on these early fall long weekends. I'm glad we did -- even though the Seward trailhead is one of the most remote in the high peaks, we still ran into quite a few parties throughout the day. Our plan was to tag Seymour first, followed by Seward, Donaldson, and Emmons before descending via the Calkins Brook trail. We started early and heard the company of a couple of owls before sunrise. Ultimately, we made pretty good time, covering about 22-23 miles in 12 hours. There were some great views throughout the hike, but much of the path was wet and slipppery, resulting in a few minor tumbles. The path up Seward from the Blueberry trail is one of the ADK's steepest, and it certainly felt like it! 
