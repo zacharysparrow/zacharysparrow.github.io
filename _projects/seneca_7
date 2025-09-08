@@ -1,0 +1,29 @@
+---
+title: "Visualizing the Seneca 7 Relay Race Results"
+header:
+  teaser: /assets/images/seneca7_sneak_peek.png
+categories:
+  - Blog
+tags:
+  - Tableau
+  - Web scaping
+sidebar:
+  - title: "Technology Used"
+    text: "Python, Web Scraping, SQL, Tableau"
+  - title: "Packaged Used"
+    text: "BeautifulSoup, Pandas, SQLite3"
+---
+
+In 2025, I ran the Seneca 7 relay race. In this race, teams of 7 people run the (approximately) 77.7 miles around Seneca Lake. Participating in this chaotic race was a ton of fun, and made me motivated to dig into some of the historical race results and visualize them using Tableau. 
+<br />
+<br />
+
+This proved to be difficult; the race results are available online, but must be scraped from raw html output. Additionally, the relay segents (and even the course length) change somewhat from year to year, making comparison between different years difficult/impossible. To make matters worse, all times are self-reported with varying degrees of accuracy, resulting not-infrequently in fairly absurd lap timings that had to be cleaned up. The resulting visualization features only teams that recorded their timings accurately enough to not be detected via simple outlier detection methods, with race course visualization for only the 2025 race.
+<br />
+<br />
+
+Check out the Viz below!
+<br />
+<br />
+
+<div class='tableauPlaceholder' id='viz1757361830300' style='position: relative'><noscript><a href='#'><img alt='The Seneca 7 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Th&#47;TheSeneca7&#47;TheSeneca7&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='TheSeneca7&#47;TheSeneca7' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Th&#47;TheSeneca7&#47;TheSeneca7&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1757361830300');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='1000px';vizElement.style.height='827px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='1000px';vizElement.style.height='827px';} else { vizElement.style.width='100%';vizElement.style.height='1577px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>

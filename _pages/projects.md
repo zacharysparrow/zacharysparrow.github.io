@@ -32,7 +32,7 @@ feature_row3:
     alt: "Visualizing the Seneca 7 Race Results" 
     title: "Visualizing the Seneca 7 Race Results" 
     excerpt: "The Seneca 7 is a 7 person relay race around Seneca Lake covering a distance of (approximately) 77.7 miles. Each team member runs three legs throughout the day as the rest of the team leapfrogs their way up the course (hopefully ariving at the exchange point in time to switch runners). Using Tableau, I visualized the results of the past several years of this chaotic race." 
-    url: "https://public.tableau.com/app/profile/zachary.sparrow/viz/TheSeneca7/TheSeneca7" 
+    url: "projects/seneca_7/" 
     btn_class: "btn--primary" 
     btn_label: "See the Viz" 
  
