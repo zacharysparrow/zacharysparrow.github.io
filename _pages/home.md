@@ -54,7 +54,9 @@ feature_row6:
 
 Questions? Try out my personal AI assistant!
 
-<iframe src="https://ragwebsiteassistant-wtfkaxrpkewsyqpzphxclb.streamlit.app/?embed_options=show_toolbar,show_footer,dark_theme,disable_scrolling,light_theme,show_colored_line,show_padding?embedded=true" width="100%" height="500px" frameborder="0"></iframe>
+<iframe src="https://ragwebsiteassistant-wtfkaxrpkewsyqpzphxclb.streamlit.app/?embed_options=show_toolbar,show_footer,dark_theme,disable_scrolling,light_theme,show_colored_line,show_padding?embed=true" width="100%" height="500px" frameborder="0"></iframe>
+
+...or check out some of my work at the links below.
 
 {% include feature_row id="feature_row5" type="right" %}
 
