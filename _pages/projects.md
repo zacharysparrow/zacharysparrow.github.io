@@ -54,17 +54,17 @@ feature_row5:
     btn_class: "btn--primary" 
     btn_label: "Learn More"
 
-feature_row5: 
-  - image_path: /assets/images/aabbcd.png
-    alt: "RAG Chatbot" 
-    title: "RAG Chatbot" 
+feature_row6: 
+  - image_path: /assets/images/robot_book.png
+    alt: "Personal Website AI Assistant" 
+    title: "Personal Website AI Assistant" 
     excerpt: "Retrieval augmented generation (RAG) chatbots have risen as a useful tool to quickly retrieve information from a given set of documents using natural language. They're quite effective at summarizing information while staying mostly factual. So, why not make my own RAG system to search my peer-reviewed publications, CV, and this website? If you want to learn more about me, come chat with my personal AI assistant! While you're at it, you can see how I made this system."
     url: "/projects/rag_chatbot/" 
     btn_class: "btn--primary" 
     btn_label: "Learn More"
 ---
 
-{% include feature_row id="feature_row5" type="right" %}
+{% include feature_row id="feature_row6" type="right" %}
 
 {% include feature_row id="feature_row1" type="left" %}
 
