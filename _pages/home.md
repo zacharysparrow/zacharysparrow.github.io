@@ -24,10 +24,6 @@ excerpt: >
   I have nearly a decade of experience in computational research working with a wide variety of tools and data, and love to solve complex problems in diverse domains.<br /><br /><br /><br /><br />
 #  <small><a href="https://github.com/mmistakes/minimal-mistakes/releases/tag/4.24.0">Latest release v4.24.0</a></small>
 
-Questions? Try out my personal AI assistant!
-
-<iframe src="https://ragwebsiteassistant-wtfkaxrpkewsyqpzphxclb.streamlit.app/?embed_options=show_toolbar,show_footer,dark_theme,disable_scrolling,light_theme,show_colored_line,show_padding" width="100%" height="500px" frameborder="0"></iframe>
-
 feature_row1:
   - image_path: /assets/images/climb_transformer.png
     alt: "Personal Projects"
@@ -55,6 +51,10 @@ feature_row6:
     btn_class: "btn--primary"
     btn_label: "Learn More"
 ---
+
+Questions? Try out my personal AI assistant!
+
+<iframe src="https://ragwebsiteassistant-wtfkaxrpkewsyqpzphxclb.streamlit.app/?embed_options=show_toolbar,show_footer,dark_theme,disable_scrolling,light_theme,show_colored_line,show_padding" width="100%" height="500px" frameborder="0"></iframe>
 
 {% include feature_row id="feature_row5" type="right" %}
 
