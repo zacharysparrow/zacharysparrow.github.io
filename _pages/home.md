@@ -52,14 +52,12 @@ feature_row6:
     btn_label: "Learn More"
 ---
 
-Questions? Try out my personal AI assistant!
-
-<iframe src="https://ragwebsiteassistant-wtfkaxrpkewsyqpzphxclb.streamlit.app/?embed=true&embed_options=show_toolbar,show_footer,dark_theme,disable_scrolling,light_theme,show_colored_line,show_padding" width="100%" height="500px" frameborder="0"></iframe>
-
-...or check out some of my work at the links below. {: .text-right}
-
 {% include feature_row id="feature_row5" type="right" %}
 
 {% include feature_row id="feature_row1" type="left" %}
 
 {% include feature_row id="feature_row6" type="right" %}
+
+Questions? Try out my personal AI assistant!
+
+<iframe src="https://ragwebsiteassistant-wtfkaxrpkewsyqpzphxclb.streamlit.app/?embed=true&embed_options=dark_theme&embed_options=disable_scrolling&embed_options=show_colored_line" width="100%" height="500px" frameborder="0"></iframe>
