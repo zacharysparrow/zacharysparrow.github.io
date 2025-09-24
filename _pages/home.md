@@ -58,6 +58,4 @@ feature_row6:
 
 {% include feature_row id="feature_row6" type="right" %}
 
-Questions? Try out my personal AI assistant!
-
 <iframe src="https://ragwebsiteassistant-wtfkaxrpkewsyqpzphxclb.streamlit.app/?embed=true&embed_options=show_colored_line&embed_options=show_toolbar" width="100%" height="600px" frameborder="0"></iframe>
