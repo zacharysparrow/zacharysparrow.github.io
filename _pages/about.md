@@ -37,7 +37,13 @@ Cornell University, Ithaca, NY (*Aug. 2017 - May 2023*)
 
 ### Undergraduate Researcher
 St. Olaf College, Northfield, MN (*Aug. 2015 - Aug. 2017*)
-- Developed efficient algorithm for high-resolution image analysis of high-speed gas flows
+- Developed efficient hybrid classical/ML algorithm algorithm for high-resolution image analysis of high-speed gas flows
+- Synthesized and characterized organometallic molybdenum and tungsten compounds
+
+### Department of Energy Summer Undergraduate Laboratory Internship Fellow
+Pacific Northwest National Laboratory, Richland, WA (*June 2016 - Aug. 2016*)
+- Fabricated, characterized, and assessed hybrid photovoltaic electrochemical energy storage devices
+- Authored internal research report on the fabrication and optimization of novel integrated photoelectrochemical cells using ion soft-landing techniques
 
 ### Visiting Undergraduate Research Assistant  
 MIT, Cambridge, MA (*June 2015 - Aug. 2015*)
