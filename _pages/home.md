@@ -60,4 +60,4 @@ feature_row6:
 
 Questions? Try out my personal AI assistant!
 
-<iframe src="https://ragwebsiteassistant-wtfkaxrpkewsyqpzphxclb.streamlit.app/?embed=true&embed_options=light_theme&embed_options=show_colored_line" width="100%" height="800px" frameborder="0"></iframe>
+<iframe src="https://ragwebsiteassistant-wtfkaxrpkewsyqpzphxclb.streamlit.app/?embed=true&embed_options=light_theme&embed_options=show_colored_line&embed_options=show_toolbar" width="100%" height="600px" frameborder="0"></iframe>
