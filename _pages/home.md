@@ -21,7 +21,7 @@ header:
 #    - label: "<i class='fas fa-download'></i> Install now"
 #      url: "/docs/quick-start-guide/"
 excerpt: >
-  I have nearly a decade of experience in computational research working with a wide variety of tools and data, and love to solve complex problems in diverse domains.<br /><br /><br /><br /><br />
+  I have nearly a decade of experience in computational research working with a wide variety of tools and data, and love to solve complex problems in diverse domains.<br /><br /><br /><br /><small>Questions? Check out my AI website assistant at the bottom of the page!</small>
 #  <small><a href="https://github.com/mmistakes/minimal-mistakes/releases/tag/4.24.0">Latest release v4.24.0</a></small>
 
 feature_row1:
