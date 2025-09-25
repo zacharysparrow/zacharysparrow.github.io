@@ -59,3 +59,4 @@ feature_row6:
 {% include feature_row id="feature_row6" type="right" %}
 
 <iframe src="https://ragwebsiteassistant-wtfkaxrpkewsyqpzphxclb.streamlit.app/?embed=true&embed_options=show_colored_line&embed_options=show_toolbar" width="100%" height="600px" frameborder="0"></iframe>
+<small>Note: Chatbot currently kept live around working hours. Responses outside of those hours may be longer than usual.</small>
