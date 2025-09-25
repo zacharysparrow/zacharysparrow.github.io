@@ -9,7 +9,7 @@ tags:
   - Full Stack
 sidebar:
   - title: "Technology Used"
-    text: "Python, LangChain, ChromaDB, FastAPI, Streamlit, RAG, Natural Language Processing"
+    text: "Python, Google Gemini, LangChain, ChromaDB, FastAPI, Streamlit, RAG, Natural Language Processing"
   - title: "Packages Used"
     text: "LangChain, FastAPI, Streamlit, Pydantic"
 ---
