@@ -1,6 +1,6 @@
 ---
 layout: single
-title: I'm Zachary Sparrow,<br /> Theoretical/Computational Chemist.
+title: I'm Zachary Sparrow,<br /> Computational Chemist.
 classes: wide
 permalink: /
 # hidden: true

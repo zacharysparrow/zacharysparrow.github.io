@@ -14,7 +14,36 @@ sidebar:
     text: "LangChain, FastAPI, Streamlit, Pydantic"
 ---
 
-<h2> Description Coming Soon... </h2>
+The promise of large language models (LLMs) is the ability to interact with computer systems using natural language. 
+It's interesting that one of the earliest practical applications of LLMs is a retrieval-agumented generation (RAG) chatbot.
+This parallels the rise of search engines during the early days of the internet (see e.g. Google).
 
+RAG systems allow the user to essentially converse with a set of documents as if they were talking to the documents directly.
+This makes them really useful for quickly searching through or summarizing documents in a natural way.
+As an added bonus, LLMs incorporated into a RAG system tend to hallucinate less because they are directly connected to a physical body of information that they must use to derive their response to a prompt.
+
+Here, I build an agentic RAG chatbot designed to be an AI assistant on my personal portfolio website.
+The goal of this project is to have a chatbot app on the site capable of answering questions about me, my experience, and my scientific work.
+A recruiter or hiring manager looking at my portfolio can then easily ask more detailed questions about my work and how I would be an asset on their team.
+On the flip side, the chatbot will be able to provide more targeted information than what is reasable for me to post on my site.
+You can check it out either at the bottom of the page, or on my landing page! (click the ZS in the upper left corner)
+
+<h2> The Details </h2>
+Features:
+- chat history
+- RAG
+- agentic search
+
+Tech:
+- Google Gemini
+- LangChain
+- ChromaDB
+- FastAPI
+- Streamlit
+
+General idea:
+We'll use streamlit as a front end, which can be hosted for free on community cloud. For the backend, we'll build a fastAPI. The fastAPI will be hosted on Render (server arch. allows for simple chat message history), and call Google Gemini's API for the LLM. LangChain will take care of all of the agentic chatbot logic, using ChromaDB as the vector database for the documents I want the chatbot to be able to search.
+
+<h2> Try out the app below! </h2>
 <iframe src="https://ragwebsiteassistant-wtfkaxrpkewsyqpzphxclb.streamlit.app/?embed=true&embed_options=show_colored_line&embed_options=show_toolbar" width="100%" height="800px" frameborder="0"></iframe>
 
