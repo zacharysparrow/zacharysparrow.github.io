@@ -26,12 +26,20 @@ feature_row3:
     url: "https://doi.org/10.1021/acs.jpclett.2c00643"
     btn_class: "btn--primary"
     btn_label: "Learn More"
+
+feature_row4:
+  - image_path: /assets/images/aabbcd.png
+    excerpt: "Density Functional Theory (DFT) is the standard method for studying chemical and physical systems. Approximations within DFT are generally accurate enough to get useful results, while still maintaining a tolerable computational cost for many systems... until you need accurate descriptions of bond breaking, band gaps, or really any real chemistry. Then, you need so-called hybrid density functional approximations (DFAs). The key component to hybrid DFAs is so-called exact exchange, which is typically quite costly to compute when compared to simpler approximations. To enable the use of hybrid DFAs to study the many interesting systems that require this type of approximation, we've developed an exact exchange algorithm that scales linearly with system size, ultimately reducing the cost of hybrid DFAs to the point where they are comparable with the underlying non-hybrid functionals. My main contribution is the development of a method that is straightforwardly applicable to a wide variety of heterogeneous systems, and with a predicatble and controllable level of accuracy. In other words, you dont' really need to know what's going on under the hood (though I'll happily talk your ear off about it), the algorithm just works. Paper and code release coming soon!"
+    btn_class: "btn-primary"
+    btn_label: "Coming Soon..."
 ---
 
 # Theoretical and Computational Chemistry
 Accurate simulations of molecules and materials have the potential to greatly acellerate the development of new technologies (better solar cells, batteries, drugs, etc.). On a theoretical level, we know how to do these simulations *exactly*. The problem? Running these simulations for any interesting molecule or material would take longer than the heat death of the universe. The main issue is accurately modeling the electrons, which has come to be known as the electronic structure problem. The entire electornic structure field is focused on developing fast, accurate approximations to the true quantum mechanical simulations. I believe the most promising solution to this problem lies in the development of both physics-informed machine learning models and fast (linear-scaling) algorithms to apply these models to large systems. 
 
 ## Featured Work
+### Linear Scaling Hybrid Density Functional Theory
+{% include feature_row id="feature_row4" type="right" %}
 ### AI Polymer Design
 {% include feature_row id="feature_row1" type="left" %}
 ### Uniting Physical and Empirical Models

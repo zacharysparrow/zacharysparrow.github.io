@@ -13,7 +13,7 @@ header:
 #      url: "https://zacharysparrow.github.io/misc/"
 ---
 
-I'm a postdoctoral scientist in computational and theoretical chemistry studying the electronic structure problem through a data scientist lens. I have a nearly decade of computational research experience with an emphasis on constructing and analyzing chemical data sets, the development of predictive machine learning models, and algorithm design. I love working with great people, turning data into insight, and developing algorithms to do things that weren't possible before. I received my Ph.D. for developing 1) tools to construct reliable ML-based density functional approximations, 2) datasets to train them, and 3) algorithms to make them fast for very large systems.
+I'm a postdoctoral scientist in computational and theoretical chemistry studying the electronic structure problem. I have a nearly decade of computational research experience with an emphasis on constructing and analyzing chemical data sets, the development of predictive machine learning models, and algorithm design. I love working with great people, turning data into insight, and developing algorithms to do things that weren't possible before. I received my Ph.D. for developing 1) tools to construct reliable ML-based density functional approximations, 2) datasets to train them, and 3) algorithms to make them fast for very large systems.
 
 ## Education
 
@@ -27,12 +27,13 @@ I'm a postdoctoral scientist in computational and theoretical chemistry studying
 Cornell University, Ithaca, NY (*May 2023 - Present*)
 - Machine learning for the design and recycling of high-density polyethylene (HDPE)
 - Algorithms for training robust and transferable machine-learned density functional approximations
+- Black-box linear-scaling exact exchange with controllable accuracy for large-scale finite-gap condensed-phase systems
 - Quantum chemical database construction and analysis
 
 ### Graduate Research Assistant  
 Cornell University, Ithaca, NY (*Aug. 2017 - May 2023*)
 - Design of physically constrained empirical/machine-learned density functional approximations
-- Linear-scaling exact exchange for large-scale finite-gap condensed-phase systems
+- Black-box linear-scaling exact exchange with controllable accuracy for large-scale finite-gap condensed-phase systems
 - Quantum chemical database construction and analysis
 
 ### Undergraduate Researcher
