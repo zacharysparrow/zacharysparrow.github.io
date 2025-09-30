@@ -29,21 +29,411 @@ On the flip side, the chatbot will be able to provide more targeted information 
 You can check it out either at the bottom of the page, or on my landing page! (click the ZS in the upper left corner)
 
 <h2> The Details </h2>
-Features:
-- chat history
-- RAG
-- agentic search
+<h3> The Chroma Database </h3>
+The first step to designing a RAG system is setting up a vector database to store the documents that will be searched.
+Here, we'll use LangChain's bulit in support for the open-source Chroma database, which is a popular choice.
+We'll only be embedding a few documents, so for simplicity I'll host the database along with the code in the GitHub repo.
+This will simplify deployment quite a bit because we won't have to host the database online---the RAG system can intereact with the database in the repo directly.
+<br />
+<br />
 
-Tech:
-- Google Gemini
-- LangChain
-- ChromaDB
-- FastAPI
-- Streamlit
+First, we have to choose an embedding model to embed chunks of text into a high-dimensional vector.
+For this project, I'll be using Google's embedding and Gemini models (we'll use Gemini-2.5-Flash for a balance between computational expense and LLM quality).
+I found that the default embedding dimension was effective enough for this application.
+These can be accessed in the LargChain frame work as follows (Note that all code fragments in this blog are incomplete for pedagogical simplicity. For working code, check out the GitHub repo!):
 
-General idea:
-We'll use streamlit as a front end, which can be hosted for free on community cloud. For the backend, we'll build a fastAPI. The fastAPI will be hosted on Render (server arch. allows for simple chat message history), and call Google Gemini's API for the LLM. LangChain will take care of all of the agentic chatbot logic, using ChromaDB as the vector database for the documents I want the chatbot to be able to search.
+<pre style="background-color: #dddddd; padding: 10px;">
+<code>
+embeddings = GoogleGenerativeAIEmbeddings(model="models/gemini-embedding-001", task_type="QUESTION_ANSWERING", google_api_key=GEMINI_API_KEY)
+llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash", temperature=0, google_api_key=GEMINI_API_KEY)
+</code>
+</pre>
 
-<h2> Try out the app below! </h2>
+From here, we can initialize the database
+
+<pre style="background-color: #dddddd; padding: 10px;">
+<code>
+chroma = Chroma(
+    collection_name="documents",
+    collection_metadata={"name": "documents", "description": "store documents"},
+    persist_directory="./data",
+    embedding_function=embeddings,
+)
+</code>
+</pre>
+
+The next step is to populate the database with our documents.
+Without going into too many details, I wrote a script (update_chromadb.py) that automatically goes through the markdown files in documents/markdown and the pages of my website, checks to see if they're in the database, and adds them if not.
+I populated this directory with markdown versions of my papers (converted from PDFs automatically using DataLabs), CV, and some FAQs.
+I translated all of my documents to markdown to enable markdown header-based text splitting, which dynamically splits the text based on the location of different level headers (corresponding to sections, subsections, etc..) in the document.
+From there, further splits are made as necessary only where a sentence ends.
+This strategy ensures that all of the relevant context is included in each chunk.
+<br />
+<br />
+
+The most important part of the embedding process is the chunking stretegy, which is how the markdown text is broken down into smaller sections to be embedded into the database and, ultimately, searched.
+If your chunks are too small, they won't contain all of the necessary context.
+If your chunks are too large, they won't be effectively summarized and embedded as a single vector.
+The optimal chunk size depends on the RAG application.
+After some searching, I see that documents like scientific papers often require larger chunk sizes, requiring around 1,000 tokens (aroudn 4,000 characters).
+One of the main targets of the RAG search is my papers, so we'll use a 4,000 character chunk size with an overlap of 20% of the chunk size between subsequent chunks.
+Finally, I make sure that the metadata for each text chunk matches the metadata for the corresponding paper (which I've hard-coded in a .json file for accuracy and consistency).
+This information will be used to include relevant citations in the chatbot responses.
+<br />
+<br />
+
+All of this can be accomplished for a document loaded as "content" as follows (which has been simplified somewhat from the update_chromadb.py script)
+<pre style="background-color: #dddddd; padding: 10px;">
+<code>
+markdown_splitter = MarkdownHeaderTextSplitter(headers_to_split_on, strip_headers=False)
+texts = markdown_splitter.split_text(content.page_content)
+chunk_size = 4000
+chunk_overlap = chunk_size*0.2
+text_splitter = RecursiveCharacterTextSplitter(
+    chunk_size=chunk_size, chunk_overlap=chunk_overlap, length_function=len, is_separator_regex=False, separators=['. ']
+)
+all_text = []
+
+for t in texts:
+    all_text.append(text_splitter.split_text(t.page_content))
+all_texts = [re.sub('(.)\n(?! \n)', r'\1 ', item[2:]+".") for sublist in all_text for item in sublist]
+
+for t in all_texts:
+    status = store_document([Document(page_content=t, metadata=doc_metadata)])
+</code>
+</pre>
+
+<h3> Chatbot Logic </h3>
+Next, we need to set-up some of the logic that allows the chatbot to search the Chroma database and respond appropriately.
+The first step to this process is setting up a retriever for each tool we want our chatbot agent to have.
+Here, I'll set up a three retrievers: one for my papers, one for my website, and one for my CV/FAQs.
+By default, these retrievers search the database by comparing the embedded search term vector to the embedded chunk vectors using cosine similarity.
+<pre style="background-color: #dddddd; padding: 10px;">
+<code>
+sci_retriever = chroma.as_retriever(search_type="similarity_score_threshold", search_kwargs={"k":3, "score_threshold":0.0, "filter":{"tag":"science"}})
+web_retriever = chroma.as_retriever(search_type="similarity_score_threshold", search_kwargs={"k":3, "score_threshold":0.0, "filter":{"tag":"web"}})
+cv_retriever = chroma.as_retriever(search_type="similarity_score_threshold", search_kwargs={"k":3, "score_threshold":0.0, "filter":{"tag":"cv"}})
+</code>
+</pre>
+
+Next, we'll set up the prompt template to instruct the LLM to behave as we would like.
+<pre style="background-color: #dddddd; padding: 10px;">
+<code>
+TEMPLATE = """
+You are Zachary Sparrow's (Zach) AI assistant designed to answer questions from hiring managers and recruiters about Zach's professional history, experience, and skills.
+You are currently talking with a hiring manager or recruiter. Your goal is to convince them to give Zach an interview or a job.
+
+The provided tools can be used to search Zach's CV, frequently asked questions, personal website (which contains information on personal projects, hobbies, etc.), and Zach's published peer review papers.
+If needed, use the provided tools to gather information related to responding to the given question, prompt, or query.
+
+Please use concise but complete answers, using bullet points "-" to organize your response only if needed.
+
+Output your response in plain text without using tags and ensure you are not quoting context text in your response.
+
+Here is the question:
+
+<messages>
+{messages}
+</messages>
+"""
+PROMPT = ChatPromptTemplate.from_template(TEMPLATE)
+</code>
+</pre>
+
+Next, we'll create the tools that our agent can use to call the retrievers.
+Ultimately, we want the retriever to return chunks of relevant text and the metadata associated with that chunk.
+To accomplish this, we'll need to implement  custom retriever tool that searches the database and combines the chunks and metadata for each retrievered chunk so that the model can distinguish between the actual content and its metadata.
+This can be accomplished as follows:
+<pre style="background-color: #dddddd; padding: 10px;">
+<code>
+class RetrieverInput(BaseModel):
+    """Input to the retriever."""
+    query: str = Field(description="Query to look up in the retriever")
+
+def get_documents(query, retriever):
+    docs = retriever.invoke(query)
+    combined_content = "\n\n".join(doc.page_content for doc in docs)
+
+    combined_metadata = {}
+    for doc in docs:
+        for key, value in doc.metadata.items():
+            if key in combined_metadata:
+                combined_metadata[key].append(value)
+            else:
+                combined_metadata[key] = [value]
+
+    combined_doc = {
+        "content": combined_content,
+        "metadata": combined_metadata
+    }
+
+    return combined_doc
+
+# custom retriever tool to also fetch references
+def create_retriever_tool(retriever, name: str, description: str) -> Tool:
+    return Tool(
+        name=name,
+        func=lambda query: get_documents(query, retriever),
+        description=description,
+        args_schema=RetrieverInput
+    )
+</code>
+</pre>
+
+With this custom retriever tool function in hand, we can make the actual tools for the LLM as follows:
+<pre style="background-color: #dddddd; padding: 10px;">
+<code>
+sci_tool = create_retriever_tool(
+    sci_retriever,
+    "scientific_paper_retriever",
+    "Searches and returns excerpts from Zach's peer-reviewed scientific papers. Topics include: PEPPr, CASE21, Chemistry, Physics, machine learning, algorithms."
+)
+
+web_tool = create_retriever_tool(
+    web_retriever,
+    "personal_website_retriever",
+    "Searches and returns excerpts from Zach's personal website and portfolio, including information about personal data science and machine learning/AI projects."
+)
+
+cv_tool = create_retriever_tool(
+    cv_retriever,
+    "resume_retriever",
+    "Searches and returns excerpts from Zach's CV and answers to frequently asked questions."
+)
+
+tools = [sci_tool, web_tool, cv_tool]
+</code>
+</pre> 
+
+The description of each tool is used by the LLM to determine if the tool is appropriate for responding to the given prompt, so each is designed to be as descriptive as possible.
+The description for the scientific paper tool includes a number of key words (including some acronyms) to urge it to use this tool when these keywords are mentioned.
+
+<h3> Chat Message History </h3>
+Next, we want to implement a simple chat message history.
+This is implemented most straightforwardly by saving the chat history in memory, then using a pre-model hook to pull the messages out of memory and inject them into the prompt.
+To avoid an ever-growing history, we pull only the most recent ~2,000 tokens in memory.
+This gives our agent an effective short-term memory, though it is lacking any sort of long-term memory.
+Implementing this effectively would require saving chat message histories to another database based on a user ID and message time, then searching the database for relevant messages before injecting them into the prompt.
+Below I also included a clear_memory funciton to allow the user to restart the session.
+<pre style="background-color: #dddddd; padding: 10px;">
+<code>
+def clear_memory(session_id: str):
+    memory.delete_thread(session_id)
+    return "successful"
+
+memory = MemorySaver()
+
+def pre_model_hook(state) -> dict[str, list[BaseMessage]]:
+    trimmed_messages = trim_messages(
+        state["messages"],
+        strategy="last",
+        max_tokens=2048,
+        token_counter=count_tokens_approximately,
+        start_on="human",
+        end_on=("human", "tool"),
+    )
+    return {"llm_input_messages": trimmed_messages}
+
+conversational_agent = create_react_agent(llm, tools, prompt=PROMPT, checkpointer=memory, pre_model_hook=pre_model_hook)
+</code>
+</pre>
+
+This all comes together in the following function which is used by the API to ask the LLM the user's question.
+<pre style="background-color: #dddddd; padding: 10px;">
+<code>
+def ask_question(query: str, session_id: str) -> str:
+    response = conversational_agent.invoke({"messages": [query]}, config={"configurable":{"thread_id": session_id}})
+
+    sources = []
+    for r in response["messages"]:
+        if isinstance(r, ToolMessage):
+            curr_metadata = literal_eval(r.content)["metadata"]
+            sources.append([dict(zip(curr_metadata,t)) for t in zip(*curr_metadata.values())])
+        if isinstance(r, HumanMessage):
+            sources = [] #only want sources relevant to most recent human message
+
+    return_sources = [x for xs in sources for x in xs]
+    return (response["messages"][-1].content, return_sources, None)
+</code>
+</pre>
+
+<h3> Building the FastAPI </h3>
+Our FastAPI consists of three endpoints: the root, /reset_history, and /ask.
+The later two are used for resetting the chat message history and submitting a query to the LLM agent, respectively.
+The first step is creating the API instance
+<pre style="background-color: #dddddd; padding: 10px;">
+<code>
+app = FastAPI(
+    title="RAG Chatbot",
+    description="A Retrieval-Augmented Generation (RAG) chatbot using Google Gemini. Ask it questions about me, my experience, or my science.",
+    version="0.1",
+)
+</code>
+</pre>
+
+From there, we can setup a pydantic model for our LLM responses and the API endpoints themselves.
+<pre style="background-color: #dddddd; padding: 10px;">
+<code>
+class AskResponse(BaseModel):
+    query: str
+    answer: str
+    sources: list
+    error: str = None
+
+# api endpoints
+@app.get("/")
+def read_root():
+    return {
+        "service": "RAG Chatbot using Google Gemini",
+        "description": "Welcome to RAG Chatbot API",
+        "status": "running",
+    }
+
+@app.get("/reset_history")
+def reset_history(session_id: str):
+    status = clear_memory(session_id)
+    return status
+
+@app.get("/ask")
+def ask(query: str, session_id: str) -> AskResponse:
+    try:
+        answer, context, history = ask_question(query, session_id)
+        sources = []
+        for source in context:
+            try:
+                doi = source["doi"]
+            except:
+                doi = None
+            try:
+                authors = source["author"]
+            except:
+                authors = None
+            try:
+                title = source["title"]
+            except:
+                title = None
+            try:
+                subject = source["subject"]
+            except:
+                subject = None
+            sources.append({"title": title, "doi": doi, "authors": authors, "subject": subject})
+
+        return {"query": query, "answer": answer, "sources": sources}
+    except Exception as e:
+        logger.error(f"Error asking question: {e}", exc_info=True)
+        return {"error": str(e), "query": query, "answer": "", "sources": ""}
+</code>
+</pre>
+
+The /reset_history endpoint simply calls the clear_memory function we defined earlier, while the /ask endpoint calls the ask_question function and organizes the response into the query, answer, and sources found during the Chroma database search.
+At the time of writing, I'm hosting this API on Render.com using the hobby (free) tier. 
+Details on setting up the API are out of the scope of this post, but the whole process was relatively straightforward, even though this is the first API I've constructed.
+One unexpected benefit of using Render as opposed to other options is that Render uses a tradiational server-based infrastructure, as opposed to a serverless one.
+This means that the API actually has access to the machine's memory, and our implementation of chat message history will work as intended.
+On the other hand, a serverless host would run the API on a different machine every time it is called---memory of past messages will be lost entirely.
+The way around this limitation is to set-up a database to hold message histories for a given user ID which can be accessed by the serverless function as needed.
+
+<h3> Streamlit Front End </h3>
+Finally, we need a front end to allow users to directly interface with the chatbot in an intuitive manner.
+We only need a simple app structure, so I opted to use the streamlit package, which allows to simple app creation with just a couple of lines of code.
+The first step is setting up functions to call the FastAPI we just finished creating.
+
+<pre style="background-color: #dddddd; padding: 10px;">
+<code>
+def ask(query: str, session_id: str) -> str:
+    with st.spinner("Asking the chatbot..."):
+        response = requests.get(f"{API_URL}/ask?query={query}&session_id={session_id}") #ZMS
+    if response.status_code == 200:
+        data = response.json()
+        return (data["answer"], data["sources"])
+    else:
+        return "I couldn't find an answer to your question."
+
+def reset_history(session_id: str):
+    with st.spinner("Setting up the chat..."):
+        status = requests.get(f"{API_URL}/reset_history?session_id={session_id}")
+    if status == "successful":
+        return "Reset successfull"
+</code>
+</pre>
+
+Then we can define the app logic itself, using streamlit's built in tools to make in input feild for the query, write the human query and LLM response, create a button for resetting the chat history.
+In order for our short-term memory feature to work properly we need to create a unique ID for the chat session. This is done when the app starts up with an initialization block, which also includes a short welcome message.
+
+<pre style="background-color: #dddddd; padding: 10px;">
+<code>
+st.set_page_config(page_title="Chatbot", page_icon="🤖")
+st.title("Zach's Personal AI Assistant")
+
+if "initialized" not in st.session_state or not st.session_state.initialized:
+    ctx = get_script_run_ctx()
+    st.session_state.session_id = ctx.session_id
+    st.session_state.initialized = True
+    with st.chat_message(name="ai", avatar="ai"):
+        st.write("Hello! I'm Zach's personal AI assistant. I can answer questions about Zach and his research, projects, and experience.")
+</code>
+</pre>
+
+The user input and LLM response are handled in another block of code that calls the FastAPI as needed and returns an error if it can't connect to the API.
+The API output is then parsed for the LLM response and metadata information.
+The latter is formatted into a standard reference style before being written after the LLM response as needed.
+
+<pre style="background-color: #dddddd; padding: 10px;">
+<code>
+if query:
+    with st.chat_message("user"):
+        st.write(query)
+    try:
+        answer, sources = ask(query, st.session_state.session_id)
+    except:
+        answer = "I've run into an issue. Please try again later!"
+        sources = None
+        pass
+
+    with st.chat_message("ai"):
+        st.write(answer)
+
+        sources = [item for item in sources if item["title"] != None]
+        seen_sources = set()
+        filtered_sources = []
+        for d in sources:
+            t = tuple(sorted(d.items()))
+            if t not in seen_sources:
+                seen_sources.add(t)
+                filtered_sources.append(d)
+
+        if filtered_sources != []:
+            expander = st.expander("Relevant work:")
+            for source in filtered_sources:
+                expander.write("- :small[" + source["authors"] + ", *" + source["title"] + "*, " + source["subject"] + "\n https://doi.org/" + source["doi"] +"]")
+</code>
+</pre>
+
+Finally, we define the button that resets chat message history and shouts out this very blog post!
+
+<pre style="background-color: #dddddd; padding: 10px;">
+<code>
+if st.button("Reset Session", key="button"):
+    status = reset_history(st.session_state.session_id)
+    st.session_state.initialized = False
+    query = None
+    del st.session_state["button"]
+    st.rerun()
+
+with st._bottom:
+    st.markdown("How did I make this? Check out my [blog post](https://zacharysparrow.github.io/projects/rag_chatbot/)!")
+</code>
+</pre>
+
+I host this frontend directly on the streamlit community cloud, which is free.
+The main downside of this is that the app automatically sleeps every 12 hours without use, which means it requires a short wake-up period if it hasn't been used in a while.
+Unfortunately, the app must we woken up from the streamlit site directly, since waking the app when it's embedded in another site doesn't seem to work.
+<br />
+<br />
+
+<h2> Try out the app! </h2>
+The end result can be seen embedded into this site below.
+If it's asleep, you can wake up the app [here](https://ragwebsiteassistant-wtfkaxrpkewsyqpzphxclb.streamlit.app/)!
+
 <iframe src="https://ragwebsiteassistant-wtfkaxrpkewsyqpzphxclb.streamlit.app/?embed=true&embed_options=show_colored_line&embed_options=show_toolbar" width="100%" height="800px" frameborder="0"></iframe>
 
