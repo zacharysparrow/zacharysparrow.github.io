@@ -21,7 +21,7 @@ header:
 #    - label: "<i class='fas fa-download'></i> Install now"
 #      url: "/docs/quick-start-guide/"
 excerpt: >
-  I have nearly a decade of experience in computational research working with a wide variety of tools and data, and love to solve complex problems in diverse domains.<br /><br /><br /><br /><small>Questions? Check out my AI website assistant at the bottom of the page!</small>
+  I have nearly a decade of experience in computational research working with a wide variety of tools and data, and love to solve complex problems in diverse domains.<br /><br /><br /><br /><small>Questions? Check out my <a hraf="https://ragwebsiteassistant-wtfkaxrpkewsyqpzphxclb.streamlit.app/" target="_blank"> AI website assistant</a>!</small>
 #  <small><a href="https://github.com/mmistakes/minimal-mistakes/releases/tag/4.24.0">Latest release v4.24.0</a></small>
 
 feature_row1:
@@ -58,5 +58,3 @@ feature_row6:
 
 {% include feature_row id="feature_row6" type="right" %}
 
-<iframe src="https://ragwebsiteassistant-wtfkaxrpkewsyqpzphxclb.streamlit.app/?embed=true&embed_options=show_colored_line&embed_options=show_toolbar" width="100%" height="600px" frameborder="0"></iframe>
-<small>Note: App asleep? Wake it up [here](https://ragwebsiteassistant-wtfkaxrpkewsyqpzphxclb.streamlit.app/). (Streamlit doesn't support waking on 3rd party sites.)</small>
