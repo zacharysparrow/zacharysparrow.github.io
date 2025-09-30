@@ -16,8 +16,6 @@ gallery:
     image_path: assets/images/gallery/indian_head.jpg
   - url: /assets/images/gallery/sydney.jpg
     image_path: assets/images/gallery/sydney.jpg
-  - url: /assets/images/gallery/camp.jpg
-    image_path: assets/images/gallery/camp.jpg
   - url: /assets/images/gallery/cranberry_lake.jpg
     image_path: assets/images/gallery/cranberry_lake.jpg
   - url: /assets/images/gallery/lake_placid.jpg
