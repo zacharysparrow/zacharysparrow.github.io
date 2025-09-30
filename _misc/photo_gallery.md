@@ -10,6 +10,10 @@ categories:
 gallery:
   - url: /assets/images/gallery/adk_sunrise.jpg
     image_path: assets/images/gallery/adk_sunrise.jpg
+  - url: /assets/images/gallery/zach_adk_trail_run.jpg
+    image_path: assets/images/gallery/zach_adk_trail_run.jpg
+  - url: /assets/images/gallery/indian_head.jpg
+    image_path: assets/images/gallery/indian_head.jpg
   - url: /assets/images/gallery/sydney.jpg
     image_path: assets/images/gallery/sydney.jpg
   - url: /assets/images/gallery/camp.jpg
