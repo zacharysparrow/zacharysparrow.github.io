@@ -26,7 +26,7 @@ Here, I build an agentic RAG chatbot designed to be an AI assistant on my person
 The goal of this project is to have a chatbot app on the site capable of answering questions about me, my experience, and my scientific work.
 A recruiter or hiring manager looking at my portfolio can then easily ask more detailed questions about my work and how I would be an asset on their team.
 On the flip side, the chatbot will be able to provide more targeted information than what is reasable for me to post on my site.
-You can check it out either at the bottom of the page, or on my landing page! (click the ZS in the upper left corner)
+You can check it out either at the bottom of the page, or on my landing page! (Click the ZS in the upper left corner.)
 
 <h2> The Details </h2>
 <h3> The Chroma Database </h3>
@@ -427,9 +427,13 @@ with st._bottom:
 
 I host this frontend directly on the streamlit community cloud, which is free.
 The main downside of this is that the app automatically sleeps every 12 hours without use, which means it requires a short wake-up period if it hasn't been used in a while.
-Unfortunately, the app must we woken up from the streamlit site directly, since waking the app when it's embedded in another site doesn't seem to work.
+Unfortunately, the app must we woken up from the streamlit site directly, not in a site embedding.
 <br />
 <br />
+
+All things considered, I'm pleased with the quality of the LLM responses and the function of the app.
+The major downsides (like the streamlit frontend going to sleep) are due to me opting for free services, which must have usage downsides in order to remain free.
+Apps like this could be effective ways for applicants to leverage AI in the hiring process.
 
 <h2> Try out the app! </h2>
 The end result can be seen embedded into this site below.
