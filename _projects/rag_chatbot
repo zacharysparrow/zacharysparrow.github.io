@@ -14,19 +14,23 @@ sidebar:
     text: "LangChain, FastAPI, Streamlit, Pydantic"
 ---
 
-The promise of large language models (LLMs) is the ability to interact with computer systems using natural language. 
 It's interesting that one of the earliest practical applications of LLMs is a retrieval-agumented generation (RAG) chatbot.
 This parallels the rise of search engines during the early days of the internet (see e.g. Google).
+<br />
+<br />
 
-RAG systems allow the user to essentially converse with a set of documents as if they were talking to the documents directly.
+RAG systems allow the user to essentially converse with a set of documents as if they were talking to them directly.
 This makes them really useful for quickly searching through or summarizing documents in a natural way.
 As an added bonus, LLMs incorporated into a RAG system tend to hallucinate less because they are directly connected to a physical body of information that they must use to derive their response to a prompt.
+<br />
+<br />
 
 Here, I build an agentic RAG chatbot designed to be an AI assistant on my personal portfolio website.
 The goal of this project is to have a chatbot app on the site capable of answering questions about me, my experience, and my scientific work.
 A recruiter or hiring manager looking at my portfolio can then easily ask more detailed questions about my work and how I would be an asset on their team.
 On the flip side, the chatbot will be able to provide more targeted information than what is reasable for me to post on my site.
-You can check it out either at the bottom of the page, or on my landing page! (Click the ZS in the upper left corner.)
+You can check out the app and GitHub repository at the bottom of the page! (Click the ZS in the upper left corner.)
+
 
 <h2> The Details </h2>
 <h3> The Chroma Database </h3>
@@ -40,7 +44,7 @@ This will simplify deployment quite a bit because we won't have to host the data
 First, we have to choose an embedding model to embed chunks of text into a high-dimensional vector.
 For this project, I'll be using Google's embedding and Gemini models (we'll use Gemini-2.5-Flash for a balance between computational expense and LLM quality).
 I found that the default embedding dimension was effective enough for this application.
-These can be accessed in the LargChain frame work as follows (Note that all code fragments in this blog are incomplete for pedagogical simplicity. For working code, check out the GitHub repo!):
+These can be accessed in the LargChain framework as follows (Note that all code fragments in this blog are incomplete for simplicity. For working code, check out the GitHub repo!):
 
 <pre style="background-color: #dddddd; padding: 10px;">
 <code>
@@ -49,7 +53,7 @@ llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash", temperature=0, google_api
 </code>
 </pre>
 
-From here, we can initialize the database
+From here, we can initialize the database.
 
 <pre style="background-color: #dddddd; padding: 10px;">
 <code>
@@ -64,8 +68,8 @@ chroma = Chroma(
 
 The next step is to populate the database with our documents.
 Without going into too many details, I wrote a script (update_chromadb.py) that automatically goes through the markdown files in documents/markdown and the pages of my website, checks to see if they're in the database, and adds them if not.
-I populated this directory with markdown versions of my papers (converted from PDFs automatically using DataLabs), CV, and some FAQs.
-I translated all of my documents to markdown to enable markdown header-based text splitting, which dynamically splits the text based on the location of different level headers (corresponding to sections, subsections, etc..) in the document.
+I populated this directory with markdown versions of my papers (converted from PDFs semi-automatically using DataLabs), CV, and some FAQs.
+The reason for translating all of my documents to markdown to enable markdown header-based text splitting, which dynamically splits the text based on the location of different level headers (corresponding to sections, subsections, etc..) in the document.
 From there, further splits are made as necessary only where a sentence ends.
 This strategy ensures that all of the relevant context is included in each chunk.
 <br />
@@ -75,14 +79,14 @@ The most important part of the embedding process is the chunking stretegy, which
 If your chunks are too small, they won't contain all of the necessary context.
 If your chunks are too large, they won't be effectively summarized and embedded as a single vector.
 The optimal chunk size depends on the RAG application.
-After some searching, I see that documents like scientific papers often require larger chunk sizes, requiring around 1,000 tokens (aroudn 4,000 characters).
+After some searching, I see that documents like scientific papers often require larger chunk sizes, requiring around 1,000 tokens (around 4,000 characters).
 One of the main targets of the RAG search is my papers, so we'll use a 4,000 character chunk size with an overlap of 20% of the chunk size between subsequent chunks.
 Finally, I make sure that the metadata for each text chunk matches the metadata for the corresponding paper (which I've hard-coded in a .json file for accuracy and consistency).
 This information will be used to include relevant citations in the chatbot responses.
 <br />
 <br />
 
-All of this can be accomplished for a document loaded as "content" as follows (which has been simplified somewhat from the update_chromadb.py script)
+All of this can be accomplished for a document loaded as "content" as follows.
 <pre style="background-color: #dddddd; padding: 10px;">
 <code>
 markdown_splitter = MarkdownHeaderTextSplitter(headers_to_split_on, strip_headers=False)
@@ -142,7 +146,7 @@ PROMPT = ChatPromptTemplate.from_template(TEMPLATE)
 
 Next, we'll create the tools that our agent can use to call the retrievers.
 Ultimately, we want the retriever to return chunks of relevant text and the metadata associated with that chunk.
-To accomplish this, we'll need to implement  custom retriever tool that searches the database and combines the chunks and metadata for each retrievered chunk so that the model can distinguish between the actual content and its metadata.
+To accomplish this, we'll need to implement a custom retriever tool that searches the database and combines the chunks and metadata for each retrievered chunk so that the model can distinguish between the actual content and the metadata.
 This can be accomplished as follows:
 <pre style="background-color: #dddddd; padding: 10px;">
 <code>
@@ -180,7 +184,7 @@ def create_retriever_tool(retriever, name: str, description: str) -> Tool:
 </code>
 </pre>
 
-With this custom retriever tool function in hand, we can make the actual tools for the LLM as follows:
+With this custom retriever tool function in hand, we can make the actual tools for the LLM.
 <pre style="background-color: #dddddd; padding: 10px;">
 <code>
 sci_tool = create_retriever_tool(
@@ -205,16 +209,16 @@ tools = [sci_tool, web_tool, cv_tool]
 </code>
 </pre> 
 
-The description of each tool is used by the LLM to determine if the tool is appropriate for responding to the given prompt, so each is designed to be as descriptive as possible.
+The description of each tool is used by the LLM to determine if it is appropriate for responding to the given prompt, so each is designed to be as descriptive as possible.
 The description for the scientific paper tool includes a number of key words (including some acronyms) to urge it to use this tool when these keywords are mentioned.
 
 <h3> Chat Message History </h3>
 Next, we want to implement a simple chat message history.
 This is implemented most straightforwardly by saving the chat history in memory, then using a pre-model hook to pull the messages out of memory and inject them into the prompt.
-To avoid an ever-growing history, we pull only the most recent ~2,000 tokens in memory.
+To avoid an ever-growing history, we pull only the most recent ~2,000 tokens.
 This gives our agent an effective short-term memory, though it is lacking any sort of long-term memory.
 Implementing this effectively would require saving chat message histories to another database based on a user ID and message time, then searching the database for relevant messages before injecting them into the prompt.
-Below I also included a clear_memory funciton to allow the user to restart the session.
+Below I also included a clear_memory function to allow the user to restart the session.
 <pre style="background-color: #dddddd; padding: 10px;">
 <code>
 def clear_memory(session_id: str):
@@ -259,8 +263,8 @@ def ask_question(query: str, session_id: str) -> str:
 
 <h3> Building the FastAPI </h3>
 Our FastAPI consists of three endpoints: the root, /reset_history, and /ask.
-The later two are used for resetting the chat message history and submitting a query to the LLM agent, respectively.
-The first step is creating the API instance
+The latter two are used for resetting the chat message history and submitting a query to the LLM agent, respectively.
+The first step is creating the API instance.
 <pre style="background-color: #dddddd; padding: 10px;">
 <code>
 app = FastAPI(
@@ -334,7 +338,7 @@ On the other hand, a serverless host would run the API on a different machine ev
 The way around this limitation is to set-up a database to hold message histories for a given user ID which can be accessed by the serverless function as needed.
 
 <h3> Streamlit Front End </h3>
-Finally, we need a front end to allow users to directly interface with the chatbot in an intuitive manner.
+Finally, we need a frontend to allow users to directly interface with the chatbot in an intuitive manner.
 We only need a simple app structure, so I opted to use the streamlit package, which allows to simple app creation with just a couple of lines of code.
 The first step is setting up functions to call the FastAPI we just finished creating.
 
@@ -357,8 +361,9 @@ def reset_history(session_id: str):
 </code>
 </pre>
 
-Then we can define the app logic itself, using streamlit's built in tools to make in input feild for the query, write the human query and LLM response, create a button for resetting the chat history.
-In order for our short-term memory feature to work properly we need to create a unique ID for the chat session. This is done when the app starts up with an initialization block, which also includes a short welcome message.
+Then we can define the app logic itself using streamlit's built in tools to make in input feild for the query, write the human query and LLM response, create a button for resetting the chat history.
+In order for our short-term memory feature to work properly, we need to create a unique ID for the chat session. 
+This is done when the app starts up with an initialization block, which also includes a short welcome message.
 
 <pre style="background-color: #dddddd; padding: 10px;">
 <code>
@@ -409,7 +414,7 @@ if query:
 </code>
 </pre>
 
-Finally, we define the button that resets chat message history and shouts out this very blog post!
+Finally, we define the button that resets chat message history and shouts out this very blog post.
 
 <pre style="background-color: #dddddd; padding: 10px;">
 <code>
