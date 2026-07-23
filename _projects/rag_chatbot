@@ -37,7 +37,7 @@ You can check out the app and GitHub repository at the bottom of the page! (Clic
 The first step to designing a RAG system is setting up a vector database to store the documents that will be searched.
 Here, we'll use LangChain's bulit in support for the open-source Chroma database, which is a popular choice.
 We'll only be embedding a few documents, so for simplicity I'll host the database along with the code in the GitHub repo.
-This will simplify deployment quite a bit because we won't have to host the database online---the RAG system can intereact with the database in the repo directly.
+This will simplify deployment quite a bit because we won't have to host the database online---the RAG system can interact with the database in the repo directly.
 <br />
 <br />
 
