@@ -63,7 +63,7 @@ plugins:
 author:
   name   : "Zachary Sparrow, Ph.D."
   avatar : "/assets/images/github-profile.jpg"
-  bio    : "Postdoctoral scientist looking for data-driven insight into chemical physics."
+  bio    : "Computational chemist building ML tools to crack hard problems."
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
