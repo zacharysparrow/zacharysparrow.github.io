@@ -1,6 +1,6 @@
 ---
 title: "Quest to Become an Adirondack 46er"
-date: 2025-09-01T10:00:00-04:00
+date: 2025-09-06T10:00:00-04:00
 header:
   image: "assets/images/adk_crop.jpg"
 categories:
