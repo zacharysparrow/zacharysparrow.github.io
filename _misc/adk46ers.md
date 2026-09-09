@@ -7,6 +7,8 @@ categories:
   - blog
 ---
 
+![alt]({{ site.url }}{{ site.baseurl }}/assets/images/adk46er.png){: .full}
+
 The Adirondack mountains (a.k.a. the 'Dacks) in upstate New York are some of the most remote peaks in the Northeast United States. The High Peaks region, sporting ~46 peaks with an elevation over 4,000 feet, has become a popular hiking destination for people all around the world. Some of the East coast's best hikes are in the ADK region (looking at you, Great Range traverse). Hiking all 46 of the ADK high peaks is recognized as one of the greatest hiking challenges in the region. On 07/09/2023, my partner and I started our quest to become ADK 46ers before leaving Ithaca (likely 2028). Track our progress here!
 
 #### Planned hikes
@@ -25,9 +27,9 @@ The Adirondack mountains (a.k.a. the 'Dacks) in upstate New York are some of the
 - [x] Cliff, Redfield, and Marshall
 - [x] Skylight, Grey, and Colden
 - [x] Seward Range
-- [ ] The Great Range Traverse
+- [x] The Great Range Traverse
 
-![alt]({{ site.url }}{{ site.baseurl }}/assets/images/adk_082126.png){: .full}
+![alt]({{ site.url }}{{ site.baseurl }}/assets/images/adk_090626.png){: .full}
 
 ## Trail Journal
 
@@ -90,3 +92,7 @@ The Adirondack mountains (a.k.a. the 'Dacks) in upstate New York are some of the
 ### Giant and Rocky Peak Ridge (39/46)
 08/15/26, Ridge Trail
 - We woke up early this morning feeling good and ready to start the hike! We got to the trail head around 5 a.m., and were the 3rd group signed into the trail register. This route started climbing almost immediately, but given that we have to gain and descend nearly 5000 feet in less than 8 miles this isn't surprising. Neither of us are huge fans of the kind of steep, eroded trails that you find with a lot of the more popular high peaks in the ADK, so we weren't in the best of moods until coming across some amazing views roughly halfway up the ridge trail, where we were able to snap some pictures in the early morning sunrise glow. We weren't really in any rush today, but we did want to finish early so we could spend the rest of the day visiting breweries and going to see the new Spider Man movie. The most notable part of this hike is definitely the col between Giant and Rocky--going down these ledges feels quite treacherous. We took a quick (cold) break at the top of Rocky, and were pleasantly surprised to find that we were nearly 3 times faster moving up the col than down it! This put us in high spirits for our lunch on the top of the (crowded) peak of Giant. The descent back to the car went fairly smoothly and quickly. After reaching the trail register, we found we were the first group of the day to summit both mountains and return back to the car! We covered just 8.2 miles in 6 hours and 15 minutes, which tells you a lot about just how steep this trail is.
+
+### The Great Range (46/46)
+09/06/26, Rooster Comb to The Garden
+- Woke up at about 2:15, on the trail by 3:30 a.m. The first 3 hours were in the dark, which meant we got to summit Roostercomb without a hint of daylight. Turning our headlamps off on the summit was an eerie feeling. From there, a mist/fog rolled in, and we had pretty limited visibility until the sun rose just before we summited Lower Wolfjaw. Upper Wolfjaw came quickly, though we were starting to get quite wet from the rain the night before and brushing up on all of the vegetation on these narrow trails. We ran right over Armstrong, stopping very briefly on the summit, and it didn't even register in our heads that this was a high peak. Fortunately the rock was dry for the infamous Gothics cables and Saddleback cliffs, though I will say the latter was more exposed than I would have liked. We saw the first glimpse of the sun on Saddleback, which did wonders for our morale. After the cliffs, Basin came quickly, and we were lucky enough to catch a little bit of a view on the summit! We continued on to Haystack, and by the time we reached little Haystack the fog had lifted completely. Fortunately, this meant we got to finish our 46 on Haystack in beautiful weather (albeit with gnarly winds). Haystack really had great views basically all the way up to the summit, probably my favorite peak. After celebrating with everyone else on the summit we made our way to Marcy to finish the Great Range Traverse, and then headed back down as quickly as we could. The descent was mercifully quick, thanks to a couple of pods casts and some running/shuffling. 
