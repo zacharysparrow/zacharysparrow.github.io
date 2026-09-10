@@ -9,7 +9,7 @@ categories:
 
 ![alt]({{ site.url }}{{ site.baseurl }}/assets/images/adk_46er_transparent.png){: .full}
 
-The Adirondack mountains (a.k.a. the 'Dacks) in upstate New York are some of the most remote peaks in the Northeast United States. The High Peaks region, sporting ~46 peaks with an elevation over 4,000 feet, has become a popular hiking destination for people all around the world. Some of the East coast's best hikes are in the ADK region (looking at you, Great Range traverse). Hiking all 46 of the ADK high peaks is recognized as one of the greatest hiking challenges in the region. On 07/09/2023, my partner and I started our quest to become ADK 46ers before leaving Ithaca (likely 2028). Track our progress here!
+The Adirondack mountains (a.k.a. the 'Dacks) in upstate New York are some of the most remote peaks in the Northeast United States. The High Peaks region, sporting ~46 peaks with an elevation over 4,000 feet, has become a popular hiking destination for people all around the world. Some of the East Coast's best hikes are in the ADK region (looking at you, Great Range Traverse). Hiking all 46 of the ADK high peaks is recognized as one of the greatest hiking challenges in the region. On 07/09/2023, my partner and I started our quest to become ADK 46ers before leaving Ithaca (likely 2028). Track our progress here!
 
 #### Planned hikes
 - [x] Cascade and Porter
